@@ -1,1 +1,7 @@
-# teo
+# Teo
+
+Game entry for the ` #GitHubGameOff`. 
+
+
+
+
