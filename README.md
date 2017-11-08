@@ -1,6 +1,6 @@
 # Teo
 
-Game entry for the ` #GitHubGameOff`. 
+Game entry for the `#GitHubGameOff` 2017. 
 
 
 
