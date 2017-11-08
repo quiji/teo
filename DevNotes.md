@@ -15,3 +15,10 @@ Blocking projectiles and storing them into satchel for future use (like *throwin
 Satchel works like a stack: first item in is last item out.
 
 Thats it. Ha!
+
+
+## Assets
+
+List of assets being used. 
+
+- Something about Godot code that I wrote before, being reused as assets. Obviously opne source.
