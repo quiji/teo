@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://addons/kiji.visualog/VisualLogger.gd" type="Script" id=1]
+
+[node name="VisualLogger" type="Node2D"]
+
+script/script = ExtResource( 1 )
+DefaultColor = Color( 0.9, 0.9, 0.9, 1 )
+location = 0
+is_enabled = true
+log_size = 0
+
+

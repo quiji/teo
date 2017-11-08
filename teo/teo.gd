@@ -52,3 +52,9 @@ func _fixed_process(delta):
 	if velocity != Vector2():
 		move(velocity * delta)
 
+
+	get_node("sprite").set_rot(direction.angle())
+
+
+func hit():
+	print("hit!")
