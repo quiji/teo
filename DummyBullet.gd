@@ -36,4 +36,5 @@ func _fixed_process(delta):
 		var obj = ObjectFactory.instance()
 		obj.set_pos(get_pos())
 		get_parent().add_child(obj)
+		obj.bounce(velocity * -1)
 		queue_free()

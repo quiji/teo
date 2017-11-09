@@ -27,6 +27,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+monitoring = false
 collision/layers = 3
 collision/mask = 0
 
