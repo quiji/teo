@@ -21,4 +21,4 @@ Thats it. Ha!
 
 List of assets being used. 
 
-- Something about Godot code that I wrote before, being reused as assets. Obviously opne source.
+- VisualLogger: A plugin I made to log data into the screen.

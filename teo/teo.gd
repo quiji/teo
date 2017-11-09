@@ -6,6 +6,13 @@ var velocity = Vector2()
 
 var running = false
 
+
+
+# Dummy vars
+var hit_count = 0
+var bullets = 0
+var DummyBulletFactory = load("res://DummyBullet.tscn")
+
 func _ready():
 	# Configure Keyboard
 	Controller.add_buttons(Glb.keyboard)
@@ -34,6 +41,15 @@ func process_input(i):
 	elif Controller.group_or(i, Glb.MovementGroup, Controller.INPUT.Just_Released): 
 		change_direction(Glb.Directions.NoDirection)
 
+	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
+		bullets -= 1
+		var bullet = DummyBulletFactory.instance()
+		
+		bullet.set_pos(get_pos())
+		get_parent().add_child(bullet)
+		bullet.shoot(direction, false)
+	
+
 func change_direction(dir):
 	if dir != Glb.Directions.NoDirection:
 		direction = dir
@@ -57,4 +73,11 @@ func _fixed_process(delta):
 
 
 func hit():
-	print("hit!")
+	hit_count += 1
+	get_node("log").update("hit_count", hit_count)
+
+func pick(obj):
+	bullets += 1
+	get_node("log").update("bullets", bullets)
+
+func get_object_type(): return Glb.ObjectTypes.Teo

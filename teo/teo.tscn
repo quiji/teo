@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://teo/teo.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/kiji.visualog/VisualLogger.gd" type="Script" id=3]
+[ext_resource path="res://addons/kiji.visualog/icon.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -29,5 +31,16 @@ build_mode = 0
 polygon = Vector2Array( -23.7482, -25.8901, 26.2518, -26.8901, 28.2518, 25.1099, -25.7482, 25.1099 )
 shape_range = Vector2( 0, 0 )
 trigger = false
+
+[node name="log" type="Node2D" parent="."]
+
+script/script = ExtResource( 3 )
+__meta__ = {
+"_editor_icon": ExtResource( 4 )
+}
+DefaultColor = Color( 0.9, 0.9, 0.9, 1 )
+location = 1
+is_enabled = true
+log_size = 0
 
 

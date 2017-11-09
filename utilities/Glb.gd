@@ -13,7 +13,8 @@ var keyboard = {
     Right = KEY_RIGHT,
     Up = KEY_UP,
     Down = KEY_DOWN,
-    Jump = KEY_A,
+    Throw = KEY_A,
+
     SkipLeft = KEY_Q,
     SkipRight = KEY_E,
     Slide = KEY_W,
@@ -44,8 +45,10 @@ var Directions = {
     NoDirection = Vector2()    
 }
 
+enum ObjectTypes { Teo, Wall, Bullet, Pickable }
 
 var TeoStats = {
     speed = 400,
     acceleration = 0.2
 }
+
