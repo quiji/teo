@@ -1,0 +1,132 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://gui/target_arrow.gd" type="Script" id=1]
+[ext_resource path="res://assets/gui/targetarrow.tex" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "targeting"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4.53727, -2.6838 ), Vector2( -7.53727, -2.6838 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.462727, -7.6838 ), Vector2( 0.462727, -10.6838 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite2:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite3:transform/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.462727, 0.3162 ), Vector2( 0.462727, 3.3162 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite3:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite1:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.46273, -2.6838 ), Vector2( 8.46273, -2.6838 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite1:transform/rot")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[node name="target_arrow" type="Node2D"]
+
+visibility/opacity = 0.8
+transform/pos = Vector2( 0, 2.83554 )
+script/script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/targeting = SubResource( 1 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "targeting"
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -5.04595, -2.6838 )
+texture = ExtResource( 2 )
+
+[node name="Sprite1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 5.9714, -2.6838 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0.462727, -8.19248 )
+transform/rot = 90.0
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0.462727, 0.824878 )
+transform/rot = 90.0
+texture = ExtResource( 2 )
+
+

@@ -28,7 +28,7 @@ drag_margin/bottom = 0.0
 [node name="tween" type="Tween" parent="."]
 
 playback/process_mode = 1
-playback/active = true
+playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 

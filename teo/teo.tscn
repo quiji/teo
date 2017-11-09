@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://teo/teo.gd" type="Script" id=1]
 [ext_resource path="res://assets/dummies/teo.png" type="Texture" id=2]
-[ext_resource path="res://addons/kiji.visualog/VisualLogger.gd" type="Script" id=3]
-[ext_resource path="res://addons/kiji.visualog/icon.png" type="Texture" id=4]
-[ext_resource path="res://teo/camera_crew.tscn" type="PackedScene" id=5]
+[ext_resource path="res://teo/camera_crew.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gui/target_arrow.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -33,6 +32,8 @@ points = Vector2Array( 6, -4, 4, 7, -3, 7 )
 
 [node name="teo" type="KinematicBody2D"]
 
+z/z = 100
+z/relative = false
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -65,17 +66,11 @@ polygon = Vector2Array( -2, -13, 4, -13, 4, -6, 6, -4, 6, 7, 4, 7, 4, 15, -3, 15
 shape_range = Vector2( 0, 4 )
 trigger = false
 
-[node name="log" type="Node2D" parent="."]
+[node name="camera_crew" parent="." instance=ExtResource( 3 )]
 
-script/script = ExtResource( 3 )
-__meta__ = {
-"_editor_icon": ExtResource( 4 )
-}
-DefaultColor = Color( 0.9, 0.9, 0.9, 1 )
-location = 1
-is_enabled = true
-log_size = 0
+[node name="target_arrow" parent="." instance=ExtResource( 4 )]
 
-[node name="camera_crew" parent="." instance=ExtResource( 5 )]
+visibility/visible = false
+transform/pos = Vector2( -31, -3 )
 
 
