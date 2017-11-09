@@ -7,6 +7,10 @@
 [GameOff Official site](https://itch.io/jam/game-off-2017)
 [Open Source Game dev resources](https://github.com/Calinou/awesome-gamedev)
 
+[Godot and Pixel Art Games](https://medium.com/@tumeowilliam/godot-engine-and-pixel-art-a-better-love-story-than-twilight-4c8155ba71cd)
+[Resolution Calculator](http://www.silisoftware.com/tools/screen_aspect_ratio_calculator)
+[Notes on Shovel Knight] (https://www.gamasutra.com/blogs/DavidDAngelo/20140625/219383/Breaking_the_NES_for_Shovel_Knight.php)
+[Notes on Hyper Light Drifter](http://nightmargin.tumblr.com/post/102886823891/on-resolution)
 
 ## Brainstorming
 
