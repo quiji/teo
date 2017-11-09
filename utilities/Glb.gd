@@ -53,5 +53,33 @@ var TeoStats = {
 }
 
 var BulletStats = {
-    speed = 500
+    min_speed = 400,
+    max_speed = 600
 }
+
+# Receives strength percentage and returns bullets speed
+func get_bullet_speed(strength):
+    var speed_range = BulletStats.max_speed - BulletStats.min_speed
+    return speed_range * clamp(strength, 0, 1.0) + BulletStats.min_speed
+
+
+
+# **********************************************************************
+#           HUD Communication... part
+# **********************************************************************
+
+enum HUDActions {
+    ThrowChargeBarStart,
+    ThrowChargeBarEnd
+}
+
+var HUD = null
+
+func set_HUD(obj):
+    HUD = obj
+
+func tell_HUD(action, values=null):
+    if HUD != null:
+        return HUD.execute_action(action, values)
+    else:
+        return false

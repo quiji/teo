@@ -27,7 +27,8 @@ Thats it. Ha!
 List of assets being used. 
 
 - VisualLogger: A plugin I made to log data into the screen.
-- utilities/Resultion.gd: Base on code by [CowThing](https://github.com/godotengine/godot/issues/6506#issuecomment-247533233). Scales and makes the pixels look all blocky and juicy.
+- utilities/Resultion.gd: Based on code by [CowThing](https://github.com/godotengine/godot/issues/6506#issuecomment-247533233). Scales and makes the pixels look all blocky and juicy.
+- utilities/Controller.gd: Based on code by [Andreas Esau](https://www.youtube.com/watch?v=BTX0DWDqnyA&t=45s)
 
 
 ## General Todo

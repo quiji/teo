@@ -16,7 +16,6 @@ func _ready():
 	get_node("timer").connect("timeout", self, "on_timeout")
 
 func _fixed_process(delta):
-
 	pass
 
 
@@ -35,6 +34,6 @@ func on_timeout():
 	
 	bullet.set_pos(get_pos())
 	get_parent().add_child(bullet)
-	bullet.throw(target_direction)
+	bullet.throw(target_direction, 0.5)
 
 

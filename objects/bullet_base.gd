@@ -12,7 +12,7 @@ func _ready():
 	gravity = -2 * height / pow(fall_time, 2.0)
 	get_node("area").connect("body_enter", self, "on_body_enter")
 
-func throw(dir, enemy=true):
+func throw(dir, strength, enemy=true):
 	if enemy:
 		set_layer_mask_bit(0, true)
 		set_layer_mask_bit(1, false)
@@ -21,7 +21,7 @@ func throw(dir, enemy=true):
 		set_layer_mask_bit(1, true)
 	
 	set_fixed_process(true)
-	set_linear_velocity(dir * Glb.BulletStats.speed)
+	set_linear_velocity(dir * Glb.get_bullet_speed(strength))
 
 func get_object_type(): 
 	if is_bullet:

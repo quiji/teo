@@ -43,12 +43,15 @@ func process_input(i):
 		change_direction(Glb.Directions.NoDirection)
 
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
+		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
+	if i.Throw == Controller.INPUT.Just_Released and bullets > 0:
+		var strength = Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
 		bullets -= 1
 		var bullet = bullet_factory.instance()
 		
 		bullet.set_pos(get_pos())
 		get_parent().add_child(bullet)
-		bullet.throw(direction, false)
+		bullet.throw(direction, strength, false)
 	
 
 func change_direction(dir):
