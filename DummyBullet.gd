@@ -29,8 +29,10 @@ func _fixed_process(delta):
 	move(velocity * delta)
 
 	if is_colliding():
-		if get_collider().get_object_type() == Glb.ObjectTypes.Teo:
-			get_collider().hit()
+		var collider = get_collider()
+		var type = collider.get_object_type()
+		if type == Glb.ObjectTypes.Teo or type == Glb.ObjectTypes.Enemy:
+			collider.hit()
 		var obj = ObjectFactory.instance()
 		obj.set_pos(get_pos())
 		get_parent().add_child(obj)

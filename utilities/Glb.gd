@@ -45,7 +45,7 @@ var Directions = {
     NoDirection = Vector2()    
 }
 
-enum ObjectTypes { Teo, Wall, Bullet, Pickable }
+enum ObjectTypes { Teo, Wall, Bullet, Pickable, Enemy }
 
 var TeoStats = {
     speed = 400,

@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Prototype.gd" type="Script" id=1]
 [ext_resource path="res://teo/teo.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/dummies/evil_godot.png" type="Texture" id=3]
-[ext_resource path="res://addons/kiji.visualog/VisualLogger.gd" type="Script" id=4]
-[ext_resource path="res://addons/kiji.visualog/icon.png" type="Texture" id=5]
-[ext_resource path="res://dummy_wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://dummy_wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://dummy_enemy.tscn" type="PackedScene" id=4]
 
 [node name="Prototype" type="Node2D"]
 
@@ -15,49 +13,30 @@ script/script = ExtResource( 1 )
 
 transform/pos = Vector2( 188, 82 )
 
-[node name="evil_godot" type="Sprite" parent="."]
-
-transform/pos = Vector2( 598, 235 )
-texture = ExtResource( 3 )
-
-[node name="Timer" type="Timer" parent="."]
-
-process_mode = 1
-wait_time = 2.0
-one_shot = false
-autostart = true
-
-[node name="log" type="Node2D" parent="."]
-
-script/script = ExtResource( 4 )
-__meta__ = {
-"_editor_icon": ExtResource( 5 )
-}
-DefaultColor = Color( 0.9, 0.9, 0.9, 1 )
-location = 0
-is_enabled = true
-log_size = 0
-
-[node name="wall" parent="." instance=ExtResource( 6 )]
+[node name="wall" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 534.681, 494.062 )
 transform/scale = Vector2( 12.3823, 1 )
 
-[node name="wall1" parent="." instance=ExtResource( 6 )]
+[node name="wall1" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 534.681, 19.843 )
 transform/scale = Vector2( 12.3823, 1 )
 
-[node name="wall2" parent="." instance=ExtResource( 6 )]
+[node name="wall2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( -95.0453, 220.001 )
 transform/rot = 89.9629
 transform/scale = Vector2( 12.3823, 1 )
 
-[node name="wall3" parent="." instance=ExtResource( 6 )]
+[node name="wall3" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1164.41, 181.509 )
 transform/rot = 89.9629
 transform/scale = Vector2( 12.3823, 1 )
+
+[node name="dummy_enemy" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 602.013, 267.903 )
 
 
