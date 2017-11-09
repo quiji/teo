@@ -27,13 +27,16 @@ Thats it. Ha!
 List of assets being used. 
 
 - VisualLogger: A plugin I made to log data into the screen.
+- utilities/Resultion.gd: Base on code by [CowThing](https://github.com/godotengine/godot/issues/6506#issuecomment-247533233). Scales and makes the pixels look all blocky and juicy.
 
 
+## General Todo
 
-## Todo
+### 9 - 15
+- [ ] Make bullets rigid bodies. Let them bounce around and add height and free fall to bullets before turning them into pickables. Let them bounce with each other too.
+- [ ] Make Teo stop wen throwing to let him aim and let him charge the shot.
+- [ ] Make Teo and enemy bounce back when hit
+- [ ] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 
-- Make bullets rigid bodies. Let them bounce around and add height and free fall to bullets before turning them into pickables. Let them bounce with each other too.
-- Make Teo stop wen throwing to let him aim and let him charge the shot.
-- Make Teo and enemy bounce back when hit
-- Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
-
+### 16-22
+### 23-29

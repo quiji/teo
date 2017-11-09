@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://teo/teo.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/dummies/teo.png" type="Texture" id=2]
 [ext_resource path="res://addons/kiji.visualog/VisualLogger.gd" type="Script" id=3]
 [ext_resource path="res://addons/kiji.visualog/icon.png" type="Texture" id=4]
 [ext_resource path="res://teo/camera_crew.tscn" type="PackedScene" id=5]
@@ -9,7 +9,27 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -23.7482, -25.8901, 26.2518, -26.8901, 28.2518, 25.1099, -25.7482, 25.1099 )
+points = Vector2Array( -2, -7, -2, -13, 4, -13, 4, -6 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 6, -4, 6, 7, 4, 7 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 4, 7, 4, 15, -3, 15, -3, 7 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 6, -4, -3, 7, -5, 7, -5, -4, -2, -7, 4, -6 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 6, -4, 4, 7, -3, 7 )
 
 [node name="teo" type="KinematicBody2D"]
 
@@ -17,6 +37,18 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
 collision/layers = 0
 collision/mask = 1
 collision/margin = 0.08
@@ -29,8 +61,8 @@ texture = ExtResource( 2 )
 [node name="collision" type="CollisionPolygon2D" parent="."]
 
 build_mode = 0
-polygon = Vector2Array( -23.7482, -25.8901, 26.2518, -26.8901, 28.2518, 25.1099, -25.7482, 25.1099 )
-shape_range = Vector2( 0, 0 )
+polygon = Vector2Array( -2, -13, 4, -13, 4, -6, 6, -4, 6, 7, 4, 7, 4, 15, -3, 15, -3, 7, -5, 7, -5, -4, -2, -7 )
+shape_range = Vector2( 0, 4 )
 trigger = false
 
 [node name="log" type="Node2D" parent="."]
