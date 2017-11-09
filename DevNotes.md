@@ -36,6 +36,7 @@ List of assets being used.
 ### 9 - 15
 - [x] Make bullets rigid bodies. Let them bounce around and add height and free fall to bullets before turning them into pickables. Let them bounce with each other too.
 - [x] Make Teo charge the shot.
+- [ ] Move camera man to direction vector when charging a shot.
 - [ ] Add aiming mechanic.
 - [ ] Evaluate charging mechanic movement, should it move or not, and how?
 - [ ] Make Teo and enemy bounce back when hit

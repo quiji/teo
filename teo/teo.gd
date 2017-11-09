@@ -6,11 +6,9 @@ var velocity = Vector2()
 
 var running = false
 
-
-
 # Dummy vars
 var hit_count = 0
-var bullets = 0
+var bullets = 2
 var bullet_factory = load("res://objects/bullet_base.tscn")
 
 
@@ -44,8 +42,11 @@ func process_input(i):
 
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
+		get_node("camera_crew").snipe_ahead()
+
 	if i.Throw == Controller.INPUT.Just_Released and bullets > 0:
 		var strength = Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
+		get_node("camera_crew").back_to_actor()
 		bullets -= 1
 		var bullet = bullet_factory.instance()
 		
@@ -74,6 +75,7 @@ func _fixed_process(delta):
 
 
 	get_node("sprite").set_rot(direction.angle())
+	get_node("camera_crew").update_actor_pos(get_pos(), direction)
 
 
 func hit():

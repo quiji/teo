@@ -56,7 +56,7 @@ var BulletStats = {
     min_speed = 250,
     max_speed = 600,
     min_airtime = 4,
-    max_airtime = 6
+    max_airtime = 7
 }
 
 # Receives strength percentage and returns bullets speed
