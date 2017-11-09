@@ -48,7 +48,10 @@ var Directions = {
 enum ObjectTypes { Teo, Wall, Bullet, Pickable, Enemy }
 
 var TeoStats = {
-    speed = 400,
+    speed = 200,
     acceleration = 0.2
 }
 
+var BulletStats = {
+    speed = 500
+}

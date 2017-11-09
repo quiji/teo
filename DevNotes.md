@@ -33,7 +33,7 @@ List of assets being used.
 ## General Todo
 
 ### 9 - 15
-- [ ] Make bullets rigid bodies. Let them bounce around and add height and free fall to bullets before turning them into pickables. Let them bounce with each other too.
+- [x] Make bullets rigid bodies. Let them bounce around and add height and free fall to bullets before turning them into pickables. Let them bounce with each other too.
 - [ ] Make Teo stop wen throwing to let him aim and let him charge the shot.
 - [ ] Make Teo and enemy bounce back when hit
 - [ ] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.

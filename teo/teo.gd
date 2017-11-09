@@ -11,7 +11,8 @@ var running = false
 # Dummy vars
 var hit_count = 0
 var bullets = 0
-var DummyBulletFactory = load("res://DummyBullet.tscn")
+var bullet_factory = load("res://objects/bullet_base.tscn")
+
 
 func _ready():
 	# Configure Keyboard
@@ -43,11 +44,11 @@ func process_input(i):
 
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
 		bullets -= 1
-		var bullet = DummyBulletFactory.instance()
+		var bullet = bullet_factory.instance()
 		
 		bullet.set_pos(get_pos())
 		get_parent().add_child(bullet)
-		bullet.shoot(direction, false)
+		bullet.throw(direction, false)
 	
 
 func change_direction(dir):

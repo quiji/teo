@@ -7,7 +7,7 @@ var velocity = Vector2()
 
 var running = false
 
-var DummyBulletFactory = load("res://DummyBullet.tscn")
+var bullet_factory = load("res://objects/bullet_base.tscn")
 var hit_count = 0
 var bullets = 0
 
@@ -30,12 +30,11 @@ func pick(obj):
 func get_object_type(): return Glb.ObjectTypes.Enemy
 
 func on_timeout():
-	var bullet = DummyBulletFactory.instance()
+	var bullet = bullet_factory.instance()
 	var target_direction = (get_node("../teo").get_pos() - get_pos()).normalized()
 	
 	bullet.set_pos(get_pos())
 	get_parent().add_child(bullet)
-	bullet.shoot(target_direction)
+	bullet.throw(target_direction)
 
 
-	
