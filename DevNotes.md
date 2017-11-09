@@ -35,7 +35,9 @@ List of assets being used.
 
 ### 9 - 15
 - [x] Make bullets rigid bodies. Let them bounce around and add height and free fall to bullets before turning them into pickables. Let them bounce with each other too.
-- [ ] Make Teo stop wen throwing to let him aim and let him charge the shot.
+- [x] Make Teo charge the shot.
+- [ ] Add aiming mechanic.
+- [ ] Evaluate charging mechanic movement, should it move or not, and how?
 - [ ] Make Teo and enemy bounce back when hit
 - [ ] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 

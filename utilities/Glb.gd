@@ -53,8 +53,10 @@ var TeoStats = {
 }
 
 var BulletStats = {
-    min_speed = 400,
-    max_speed = 600
+    min_speed = 250,
+    max_speed = 600,
+    min_airtime = 4,
+    max_airtime = 6
 }
 
 # Receives strength percentage and returns bullets speed
@@ -62,6 +64,9 @@ func get_bullet_speed(strength):
     var speed_range = BulletStats.max_speed - BulletStats.min_speed
     return speed_range * clamp(strength, 0, 1.0) + BulletStats.min_speed
 
+func get_buller_air_time(strength):
+    var time_range = BulletStats.max_airtime - BulletStats.min_airtime
+    return time_range * clamp(strength, 0, 1.0) + BulletStats.min_airtime
 
 
 # **********************************************************************

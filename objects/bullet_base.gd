@@ -2,14 +2,13 @@ extends RigidBody2D
 
 var height = 10
 var max_height = 10
-var fall_time = 5
+
 var gravity = 0
 var velocity = 0
 
 var is_bullet = true
 
 func _ready():
-	gravity = -2 * height / pow(fall_time, 2.0)
 	get_node("area").connect("body_enter", self, "on_body_enter")
 
 func throw(dir, strength, enemy=true):
@@ -20,6 +19,7 @@ func throw(dir, strength, enemy=true):
 		set_layer_mask_bit(0, false)
 		set_layer_mask_bit(1, true)
 	
+	gravity = -2 * height / pow(Glb.get_buller_air_time(strength), 2.0)
 	set_fixed_process(true)
 	set_linear_velocity(dir * Glb.get_bullet_speed(strength))
 
