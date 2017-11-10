@@ -1,5 +1,8 @@
 extends Node
 
+# Based on code by Andreas Esau from his tutorial
+# https://www.youtube.com/watch?v=BTX0DWDqnyA&t=45s
+
 # **********************************************************************
 #           Controller node
 #

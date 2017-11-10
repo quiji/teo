@@ -26,7 +26,6 @@ Thats it. Ha!
 
 List of assets being used. 
 
-- VisualLogger: A plugin I made to log data into the screen.
 - utilities/Resultion.gd: Based on code by [CowThing](https://github.com/godotengine/godot/issues/6506#issuecomment-247533233). Scales and makes the pixels look all blocky and juicy.
 - utilities/Controller.gd: Based on code by [Andreas Esau](https://www.youtube.com/watch?v=BTX0DWDqnyA&t=45s)
 
@@ -37,8 +36,8 @@ List of assets being used.
 - [x] Make bullets rigid bodies. Let them bounce around and add height and free fall to bullets before turning them into pickables. Let them bounce with each other too.
 - [x] Make Teo charge the shot.
 - [x] Move camera man to direction vector when charging a shot.
-- [ ] Add aiming mechanic.
-- [ ] Evaluate charging mechanic movement, should it move or not, and how?
+- [x] Add aiming mechanic.
+- [x] Evaluate charging mechanic movement, should it move or not, and how?
 - [ ] Make Teo and enemy bounce back when hit
 - [ ] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 

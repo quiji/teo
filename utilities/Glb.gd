@@ -45,15 +45,21 @@ var Directions = {
     NoDirection = Vector2()    
 }
 
+func is_diagonal(dir):
+    var diags = [Directions.UpLeft, Directions.UpRight, Directions.DownLeft, Directions.DownRight]
+    return diags.find(dir) >= 0
+
+
 enum ObjectTypes { Teo, Wall, Bullet, Pickable, Enemy }
 
 var TeoStats = {
     speed = 200,
+    aimwalk_speed = 60,
     acceleration = 0.2
 }
 
 var BulletStats = {
-    min_speed = 250,
+    min_speed = 300,
     max_speed = 600,
     min_airtime = 4,
     max_airtime = 7
