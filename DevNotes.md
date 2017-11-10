@@ -20,6 +20,7 @@
 - Satchel works like a stack: first item in is last item out.
 - Only way to open doors, breaking them throwing stuff (Let's reinforce the main mechanic).
 - You can throw with different strengths by charging. Charging limits your movement.
+- Enemies: Are ghosts. Because they are ghosts, they cannot be damaged directly, instead they need to have something to "bring it to the physic world", like a t-shirt, or paint them... HENCE the mechanic, paint balls to allow ghost hurting? (This is getting too complicated...)
 
 Thats it. Ha!
 
