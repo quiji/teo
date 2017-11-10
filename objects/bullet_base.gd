@@ -65,7 +65,7 @@ func _fixed_process(delta):
 		is_bullet = false
 	elif is_colliding():
 		var collider = get_collider()
-		if collider.get_object_type() == Glb.ObjectTypes.Teo or collider.get_object_type() == Glb.ObjectTypes.Enemy:
+		if collider.get_object_type() == Glb.ObjectTypes.Teo or collider.get_object_type() == Glb.ObjectTypes.Ghost:
 			collider.hit(velocity.normalized(), strength_level)
 		velocity = get_collision_normal().reflect(velocity.normalized()) * speed * 0.5
 

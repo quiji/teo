@@ -50,7 +50,7 @@ func is_diagonal(dir):
     return diags.find(dir) >= 0
 
 
-enum ObjectTypes { Teo, Wall, Bullet, Pickable, Enemy }
+enum ObjectTypes { Teo, Wall, Bullet, Pickable, Ghost }
 
 var TeoStats = {
     speed = 200,
@@ -59,7 +59,9 @@ var TeoStats = {
     react_delay = 1
 }
 
-var DummyEnemyStats = {
+var StandardGhostStats = {
+    speed = 150,
+    acceleration = 1,
     react_delay = 1.5
 }
 
@@ -105,3 +107,13 @@ func tell_HUD(action, values=null):
         return HUD.execute_action(action, values)
     else:
         return false
+
+
+
+
+# **********************************************************************
+#           Global Init
+# **********************************************************************
+
+func _ready():
+    randomize()
