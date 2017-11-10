@@ -23,11 +23,11 @@ func end_count():
 	if step == 1:
 		return 0
 	elif step == 2:
-		return 0.1
+		return 0.2
 	elif step == 3:
-		return 0.3
+		return 0.4
 	else:
-		return 0.8
+		return 0.7
 
 func on_timeout():
 	step += 1

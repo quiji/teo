@@ -7,8 +7,9 @@ var velocity = Vector2()
 
 var running = false
 
+var react_wait_delta = 0
+
 var bullet_factory = load("res://objects/bullet_base.tscn")
-var hit_count = 0
 var bullets = 10
 
 func _ready():
@@ -20,9 +21,11 @@ func _fixed_process(delta):
 
 
 func hit(velocity, strength):
-	hit_count += 1
+	velocity = -dir * Glb.get_bullet_throwback(strength)
+	react_wait_delta = Glb.DummyEnemyStats.react_delay
 	Glb.tell_HUD(Glb.HUDActions.Log, "Enemy Hit!!")
 
+	
 func pick(obj):
 	bullets += 1
 

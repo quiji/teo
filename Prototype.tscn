@@ -16,23 +16,23 @@ transform/pos = Vector2( 617.569, 234.428 )
 
 [node name="wall" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 550.078, 364.729 )
+transform/pos = Vector2( 551.618, 353.951 )
 transform/scale = Vector2( 12.3823, 1 )
 
 [node name="wall1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 537.76, 102.985 )
+transform/pos = Vector2( 536.22, 116.842 )
 transform/scale = Vector2( 12.3823, 1 )
 
 [node name="wall2" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 391.492, 232.318 )
+transform/pos = Vector2( 431.524, 227.699 )
 transform/rot = 89.9629
 transform/scale = Vector2( 12.3823, 1 )
 
 [node name="wall3" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 828.761, 216.921 )
+transform/pos = Vector2( 807.206, 216.921 )
 transform/rot = 89.9629
 transform/scale = Vector2( 12.3823, 1 )
 

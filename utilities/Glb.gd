@@ -64,8 +64,8 @@ var DummyEnemyStats = {
 }
 
 var BulletStats = {
-    min_speed = 300,
-    max_speed = 600,
+    min_speed = 400,
+    max_speed = 700,
     min_airtime = 4,
     max_airtime = 7,
     min_throwback = 200,

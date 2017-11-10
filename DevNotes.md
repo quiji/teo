@@ -16,8 +16,10 @@
 
 ### Game Mechanics
 
-Blocking projectiles and storing them into satchel for future use (like *throwing back*).
-Satchel works like a stack: first item in is last item out.
+- Blocking projectiles and storing them into satchel for future use (like *throwing back*).
+- Satchel works like a stack: first item in is last item out.
+- Only way to open doors, breaking them throwing stuff (Let's reinforce the main mechanic).
+- You can throw with different strengths by charging. Charging limits your movement.
 
 Thats it. Ha!
 
@@ -40,9 +42,9 @@ List of assets, how they were made and credit where needed.
 - [x] Add aiming mechanic.
 - [x] Evaluate charging mechanic movement, should it move or not, and how?
 - [ ] Make Teo and enemy bounce back when hit
-- [ ] Bullet bouncing looks weird, Godot physics has some trouble with collisions on high speeds. [Possible solutions](https://godotengine.org/qa/1250/how-to-properly-handle-high-speed-collisions):
+- [x] Bullet bouncing looks weird, Godot physics has some trouble with collisions on high speeds. [Possible solutions](https://godotengine.org/qa/1250/how-to-properly-handle-high-speed-collisions):
     - Increase the fixed fps value in Project settings.
-    - Implement Bullet as kinematic body with reflect on normal of collision.
+    - (This solution rocks!) Implement Bullet as kinematic body with reflect on normal of collision.
 - [ ] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 
 ### 16-22

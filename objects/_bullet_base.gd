@@ -1,14 +1,11 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 var height = 10
 var max_height = 10
 
 var gravity = 0
-var fall_velocity = 0
+var velocity = 0
 
-var velocity = Vector2()
-
-var speed = 0
 var strength_level = 0
 var is_bullet = true
 
@@ -25,8 +22,7 @@ func throw(dir, strength, enemy=true):
 	
 	gravity = -2 * height / pow(Glb.get_buller_air_time(strength), 2.0)
 	set_fixed_process(true)
-	speed = Glb.get_bullet_speed(strength)
-	velocity = dir * Glb.get_bullet_speed(strength)
+	set_linear_velocity(dir * Glb.get_bullet_speed(strength))
 	strength_level = strength 
 
 func get_object_type(): 
@@ -49,24 +45,24 @@ func _fixed_process(delta):
 	var scale = height / max_height
 	get_node("shadow").set_scale(Vector2(scale, scale))
 
-	fall_velocity += gravity 
-	height += fall_velocity * delta
-
-	move(velocity * delta)
+	velocity += gravity 
+	height += velocity * delta
 
 
 	if height <= 0:
 		set_fixed_process(false)
 		get_node("shadow").hide()
-		velocity = Vector2()
+		set_linear_velocity(Vector2())
+		set_mode(MODE_STATIC)
 		set_layer_mask_bit(0, false)
 		set_layer_mask_bit(1, false)
 		get_node("area").set_enable_monitoring(true)
 		is_bullet = false
-	elif is_colliding():
-		var collider = get_collider()
-		if collider.get_object_type() == Glb.ObjectTypes.Teo or collider.get_object_type() == Glb.ObjectTypes.Enemy:
-			collider.hit(velocity.normalized(), strength_level)
-		velocity = get_collision_normal().reflect(velocity.normalized()) * speed * 0.5
+	else:
+		var colliders = get_colliding_bodies()
+		for collider in colliders:
+			if collider.get_object_type() == Glb.ObjectTypes.Teo or collider.get_object_type() == Glb.ObjectTypes.Enemy:
+				collider.hit(get_linear_velocity().normalized(), strength_level)
+
 
 
