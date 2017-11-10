@@ -9,7 +9,7 @@ var running = false
 
 var bullet_factory = load("res://objects/bullet_base.tscn")
 var hit_count = 0
-var bullets = 0
+var bullets = 3
 
 func _ready():
 	set_fixed_process(true)
@@ -21,7 +21,7 @@ func _fixed_process(delta):
 
 func hit():
 	hit_count += 1
-	get_node("log").update("hit_count", hit_count)
+	Glb.tell_HUD(Glb.HUDActions.Log, "Enemy Hit!!")
 
 func pick(obj):
 	bullets += 1
@@ -35,5 +35,8 @@ func on_timeout():
 	bullet.set_pos(get_pos())
 	get_parent().add_child(bullet)
 	bullet.throw(target_direction, 0.5)
+	bullets -= 1
+	if bullets == 0:
+		get_node("timer").stop()
 
 

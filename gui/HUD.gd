@@ -11,6 +11,8 @@ func execute_action(action, variables):
 		return get_node("throw_charge_bar").start_count()
 	elif action == Glb.HUDActions.ThrowChargeBarEnd:
 		return get_node("throw_charge_bar").end_count()
+	elif action == Glb.HUDActions.Log:
+		return get_node("log").set_text(variables)
 
 		
 	

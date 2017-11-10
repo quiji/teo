@@ -108,6 +108,7 @@ func _fixed_process(delta):
 
 func hit():
 	hit_count += 1
+	Glb.tell_HUD(Glb.HUDActions.Log, "Teo Hit!!")
 
 func pick(obj):
 	bullets += 1

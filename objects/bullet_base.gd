@@ -46,6 +46,7 @@ func _fixed_process(delta):
 	velocity += gravity 
 	height += velocity * delta
 
+
 	if height <= 0:
 		set_fixed_process(false)
 		get_node("shadow").hide()
@@ -55,6 +56,11 @@ func _fixed_process(delta):
 		set_layer_mask_bit(1, false)
 		get_node("area").set_enable_monitoring(true)
 		is_bullet = false
+	else:
+		var colliders = get_colliding_bodies()
+		for collider in colliders:
+			if collider.get_object_type() == Glb.ObjectTypes.Teo or collider.get_object_type() == Glb.ObjectTypes.Enemy:
+				collider.hit()
 
 
 

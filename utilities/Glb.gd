@@ -54,7 +54,7 @@ enum ObjectTypes { Teo, Wall, Bullet, Pickable, Enemy }
 
 var TeoStats = {
     speed = 200,
-    aimwalk_speed = 60,
+    aimwalk_speed = 70,
     acceleration = 0.2
 }
 
@@ -81,7 +81,8 @@ func get_buller_air_time(strength):
 
 enum HUDActions {
     ThrowChargeBarStart,
-    ThrowChargeBarEnd
+    ThrowChargeBarEnd,
+    Log
 }
 
 var HUD = null
