@@ -6,6 +6,7 @@ var max_height = 10
 var gravity = 0
 var velocity = 0
 
+var strength_level = 0
 var is_bullet = true
 
 func _ready():
@@ -22,6 +23,7 @@ func throw(dir, strength, enemy=true):
 	gravity = -2 * height / pow(Glb.get_buller_air_time(strength), 2.0)
 	set_fixed_process(true)
 	set_linear_velocity(dir * Glb.get_bullet_speed(strength))
+	strength_level = strength 
 
 func get_object_type(): 
 	if is_bullet:
@@ -60,7 +62,7 @@ func _fixed_process(delta):
 		var colliders = get_colliding_bodies()
 		for collider in colliders:
 			if collider.get_object_type() == Glb.ObjectTypes.Teo or collider.get_object_type() == Glb.ObjectTypes.Enemy:
-				collider.hit()
+				collider.hit(get_linear_velocity().normalized(), strength_level)
 
 
 

@@ -55,14 +55,21 @@ enum ObjectTypes { Teo, Wall, Bullet, Pickable, Enemy }
 var TeoStats = {
     speed = 200,
     aimwalk_speed = 70,
-    acceleration = 0.2
+    acceleration = 0.2,
+    react_delay = 1
+}
+
+var DummyEnemyStats = {
+    react_delay = 1.5
 }
 
 var BulletStats = {
     min_speed = 300,
     max_speed = 600,
     min_airtime = 4,
-    max_airtime = 7
+    max_airtime = 7,
+    min_throwback = 200,
+    max_throback = 400
 }
 
 # Receives strength percentage and returns bullets speed
@@ -74,6 +81,9 @@ func get_buller_air_time(strength):
     var time_range = BulletStats.max_airtime - BulletStats.min_airtime
     return time_range * clamp(strength, 0, 1.0) + BulletStats.min_airtime
 
+func get_bullet_throwback(strength):
+    var speed_range = BulletStats.max_throback - BulletStats.min_throwback
+    return speed_range * clamp(strength, 0, 1.0) + BulletStats.min_throwback
 
 # **********************************************************************
 #           HUD Communication... part

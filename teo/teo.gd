@@ -7,9 +7,8 @@ var velocity = Vector2()
 var running = false
 var charging = false
 var aim_walk = false
+var react_wait_delta = 0
 
-# Dummy vars
-var hit_count = 0
 var bullets = 2
 var bullet_factory = load("res://objects/bullet_base.tscn")
 
@@ -22,7 +21,6 @@ func _ready():
 	set_fixed_process(true)
 
 func process_input(i):
-
 
 	if i.UpLeft == Controller.INPUT.Pressed: 
 		change_direction(Glb.Directions.UpLeft)
@@ -51,7 +49,7 @@ func process_input(i):
 		charging = true
 		running = false
 
-	if i.Throw == Controller.INPUT.Just_Released and bullets > 0:
+	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
 		var strength = Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
 		get_node("target_arrow").stop_polling()
 		get_node("camera_crew").back_to_actor()
@@ -89,7 +87,10 @@ func change_direction(dir):
 			aim_walk = false
 
 func _fixed_process(delta):
-	process_input(Controller.check())
+	if react_wait_delta <= 0:
+		process_input(Controller.check())
+	else:
+		react_wait_delta -= delta
 
 	if running:
 		velocity = velocity.linear_interpolate(direction * Glb.TeoStats.speed,  Glb.TeoStats.acceleration)
@@ -106,8 +107,16 @@ func _fixed_process(delta):
 	get_node("camera_crew").update_actor_pos(get_pos(), direction)
 
 
-func hit():
-	hit_count += 1
+func hit(dir, strength):
+	aim_walk = false
+	running = false 
+	charging = false
+	Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
+	get_node("target_arrow").stop_polling()
+	get_node("camera_crew").back_to_actor()
+
+	velocity = -dir * Glb.get_bullet_throwback(strength)
+	react_wait_delta = Glb.TeoStats.react_delay
 	Glb.tell_HUD(Glb.HUDActions.Log, "Teo Hit!!")
 
 func pick(obj):

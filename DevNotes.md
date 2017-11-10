@@ -24,7 +24,7 @@ Thats it. Ha!
 
 ## Assets
 
-List of assets, how they were made and credit where is necessary.
+List of assets, how they were made and credit where needed.
 
 - utilities/Resultion.gd: Based on code by [CowThing](https://github.com/godotengine/godot/issues/6506#issuecomment-247533233). Scales and makes the pixels look all blocky and juicy.
 - utilities/Controller.gd: Based on code by [Andreas Esau](https://www.youtube.com/watch?v=BTX0DWDqnyA&t=45s)
@@ -40,6 +40,9 @@ List of assets, how they were made and credit where is necessary.
 - [x] Add aiming mechanic.
 - [x] Evaluate charging mechanic movement, should it move or not, and how?
 - [ ] Make Teo and enemy bounce back when hit
+- [ ] Bullet bouncing looks weird, Godot physics has some trouble with collisions on high speeds. [Possible solutions](https://godotengine.org/qa/1250/how-to-properly-handle-high-speed-collisions):
+    - Increase the fixed fps value in Project settings.
+    - Implement Bullet as kinematic body with reflect on normal of collision.
 - [ ] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 
 ### 16-22

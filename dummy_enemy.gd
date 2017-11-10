@@ -9,7 +9,7 @@ var running = false
 
 var bullet_factory = load("res://objects/bullet_base.tscn")
 var hit_count = 0
-var bullets = 3
+var bullets = 10
 
 func _ready():
 	set_fixed_process(true)
@@ -19,7 +19,7 @@ func _fixed_process(delta):
 	pass
 
 
-func hit():
+func hit(velocity, strength):
 	hit_count += 1
 	Glb.tell_HUD(Glb.HUDActions.Log, "Enemy Hit!!")
 
