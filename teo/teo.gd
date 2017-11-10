@@ -117,7 +117,7 @@ func hit(dir, strength):
 
 	velocity = -dir * Glb.get_bullet_throwback(strength)
 	react_wait_delta = Glb.TeoStats.react_delay
-	Glb.tell_HUD(Glb.HUDActions.Log, "Teo Hit!!")
+	
 
 func pick(obj):
 	bullets += 1

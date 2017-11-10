@@ -61,8 +61,18 @@ var TeoStats = {
 
 var StandardGhostStats = {
     speed = 150,
+    walk_speed = 40,
     acceleration = 1,
-    react_delay = 1.5
+
+    react_delay = 1.5,
+
+    idle_time = 3,
+    walk_time = 4,
+    prepare_throw_time = 5,
+
+    spot_distance = pow(200, 2),
+
+    throw_strength = 0.5
 }
 
 var BulletStats = {

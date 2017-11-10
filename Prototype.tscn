@@ -37,7 +37,7 @@ transform/pos = Vector2( 523, 206 )
 
 [node name="teo" parent="YSort" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 624, 239 )
+transform/pos = Vector2( 909, 253 )
 
 [node name="column" parent="YSort" instance=ExtResource( 5 )]
 

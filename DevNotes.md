@@ -42,11 +42,13 @@ List of assets, how they were made and credit where needed.
 - [x] Move camera man to direction vector when charging a shot.
 - [x] Add aiming mechanic.
 - [x] Evaluate charging mechanic movement, should it move or not, and how?
-- [ ] Make Teo and enemy bounce back when hit
+- [x] Make Teo bounce back when hit
 - [x] Bullet bouncing looks weird, Godot physics has some trouble with collisions on high speeds. [Possible solutions](https://godotengine.org/qa/1250/how-to-properly-handle-high-speed-collisions):
     - Increase the fixed fps value in Project settings.
     - (This solution rocks!) Implement Bullet as kinematic body with reflect on normal of collision.
-- [ ] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
+- [x] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
+- [ ] Make ghost hurt when hit
+- [ ] Implement method to aproximate normalized vectors to the 8 directions.
 
 ### 16-22
 ### 23-29
