@@ -45,12 +45,20 @@ var Directions = {
     NoDirection = Vector2()    
 }
 
+func get_direction_name(dir):
+    var name = ""
+    for key in Directions:
+        if Directions[key] == dir:
+            name = key
+    return name
+
 func is_diagonal(dir):
     var diags = [Directions.UpLeft, Directions.UpRight, Directions.DownLeft, Directions.DownRight]
     return diags.find(dir) >= 0
 
 
 enum ObjectTypes { Teo, Wall, Bullet, Pickable, Ghost }
+
 
 var TeoStats = {
     speed = 200,

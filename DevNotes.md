@@ -50,6 +50,8 @@ List of assets, how they were made and credit where needed.
 - [x] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 - [ ] Make ghost hurt when hit
 - [ ] Implement method to aproximate normalized vectors to the 8 directions.
+- [ ] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.
+- [ ] Aseprite importer doesn't handle layers.
 
 ### 16-22
 ### 23-29

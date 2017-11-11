@@ -71,8 +71,10 @@ func change_direction(dir):
 		if dir != Glb.Directions.NoDirection:
 			direction = dir
 			running = true
+			get_node("sprite_handler").play_action("Run", direction)
 		else:
 			running = false
+			get_node("sprite_handler").play_action("Idle", direction)
 	else:
 		if dir != Glb.Directions.NoDirection:
 			if Glb.is_diagonal(direction):
@@ -85,6 +87,7 @@ func change_direction(dir):
 					aim_walk = true
 		else:
 			aim_walk = false
+			get_node("sprite_handler").play_action("Idle", direction)
 
 func _fixed_process(delta):
 	if react_wait_delta <= 0:
@@ -103,7 +106,6 @@ func _fixed_process(delta):
 		move(velocity * delta)
 
 
-	get_node("sprite").set_rot(direction.angle())
 	get_node("camera_crew").update_actor_pos(get_pos(), direction)
 
 
