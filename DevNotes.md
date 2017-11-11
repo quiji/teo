@@ -32,6 +32,7 @@ List of assets, how they were made and credit where needed.
 - utilities/Resultion.gd: Based on code by [CowThing](https://github.com/godotengine/godot/issues/6506#issuecomment-247533233). Scales and makes the pixels look all blocky and juicy.
 - utilities/Controller.gd: Based on code by [Andreas Esau](https://www.youtube.com/watch?v=BTX0DWDqnyA&t=45s)
 - Fonts: *Qpix* was created by me using [bitfontmaker2](http://www.pentacom.jp/pentacom/bitfontmaker2/)
+- Aseprite Importer: Plugin to import Aseprite export files to Godot made by [eska014](https://github.com/eska014/aseprite-import). Did minor modifications to allow preprocessing scripts.
 
 
 ## General Todo
