@@ -57,7 +57,9 @@ List of assets, how they were made and credit where needed.
 - [x] Tweak stone to make shadow work well.
 
 
-- [ ] Fix shadows for Ghost's and Teo's pixel art sprites (top down shadow!)
+- [ ] **Fix shadows for Ghost's and Teo's pixel art sprites (top down shadow!)**
+- [ ] Fix Teo's shadows
+- [ ] Fix Ghost's shadows 
 
 - [ ] Make ghost hurt when hit
 - [ ] Implement method to aproximate normalized vectors to the 8 directions.
