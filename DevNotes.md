@@ -51,14 +51,13 @@ List of assets, how they were made and credit where needed.
 - [x] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 - [x] Make Teos running speed match the animations steps. 
 - [x] Add shadows to enemies and Teo
+- [x] Improve height and shadow handling for bullets. (Work with offset)
+- [x] Implement sprite_handler for bullets
+- [x] Create stone animations (easy there champ, don't put much time in this)
+- [x] Tweak stone to make shadow work well.
 
-- [ ] **Improve height and shadow handling for bullets. (Work with offset)**
-- [ ] Implement sprite_handler for bullets
-- [ ] Create stone animations (easy there champ, don't put much time in this)
-- [ ] Tweak stone to make shadow work well.
 
-
-- [ ] Fix shadows for Ghost's and Teo's sprites (top down shadow!)
+- [ ] Fix shadows for Ghost's and Teo's pixel art sprites (top down shadow!)
 
 - [ ] Make ghost hurt when hit
 - [ ] Implement method to aproximate normalized vectors to the 8 directions.
