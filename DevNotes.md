@@ -11,6 +11,7 @@
 - [Resolution Calculator](http://www.silisoftware.com/tools/screen_aspect_ratio_calculator)
 - [Notes on Shovel Knight](https://www.gamasutra.com/blogs/DavidDAngelo/20140625/219383/Breaking_the_NES_for_Shovel_Knight.php)
 - [Notes on Hyper Light Drifter](http://nightmargin.tumblr.com/post/102886823891/on-resolution)
+- [Git Branching] (https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
 
 ## Brainstorming
 

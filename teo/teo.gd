@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-signal moved
-
 var direction = Vector2(0, 1)
 var side_dir = Vector2()
 var velocity = Vector2()
@@ -11,7 +9,7 @@ var charging = false
 var aim_walk = false
 var react_wait_delta = 0
 
-var bullets = 2
+var bullets = 20
 
 
 func _ready():
@@ -19,6 +17,7 @@ func _ready():
 	Controller.add_buttons(Glb.keyboard)
 	Controller.merge_buttons(Glb.keyboard_merged_buttons)
 
+	add_user_signal("moved")
 	set_fixed_process(true)
 
 func process_input(i):

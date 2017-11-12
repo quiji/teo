@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-signal moved
 
 enum GhostStates {
 	Idle,
@@ -29,6 +28,7 @@ var velocity = Vector2()
 
 
 func _ready():
+	add_user_signal("moved")
 	set_fixed_process(true)
 
 func get_object_type(): return Glb.ObjectTypes.Ghost
