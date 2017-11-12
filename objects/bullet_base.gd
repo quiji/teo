@@ -29,6 +29,8 @@ func throw(dir, strength, is_teo):
 	velocity = dir * Glb.get_bullet_speed(strength)
 	strength_level = strength 
 
+	
+
 func get_object_type(): 
 	if is_bullet:
 		return Glb.ObjectTypes.Bullet

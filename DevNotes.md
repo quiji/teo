@@ -49,8 +49,16 @@ List of assets, how they were made and credit where needed.
     - (This solution rocks!) Implement Bullet as kinematic body with reflect on normal of collision.
 - [x] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 - [x] Make Teos running speed match the animations steps. 
-- [ ] Add shadows to enemies and Teo
-- [ ] Improve height and shadow handling for bullets. (Work with offset)
+- [x] Add shadows to enemies and Teo
+
+- [ ] **Improve height and shadow handling for bullets. (Work with offset)**
+- [ ] Implement sprite_handler for bullets
+- [ ] Create stone animations (easy there champ, don't put much time in this)
+- [ ] Tweak stone to make shadow work well.
+
+
+- [ ] Fix shadows for Ghost's and Teo's sprites (top down shadow!)
+
 - [ ] Make ghost hurt when hit
 - [ ] Implement method to aproximate normalized vectors to the 8 directions.
 - [x] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.

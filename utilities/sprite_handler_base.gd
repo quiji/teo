@@ -5,8 +5,9 @@ var prev_anim = ""
 var prev_frame = 0.0
 
 func _ready():
-	get_node("AnimationPlayer").play("Down-Idle")
-	current_action = "Idle"
+	if get_node("AnimationPlayer").has_animation("Down-Idle"):
+		get_node("AnimationPlayer").play("Down-Idle")
+		current_action = "Idle"
 
 func play_action(action, direction):
 	var d = Glb.get_direction_name(direction)
