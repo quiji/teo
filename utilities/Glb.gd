@@ -84,10 +84,14 @@ var StandardGhostStats = {
 }
 
 var BulletStats = {
-    min_speed = 400,
-    max_speed = 700,
-    min_airtime = 4,
-    max_airtime = 7,
+    min_speed = 300,
+    max_speed = 500,
+    min_falltime = 4,
+    max_falltime = 7,
+
+    min_bullet_time = 0.2,
+    max_bullet_time = 1,
+
     min_throwback = 200,
     max_throback = 400
 }
@@ -97,9 +101,14 @@ func get_bullet_speed(strength):
     var speed_range = BulletStats.max_speed - BulletStats.min_speed
     return speed_range * clamp(strength, 0, 1.0) + BulletStats.min_speed
 
-func get_buller_air_time(strength):
-    var time_range = BulletStats.max_airtime - BulletStats.min_airtime
-    return time_range * clamp(strength, 0, 1.0) + BulletStats.min_airtime
+func get_bullet_fall_time(strength):
+    var time_range = BulletStats.max_falltime - BulletStats.min_falltime
+    return time_range * clamp(strength, 0, 1.0) + BulletStats.min_falltime
+
+func get_bullet_time(strength):
+    var time_range = BulletStats.max_bullet_time - BulletStats.min_bullet_time
+    return time_range * clamp(strength, 0, 1.0) + BulletStats.min_bullet_time
+    
 
 func get_bullet_throwback(strength):
     var speed_range = BulletStats.max_throback - BulletStats.min_throwback

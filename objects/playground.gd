@@ -22,6 +22,10 @@ func throw_bullet(pos, direction, strength, is_teo):
 
 	bullet.set_pos(pos)
 	add_child(bullet)
-	# Spawn shadow!!!!
+	var sh = shadow.instance()
+	add_child(sh)
 
+
+	sh.follow_owner(bullet)
 	bullet.throw(direction, strength, is_teo)
+	

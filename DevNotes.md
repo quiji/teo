@@ -11,6 +11,7 @@
 - [Resolution Calculator](http://www.silisoftware.com/tools/screen_aspect_ratio_calculator)
 - [Notes on Shovel Knight](https://www.gamasutra.com/blogs/DavidDAngelo/20140625/219383/Breaking_the_NES_for_Shovel_Knight.php)
 - [Notes on Hyper Light Drifter](http://nightmargin.tumblr.com/post/102886823891/on-resolution)
+- [Git Branching] (https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
 
 ## Brainstorming
 
@@ -49,8 +50,15 @@ List of assets, how they were made and credit where needed.
     - (This solution rocks!) Implement Bullet as kinematic body with reflect on normal of collision.
 - [x] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
 - [x] Make Teos running speed match the animations steps. 
-- [ ] Add shadows to enemies and Teo
-- [ ] Improve height and shadow handling for bullets. (Work with offset)
+- [x] Add shadows to enemies and Teo
+- [x] Improve height and shadow handling for bullets. (Work with offset)
+- [x] Implement sprite_handler for bullets
+- [x] Create stone animations (easy there champ, don't put much time in this)
+- [x] Tweak stone to make shadow work well.
+
+
+- [ ] Fix shadows for Ghost's and Teo's pixel art sprites (top down shadow!)
+
 - [ ] Make ghost hurt when hit
 - [ ] Implement method to aproximate normalized vectors to the 8 directions.
 - [x] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.
