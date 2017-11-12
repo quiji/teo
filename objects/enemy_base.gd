@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+signal moved
 
 enum GhostStates {
 	Idle,
@@ -26,13 +27,14 @@ var current_state = GhostStates.Idle
 var direction = Vector2(0, 1)
 var velocity = Vector2()
 
-var bullet_factory = load("res://objects/bullet_base.tscn")
-
 
 func _ready():
 	set_fixed_process(true)
 
 func get_object_type(): return Glb.ObjectTypes.Ghost
+func is_shadow_enabled(): return true
+func get_shadow_offset(): return Vector2(0, 0)
+func get_sprite_handler(): return get_node("sprite_handler")
 
 func hit(dir, strength):
 	Glb.tell_HUD(Glb.HUDActions.Log, "Ghost Hit!!")
@@ -48,14 +50,11 @@ func process_state(delta):
 	var target = teos_pos - my_pos
 	var spotted = teo_spotted(target)
 
+	get_node("sprite_handler").play_action("Idle", direction)
+
 	if current_state == GhostStates.Throw:
 		Glb.tell_HUD(Glb.HUDActions.Log, "Throw")
-		var bullet = bullet_factory.instance()
-		
-		bullet.set_pos(get_pos())
-		get_parent().add_child(bullet)
-
-		bullet.throw(target.normalized(), Glb.StandardGhostStats.throw_strength)
+		get_parent().throw_bullet(get_pos(), target.normalized(), Glb.StandardGhostStats.throw_strength, false)
 		current_state = GhostStates.PrepareNextThrow
 		return true
 	
@@ -109,5 +108,4 @@ func _fixed_process(delta):
 		velocity = velocity.linear_interpolate(Vector2(),  Glb.StandardGhostStats.acceleration)
 	
 	move(velocity * delta)
-
-
+	if get_travel().length_squared() > 0: emit_signal("moved", self)

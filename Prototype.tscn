@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Prototype.gd" type="Script" id=1]
 [ext_resource path="res://assets/tiles/grass.png" type="Texture" id=2]
-[ext_resource path="res://objects/enemy_base.tscn" type="PackedScene" id=3]
-[ext_resource path="res://teo/teo.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/walls/column.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/walls/horizontal_wall.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/walls/vertical_wall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/playground.gd" type="Script" id=3]
+[ext_resource path="res://objects/enemy_base.tscn" type="PackedScene" id=4]
+[ext_resource path="res://teo/teo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/walls/column.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/walls/horizontal_wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/walls/vertical_wall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=9]
 
 [node name="Prototype" type="Node2D"]
 
@@ -30,95 +31,96 @@ stretch_mode = 0
 [node name="YSort" type="YSort" parent="."]
 
 sort/enabled = true
+script/script = ExtResource( 3 )
 
-[node name="enemy_base" parent="YSort" instance=ExtResource( 3 )]
+[node name="enemy_base" parent="YSort" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 523, 206 )
 
-[node name="teo" parent="YSort" instance=ExtResource( 4 )]
+[node name="teo" parent="YSort" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 909, 253 )
 
-[node name="column" parent="YSort" instance=ExtResource( 5 )]
+[node name="column" parent="YSort" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( -130.872, 152.428 )
 
-[node name="column1" parent="YSort" instance=ExtResource( 5 )]
+[node name="column1" parent="YSort" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 399, 376 )
 
-[node name="column3" parent="YSort" instance=ExtResource( 5 )]
+[node name="column3" parent="YSort" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 399, 52 )
 
-[node name="column2" parent="YSort" instance=ExtResource( 5 )]
+[node name="column2" parent="YSort" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 815, 376 )
 
-[node name="column4" parent="YSort" instance=ExtResource( 5 )]
+[node name="column4" parent="YSort" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 815, 248 )
 
-[node name="column6" parent="YSort" instance=ExtResource( 5 )]
+[node name="column6" parent="YSort" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 815, 157 )
 
-[node name="column5" parent="YSort" instance=ExtResource( 5 )]
+[node name="column5" parent="YSort" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 815, 52 )
 
-[node name="horizontal_wall" parent="YSort" instance=ExtResource( 6 )]
+[node name="horizontal_wall" parent="YSort" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( -101.619, 247.888 )
 
-[node name="horizontal_wall1" parent="YSort" instance=ExtResource( 6 )]
+[node name="horizontal_wall1" parent="YSort" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 479, 376 )
 
-[node name="horizontal_wall4 3" parent="YSort" instance=ExtResource( 6 )]
+[node name="horizontal_wall4 3" parent="YSort" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 479, 52 )
 
-[node name="horizontal_wall2" parent="YSort" instance=ExtResource( 6 )]
+[node name="horizontal_wall2" parent="YSort" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 607, 376 )
 
-[node name="horizontal_wall4 2" parent="YSort" instance=ExtResource( 6 )]
+[node name="horizontal_wall4 2" parent="YSort" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 607, 52 )
 
-[node name="horizontal_wall3" parent="YSort" instance=ExtResource( 6 )]
+[node name="horizontal_wall3" parent="YSort" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 735, 376 )
 
-[node name="horizontal_wall4" parent="YSort" instance=ExtResource( 6 )]
+[node name="horizontal_wall4" parent="YSort" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 735, 52 )
 
-[node name="vertical_wall" parent="YSort" instance=ExtResource( 7 )]
+[node name="vertical_wall" parent="YSort" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( -53, 75 )
 
-[node name="vertical_wall1" parent="YSort" instance=ExtResource( 7 )]
+[node name="vertical_wall1" parent="YSort" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 399, 279 )
 
-[node name="vertical_wall4" parent="YSort" instance=ExtResource( 7 )]
+[node name="vertical_wall4" parent="YSort" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 815, 280 )
 
-[node name="vertical_wall5" parent="YSort" instance=ExtResource( 7 )]
+[node name="vertical_wall5" parent="YSort" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 815, 84 )
 
-[node name="vertical_wall2" parent="YSort" instance=ExtResource( 7 )]
+[node name="vertical_wall2" parent="YSort" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 399, 181 )
 
-[node name="vertical_wall3" parent="YSort" instance=ExtResource( 7 )]
+[node name="vertical_wall3" parent="YSort" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 399, 83 )
 
-[node name="HUD" parent="." instance=ExtResource( 8 )]
+[node name="HUD" parent="." instance=ExtResource( 9 )]
 
 

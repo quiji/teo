@@ -4,6 +4,9 @@ var current_action = ""
 var prev_anim = ""
 var prev_frame = 0.0
 
+func _ready():
+	get_node("AnimationPlayer").play("Down-Idle")
+	current_action = "Idle"
 
 func play_action(action, direction):
 	var d = Glb.get_direction_name(direction)
@@ -28,3 +31,7 @@ func react(action):
     if get_parent().has_method("react"):
         get_parent().react(action)
 
+
+
+func get_sprite():
+	return get_node("Sprite")

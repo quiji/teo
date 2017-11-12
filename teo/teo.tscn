@@ -44,7 +44,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -31, -3 )
 
-[node name="Node2D" parent="." instance=ExtResource( 4 )]
+[node name="sprite_handler" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 0, -14 )
 

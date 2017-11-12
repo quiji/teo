@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal moved
+
 var direction = Vector2(0, 1)
 var side_dir = Vector2()
 var velocity = Vector2()
@@ -10,7 +12,6 @@ var aim_walk = false
 var react_wait_delta = 0
 
 var bullets = 2
-var bullet_factory = load("res://objects/bullet_base.tscn")
 
 
 func _ready():
@@ -56,12 +57,7 @@ func process_input(i):
 		charging = false
 		aim_walk = false
 		bullets -= 1
-		var bullet = bullet_factory.instance()
-		
-		bullet.set_pos(get_pos())
-		get_parent().add_child(bullet)
-
-		bullet.throw(direction, strength, false)
+		get_parent().throw_bullet(get_pos(), direction, strength, true)
 	
 
 func get_direction(): return direction
@@ -104,6 +100,7 @@ func _fixed_process(delta):
 	
 	if velocity != Vector2():
 		move(velocity * delta)
+		if get_travel().length_squared() > 0: emit_signal("moved", self)
 
 
 	get_node("camera_crew").update_actor_pos(get_pos(), direction)
@@ -125,3 +122,11 @@ func pick(obj):
 	bullets += 1
 
 func get_object_type(): return Glb.ObjectTypes.Teo
+func is_shadow_enabled(): return true
+func get_shadow_offset(): return Vector2(0, -5)
+func get_sprite_handler(): return get_node("sprite_handler")
+
+
+func react(action):
+	if action == "Step":
+		velocity = direction * Glb.TeoStats.speed / 2

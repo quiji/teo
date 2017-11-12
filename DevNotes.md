@@ -48,10 +48,14 @@ List of assets, how they were made and credit where needed.
     - Increase the fixed fps value in Project settings.
     - (This solution rocks!) Implement Bullet as kinematic body with reflect on normal of collision.
 - [x] Implement simple enemy AI, make them move and choose when to throw. Limit the amount of throws to avoid farming bullets.
+- [x] Make Teos running speed match the animations steps. 
+- [ ] Add shadows to enemies and Teo
+- [ ] Improve height and shadow handling for bullets. (Work with offset)
 - [ ] Make ghost hurt when hit
 - [ ] Implement method to aproximate normalized vectors to the 8 directions.
-- [ ] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.
+- [x] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.
 - [ ] Aseprite importer doesn't handle layers.
+- [ ] Extend Aseprite importer to keep exporting files for easier updates.
 
 ### 16-22
 ### 23-29

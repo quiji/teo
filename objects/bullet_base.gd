@@ -15,8 +15,8 @@ var is_bullet = true
 func _ready():
 	get_node("area").connect("body_enter", self, "on_body_enter")
 
-func throw(dir, strength, enemy=true):
-	if enemy:
+func throw(dir, strength, is_teo):
+	if not is_teo:
 		set_layer_mask_bit(0, true)
 		set_layer_mask_bit(1, false)
 	else:
