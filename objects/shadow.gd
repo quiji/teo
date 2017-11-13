@@ -11,7 +11,7 @@ func generate_shadow(sprite_handler, owners_offset, size=1):
 	shadow.set_pos(owners_offset)
 	shadow.set_offset(Vector2(1, 0))
 	shadow.set_texture(spr.get_texture())
-	shadow.set_scale(Vector2(size, 0.3))
+	shadow.set_scale(Vector2(size, 0.2))
 
 	if spr.is_region():
 		shadow.set_region(true)

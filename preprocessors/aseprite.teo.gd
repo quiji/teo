@@ -40,9 +40,9 @@ func prepare_run_anim(an):
     track = an.add_track(Animation.TYPE_VALUE)
     an.track_set_path(track, "Sprite:offset")
     an.track_insert_key(track, 0, Vector2(0, -1))
-    an.track_insert_key(track, 0.15, Vector2(0, -2))
+    an.track_insert_key(track, 0.15, Vector2(0, -3))
     an.track_insert_key(track, 0.33, Vector2(0, 0))
     an.track_insert_key(track, 0.48, Vector2(0, -1))
-    an.track_insert_key(track, 0.63, Vector2(0, -2))
+    an.track_insert_key(track, 0.63, Vector2(0, -3))
     an.track_insert_key(track, 0.81, Vector2(0, 0))
 
