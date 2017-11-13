@@ -18,7 +18,7 @@ func _ready():
 	add_user_signal("freed")
 	get_node("area").connect("body_enter", self, "on_body_enter")
 
-func throw(dir, strength, is_teo):
+func throw(dir, strength, is_teo, size=1):
 	if not is_teo:
 		set_layer_mask_bit(0, true)
 		set_layer_mask_bit(1, false)
@@ -32,6 +32,10 @@ func throw(dir, strength, is_teo):
 	speed = Glb.get_bullet_speed(strength)
 	velocity = dir * Glb.get_bullet_speed(strength)
 	strength_level = strength 
+
+	get_node("sprite_handler").set_scale(Vector2(size, size))
+
+
 	get_node("sprite_handler").get_sprite().set_pos(Vector2(0, -height))
 	bullet_time = Glb.get_bullet_time(strength)
 	get_node("sprite_handler").add_animation_speed(strength + 0.5)
@@ -46,7 +50,7 @@ func get_object_type():
 func is_shadow_enabled(): return true
 func get_shadow_offset(): return Vector2(1, 1)
 func get_sprite_handler(): return get_node("sprite_handler")
-			
+
 func on_body_enter(body):
 	if body.get_object_type() == Glb.ObjectTypes.Teo:
 		body.pick(Glb.ObjectTypes.Bullet)
