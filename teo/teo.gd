@@ -48,6 +48,7 @@ func process_input(i):
 		get_node("camera_crew").snipe_ahead()
 		charging = true
 		running = false
+		get_node("sprite_handler").play_action("IdleThrow", direction)
 
 	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
 		var strength = Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
@@ -76,13 +77,22 @@ func change_direction(dir):
 				if Glb.is_diagonal(dir):
 					side_dir = dir
 					aim_walk = true
+					get_node("sprite_handler").play_action("SideThrow", direction)
 			else:
 				if not Glb.is_diagonal(dir):
 					side_dir = dir
 					aim_walk = true
+					if direction == side_dir:
+						get_node("sprite_handler").play_action("FrontThrow", direction)
+					elif direction == -side_dir:
+						get_node("sprite_handler").play_action("FrontThrow", direction, true)
+					elif direction == Vector2(side_dir.y, side_dir.x):
+						get_node("sprite_handler").play_action("SideThrow", direction, false)
+					else:
+						get_node("sprite_handler").play_action("SideThrow", direction, true)
 		else:
 			aim_walk = false
-			get_node("sprite_handler").play_action("Idle", direction)
+			get_node("sprite_handler").play_action("IdleThrow", direction)
 
 func _fixed_process(delta):
 	if react_wait_delta <= 0:

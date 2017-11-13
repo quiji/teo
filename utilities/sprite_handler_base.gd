@@ -12,7 +12,7 @@ func _ready():
 		get_node("AnimationPlayer").play("Regular")
 		current_action = "Regular"
 
-func play_action(action, direction):
+func play_action(action, direction, backwards=false):
 	var d = Glb.get_direction_name(direction)
 	var anim_name = d + "-" + action
 
@@ -23,7 +23,10 @@ func play_action(action, direction):
 		var emit_prev = false
 		prev_anim = get_node("AnimationPlayer").get_current_animation()
 		prev_frame = get_node("AnimationPlayer").get_current_animation_pos()
-		get_node("AnimationPlayer").play(anim_name)
+		if backwards:
+			get_node("AnimationPlayer").play_backwards(anim_name)
+		else:
+			get_node("AnimationPlayer").play(anim_name)
 		if current_action == action:
 			get_node("AnimationPlayer").seek(prev_frame, true)
 			emit_prev = true
