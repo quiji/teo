@@ -63,6 +63,7 @@ func process_input(i):
 func get_direction(): return direction
 
 func change_direction(dir):
+	var is_diagonal = false
 	if not charging:
 		if dir != Glb.Directions.NoDirection:
 			direction = dir
@@ -77,19 +78,40 @@ func change_direction(dir):
 				if Glb.is_diagonal(dir):
 					side_dir = dir
 					aim_walk = true
-					get_node("sprite_handler").play_action("SideThrow", direction)
+					is_diagonal = true
+				else:
+					direction = side_dir
+					aim_walk = true
+					is_diagonal = false
 			else:
 				if not Glb.is_diagonal(dir):
 					side_dir = dir
 					aim_walk = true
-					if direction == side_dir:
-						get_node("sprite_handler").play_action("FrontThrow", direction)
-					elif direction == -side_dir:
-						get_node("sprite_handler").play_action("FrontThrow", direction, true)
-					elif direction == Vector2(side_dir.y, side_dir.x):
-						get_node("sprite_handler").play_action("SideThrow", direction, false)
-					else:
-						get_node("sprite_handler").play_action("SideThrow", direction, true)
+					is_diagonal = false
+				else:
+					direction = side_dir
+					aim_walk = true
+					is_diagonal = true
+			
+			if is_diagonal:
+				if direction == side_dir:
+					get_node("sprite_handler").play_action("FrontThrow", direction, true)
+				elif direction == -side_dir:
+					get_node("sprite_handler").play_action("FrontThrow", direction, false)
+				elif direction == Vector2(side_dir.y, -side_dir.x):
+					get_node("sprite_handler").play_action("SideThrow", direction, false)
+				else:
+					get_node("sprite_handler").play_action("SideThrow", direction, true)
+			else:
+				if direction == side_dir:
+					get_node("sprite_handler").play_action("FrontThrow", direction)
+				elif direction == -side_dir:
+					get_node("sprite_handler").play_action("FrontThrow", direction, true)
+				elif direction == Vector2(side_dir.y, -side_dir.x):
+					get_node("sprite_handler").play_action("SideThrow", direction, true)
+				else:
+					get_node("sprite_handler").play_action("SideThrow", direction, false)
+
 		else:
 			aim_walk = false
 			get_node("sprite_handler").play_action("IdleThrow", direction)
@@ -117,6 +139,10 @@ func _fixed_process(delta):
 
 
 	get_node("camera_crew").update_actor_pos(get_pos(), direction)
+
+	# Some debugging
+	get_node("direction").set_direction(direction, Color(200, 0, 0))
+	get_node("side_direction").set_direction(side_dir, Color(0, 200, 0))
 
 
 func hit(dir, strength):

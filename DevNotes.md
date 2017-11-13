@@ -72,7 +72,9 @@ List of assets, how they were made and credit where needed.
 - [ ] Teo's throw and move animation
     - [x] Create pixel art for preparing throw 8 directions
     - [ ] Create pixel art for moving while preparing throw 8 directions
-        - [ ] Create leg movements
+        - [x] Create leg movements
+        - [ ] Fix Leg movements
+        - [ ] Synchronize movement and animations
         - [ ] Add motion details (Hair and tie)
         - [ ] Add coded animation details (move up on certain frames if necesary)
         - [ ] Fix leg shadows
