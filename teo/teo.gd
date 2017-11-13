@@ -56,7 +56,7 @@ func process_input(i):
 		charging = false
 		aim_walk = false
 		bullets -= 1
-		get_parent().throw_bullet(get_pos(), direction, strength, true)
+		get_parent().throw_bullet(get_pos(), direction, strength, true, 0.6)
 	
 
 func get_direction(): return direction

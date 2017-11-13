@@ -17,7 +17,7 @@ func _ready():
 		i += 1
 
 
-func throw_bullet(pos, direction, strength, is_teo):
+func throw_bullet(pos, direction, strength, is_teo, size=1):
 	var bullet = bullet_factory.instance()
 
 	bullet.set_pos(pos)
@@ -26,6 +26,6 @@ func throw_bullet(pos, direction, strength, is_teo):
 	add_child(sh)
 
 
-	sh.follow_owner(bullet)
-	bullet.throw(direction, strength, is_teo)
+	sh.follow_owner(bullet, size)
+	bullet.throw(direction, strength, is_teo, size)
 	
