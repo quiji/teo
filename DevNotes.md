@@ -63,16 +63,16 @@ List of assets, how they were made and credit where needed.
 - [x] Fix Rocks positioning when changing size
 - [x] Make Rock size relative to throw length (faster-bigger)
 
-- [ ] Evaluate **tealm**'s critique: "looks better! But I would slow him down just a bit more, and just use a simple blob shadow shape beneath him - the one you have now might be  distracting."
-    - [ ] Tweak Teo's movement to make animation and movement feel tighter.
-    - [ ] Evaluate blob shadow.
+- [x] Evaluate *tealm*'s critique: "looks better! But I would slow him down just a bit more, and just use a simple blob shadow shape beneath him - the one you have now might be  distracting."
+    - [x] Tweak Teo's movement to make animation and movement feel tighter.
+    - [x] Evaluate blob shadow.
 
+- [x] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.
 
 
 - [ ] Make ghost hurt when hit
 - [ ] Implement method to aproximate normalized vectors to the 8 directions.
-- [x] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.
-- [ ] Aseprite importer doesn't handle layers.
+
 - [ ] Extend Aseprite importer to keep exporting files for easier updates.
 
 ### 16-22
