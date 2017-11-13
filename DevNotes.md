@@ -11,7 +11,8 @@
 - [Resolution Calculator](http://www.silisoftware.com/tools/screen_aspect_ratio_calculator)
 - [Notes on Shovel Knight](https://www.gamasutra.com/blogs/DavidDAngelo/20140625/219383/Breaking_the_NES_for_Shovel_Knight.php)
 - [Notes on Hyper Light Drifter](http://nightmargin.tumblr.com/post/102886823891/on-resolution)
-- [Git Branching] (https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
+- [Git Branching](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
+
 
 ## Brainstorming
 
@@ -20,7 +21,7 @@
 - Blocking projectiles and storing them into satchel for future use (like *throwing back*).
 - Satchel works like a stack: first item in is last item out.
 - Only way to open doors, breaking them throwing stuff (Let's reinforce the main mechanic).
-- You can throw with different strengths by charging. Charging limits your movement.
+- You can throw with different strengths by charging. Charging limits your movement. 
 - Enemies: Are ghosts. Because they are ghosts, they cannot be damaged directly, instead they need to have something to "bring it to the physic world", like a t-shirt, or paint them... HENCE the mechanic, paint balls to allow ghost hurting? (This is getting too complicated...)
 
 Thats it. Ha!
@@ -58,7 +59,9 @@ List of assets, how they were made and credit where needed.
 - [x] Fix shadows for Ghost's and Teo's pixel art sprites (top down shadow!)
     - [x] Fix Teo's shadows
     - [x] Fix Ghost's shadows 
-- [ ] Rocks are too big, evaluate making them smaller
+- [x] Rocks are too big, evaluate making them smaller
+- [x] Fix Rocks positioning when changing size
+- [x] Make Rock size relative to throw length (faster-bigger)
 
 - [ ] Evaluate **tealm**'s critique: "looks better! But I would slow him down just a bit more, and just use a simple blob shadow shape beneath him - the one you have now might be  distracting."
     - [ ] Tweak Teo's movement to make animation and movement feel tighter.

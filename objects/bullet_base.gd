@@ -33,7 +33,7 @@ func throw(dir, strength, is_teo, size=1):
 	velocity = dir * Glb.get_bullet_speed(strength)
 	strength_level = strength 
 
-	get_node("sprite_handler").set_scale(Vector2(size, size))
+	get_node("sprite_handler").scale_sprite(Vector2(size, size))
 
 
 	get_node("sprite_handler").get_sprite().set_pos(Vector2(0, -height))

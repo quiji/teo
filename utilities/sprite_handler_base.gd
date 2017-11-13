@@ -51,3 +51,6 @@ func play_backwards_from_spot():
 	var frame = get_node("AnimationPlayer").get_current_animation_pos()
 	get_node("AnimationPlayer").play_backwards(an)
 	get_node("AnimationPlayer").seek(frame, true)
+
+func scale_sprite(scale):
+	get_node("Sprite").set_scale(scale)
