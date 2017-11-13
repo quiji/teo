@@ -69,9 +69,15 @@ List of assets, how they were made and credit where needed.
 
 - [x] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.
 
+- [ ] Teo's throw and move animation
+    - [ ] Create pixel art for preparing throw 8 directions
+    - [ ] Create pixel art for throwing with 8 directions
+    - [ ] Import assets and tweak to make them feel right
+    - [ ] Implement rock spawning points
 
+
+- [ ] Make ghost follow character without moving
 - [ ] Make ghost hurt when hit
-- [ ] Implement method to aproximate normalized vectors to the 8 directions.
 
 - [ ] Extend Aseprite importer to keep exporting files for easier updates.
 
