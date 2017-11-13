@@ -91,7 +91,11 @@ func _fixed_process(delta):
 		react_wait_delta -= delta
 
 	if running:
-		velocity = velocity.linear_interpolate(direction * Glb.TeoStats.speed,  Glb.TeoStats.acceleration)
+		var top_velocity = direction * Glb.TeoStats.speed
+		if velocity == top_velocity:
+			velocity = velocity.linear_interpolate(top_velocity / 2,  Glb.TeoStats.acceleration)
+		else:
+			velocity = velocity.linear_interpolate(top_velocity,  Glb.TeoStats.acceleration)
 	elif aim_walk:
 		velocity = velocity.linear_interpolate(side_dir * Glb.TeoStats.aimwalk_speed,  Glb.TeoStats.acceleration)
 	else:
