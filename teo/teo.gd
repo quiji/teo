@@ -47,7 +47,7 @@ func process_input(i):
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
 		target = get_parent().start_polling_target(get_pos(), direction)
-		get_node("camera_crew").snipe_ahead()
+		get_parent().camera_snipe_ahead(target)
 		charging = true
 		running = false
 
@@ -56,7 +56,7 @@ func process_input(i):
 	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
 		var strength = Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
 		get_parent().stop_polling_target()
-		get_node("camera_crew").back_to_actor()
+		get_parent().camera_back_to_actor()
 		charging = false
 		aim_walk = false
 		bullets -= 1
@@ -131,8 +131,6 @@ func _fixed_process(delta):
 		if get_travel().length_squared() > 0: emit_signal("moved", self)
 
 
-	get_node("camera_crew").update_actor_pos(get_pos(), direction)
-
 	# Some debugging
 	get_node("debug_direction").set_direction(direction)
 	get_node("debug_side_direction").set_direction(side_dir)
@@ -144,7 +142,7 @@ func hit(dir, strength):
 	charging = false
 	Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
 	get_parent().stop_polling_target()
-	get_node("camera_crew").back_to_actor()
+	get_parent().camera_back_to_actor()
 
 	velocity = -dir * Glb.get_bullet_throwback(strength)
 	react_wait_delta = Glb.TeoStats.react_delay

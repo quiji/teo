@@ -1,2 +1,2 @@
-extends "res://utilities/sprite_handler_base.gd"
+extends "res://objects/sprite_handler_base.gd"
 

@@ -21,6 +21,7 @@ func _ready():
 
 	target_arrow = target_factory.instance()
 	add_child(target_arrow)
+	get_node("camera_crew").set_actor(get_node("teo"))
 
 func throw_bullet(pos, direction, strength, is_teo):
 	var bullet = bullet_factory.instance()
@@ -38,3 +39,6 @@ func throw_bullet(pos, direction, strength, is_teo):
 
 func start_polling_target(pos, direction): return target_arrow.poll_target(pos, direction)
 func stop_polling_target(): target_arrow.stop_polling()
+
+func camera_snipe_ahead(target): get_node("camera_crew").snipe_ahead(target)
+func camera_back_to_actor(): get_node("camera_crew").back_to_actor()

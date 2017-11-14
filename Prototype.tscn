@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Prototype.gd" type="Script" id=1]
 [ext_resource path="res://assets/tiles/grass.png" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://objects/walls/column.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/walls/horizontal_wall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/walls/vertical_wall.tscn" type="PackedScene" id=8]
-[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://gui/camera_crew.tscn" type="PackedScene" id=9]
+[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=10]
 
 [node name="Prototype" type="Node2D"]
 
@@ -30,6 +31,7 @@ stretch_mode = 0
 
 [node name="YSort" type="YSort" parent="."]
 
+editor/display_folded = true
 sort/enabled = true
 script/script = ExtResource( 3 )
 
@@ -121,6 +123,10 @@ transform/pos = Vector2( 399, 181 )
 
 transform/pos = Vector2( 399, 83 )
 
-[node name="HUD" parent="." instance=ExtResource( 9 )]
+[node name="camera_crew" parent="YSort" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 987, 251 )
+
+[node name="HUD" parent="." instance=ExtResource( 10 )]
 
 

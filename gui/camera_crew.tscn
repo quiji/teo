@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://teo/camera_crew.gd" type="Script" id=1]
+[ext_resource path="res://gui/camera_crew.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
 [node name="camera_crew" type="Node2D"]
 
@@ -31,5 +32,9 @@ playback/process_mode = 1
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="marker" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
 
 
