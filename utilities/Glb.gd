@@ -53,16 +53,28 @@ func get_direction_name(dir):
     return name
 
 func is_diagonal(dir):
-    var diags = [Directions.UpLeft, Directions.UpRight, Directions.DownLeft, Directions.DownRight]
-    return diags.find(dir) >= 0
+    return dir.x != 0 and dir.y != 0
 
+func find_closest_direction(dir):
+    var keys = Directions.keys()
+    var i = 0
+    var closest = null
+    var closest_dot = -1
+    while i < keys.size():
+        var temp_dot = Directions[keys[i]].dot(dir)
+        if temp_dot > closest_dot:
+            closest = Directions[keys[i]]
+            closest_dot = temp_dot
+        i += 1
+    return closest
 
 enum ObjectTypes { Teo, Wall, Bullet, Pickable, Ghost }
 
 
 var TeoStats = {
-    speed = 150,
-    aimwalk_speed = 70,
+    speed = 140,
+    aimwalk_speed = 38,
+    aimwalk_speed_backwards = 12,
     acceleration = 0.4,
     react_delay = 1
 }

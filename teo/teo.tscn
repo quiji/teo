@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://teo/teo.gd" type="Script" id=1]
-[ext_resource path="res://teo/camera_crew.tscn" type="PackedScene" id=2]
-[ext_resource path="res://gui/target_arrow.tscn" type="PackedScene" id=3]
-[ext_resource path="res://teo/sprite_handler.scn" type="PackedScene" id=4]
+[ext_resource path="res://teo/sprite_handler.scn" type="PackedScene" id=2]
+[ext_resource path="res://utilities/VectorLine.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -37,15 +36,32 @@ polygon = Vector2Array( -5, -3, 6, -3, 6, 6, 4, 7, 4, 15, -3, 15, -3, 7, -5, 6 )
 shape_range = Vector2( 0, 1 )
 trigger = false
 
-[node name="camera_crew" parent="." instance=ExtResource( 2 )]
-
-[node name="target_arrow" parent="." instance=ExtResource( 3 )]
-
-visibility/visible = false
-transform/pos = Vector2( -31, -3 )
-
-[node name="sprite_handler" parent="." instance=ExtResource( 4 )]
+[node name="sprite_handler" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 0, -14 )
+
+[node name="debug_direction_mark" parent="." instance=ExtResource( 3 )]
+
+vector_color = Color( 0.822727, 0.0541992, 0.867188, 1 )
+mode = 1
+enabled = false
+
+[node name="debug_direction" parent="." instance=ExtResource( 3 )]
+
+vector_color = Color( 0.222832, 0.200912, 0.902344, 1 )
+mode = 0
+enabled = false
+
+[node name="debug_target" parent="." instance=ExtResource( 3 )]
+
+vector_color = Color( 0.253229, 0.828125, 0.0452881, 1 )
+mode = 0
+enabled = false
+
+[node name="debug_side_direction" parent="." instance=ExtResource( 3 )]
+
+vector_color = Color( 0.828125, 0.749225, 0.10675, 1 )
+mode = 0
+enabled = false
 
 

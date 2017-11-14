@@ -1,12 +1,14 @@
 extends KinematicBody2D
 
 var direction = Vector2(0, 1)
+var target = Vector2()
 var side_dir = Vector2()
 var velocity = Vector2()
 
 var running = false
 var charging = false
 var aim_walk = false
+var aim_walk_sides = false
 var react_wait_delta = 0
 
 var bullets = 20
@@ -44,19 +46,21 @@ func process_input(i):
 
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
-		get_node("target_arrow").poll_target()
-		get_node("camera_crew").snipe_ahead()
+		target = get_parent().start_polling_target(get_pos(), direction)
+		get_parent().camera_snipe_ahead(target)
 		charging = true
 		running = false
 
+		get_node("sprite_handler").play_action("IdleThrow", direction)
+
 	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
 		var strength = Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
-		get_node("target_arrow").stop_polling()
-		get_node("camera_crew").back_to_actor()
+		get_parent().stop_polling_target()
+		get_parent().camera_back_to_actor()
 		charging = false
 		aim_walk = false
 		bullets -= 1
-		get_parent().throw_bullet(get_pos(), direction, strength, true)
+		get_parent().throw_bullet(get_pos(), side_dir, strength, true)
 	
 
 func get_direction(): return direction
@@ -72,17 +76,36 @@ func change_direction(dir):
 			get_node("sprite_handler").play_action("Idle", direction)
 	else:
 		if dir != Glb.Directions.NoDirection:
-			if Glb.is_diagonal(direction):
-				if Glb.is_diagonal(dir):
-					side_dir = dir
-					aim_walk = true
+			aim_walk = true
+			direction = dir
+			
+			var target_dir = (target - get_pos()).normalized()
+			var closest_dir = null
+
+			get_node("debug_target").set_direction(target_dir)
+			closest_dir = Glb.find_closest_direction(target_dir)
+
+			if closest_dir != null: 
+				side_dir = closest_dir
+
+
+			if direction == side_dir:
+				get_node("sprite_handler").play_action("FrontThrow", side_dir, false)
+				aim_walk_sides = false
+			elif direction == -side_dir:
+				get_node("sprite_handler").play_action("FrontThrow", side_dir, true)
+				aim_walk_sides = false
+			elif direction == Vector2(side_dir.y, -side_dir.x):
+				get_node("sprite_handler").play_action("SideThrow", side_dir, false)
+				aim_walk_sides = true
 			else:
-				if not Glb.is_diagonal(dir):
-					side_dir = dir
-					aim_walk = true
+				get_node("sprite_handler").play_action("SideThrow", side_dir, true)
+				aim_walk_sides = true
+
 		else:
+			direction = side_dir
 			aim_walk = false
-			get_node("sprite_handler").play_action("Idle", direction)
+			get_node("sprite_handler").play_action("IdleThrow", direction)
 
 func _fixed_process(delta):
 	if react_wait_delta <= 0:
@@ -96,8 +119,10 @@ func _fixed_process(delta):
 			velocity = velocity.linear_interpolate(top_velocity / 2,  Glb.TeoStats.acceleration)
 		else:
 			velocity = velocity.linear_interpolate(top_velocity,  Glb.TeoStats.acceleration)
+	elif aim_walk and aim_walk_sides:
+		velocity = velocity.linear_interpolate(direction * Glb.TeoStats.aimwalk_speed,  Glb.TeoStats.acceleration)
 	elif aim_walk:
-		velocity = velocity.linear_interpolate(side_dir * Glb.TeoStats.aimwalk_speed,  Glb.TeoStats.acceleration)
+		velocity = velocity.linear_interpolate(direction * Glb.TeoStats.aimwalk_speed_backwards,  Glb.TeoStats.acceleration)
 	else:
 		velocity = velocity.linear_interpolate(Vector2(),  Glb.TeoStats.acceleration)
 	
@@ -106,7 +131,9 @@ func _fixed_process(delta):
 		if get_travel().length_squared() > 0: emit_signal("moved", self)
 
 
-	get_node("camera_crew").update_actor_pos(get_pos(), direction)
+	# Some debugging
+	get_node("debug_direction").set_direction(direction)
+	get_node("debug_side_direction").set_direction(side_dir)
 
 
 func hit(dir, strength):
@@ -114,8 +141,8 @@ func hit(dir, strength):
 	running = false 
 	charging = false
 	Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
-	get_node("target_arrow").stop_polling()
-	get_node("camera_crew").back_to_actor()
+	get_parent().stop_polling_target()
+	get_parent().camera_back_to_actor()
 
 	velocity = -dir * Glb.get_bullet_throwback(strength)
 	react_wait_delta = Glb.TeoStats.react_delay
