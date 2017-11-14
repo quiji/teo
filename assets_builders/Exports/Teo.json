@@ -2303,7 +2303,7 @@
    { "name": "Left-SideThrow", "from": 208, "to": 213, "direction": "forward" },
    { "name": "Left-FrontThrow", "from": 214, "to": 219, "direction": "forward" },
    { "name": "UpLeft-SideThrow", "from": 220, "to": 225, "direction": "forward" },
-   { "name": "UpLeft-FrontThrow", "from": 226, "to": 231, "direction": "forward" },
+   { "name": "UpLeft-FrontThrow", "from": 226, "to": 231, "direction": "reverse" },
    { "name": "Up-SideThrow", "from": 232, "to": 237, "direction": "forward" },
    { "name": "Up-FrontThrow", "from": 238, "to": 243, "direction": "forward" },
    { "name": "UpRight-SideThrow", "from": 244, "to": 249, "direction": "forward" },

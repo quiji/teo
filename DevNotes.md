@@ -82,7 +82,7 @@ List of assets, how they were made and credit where needed.
         - [x] Fixed and improved 8 direction aproximations from target vector
         - [x] Fix Leg movements
         - [x] Synchronize movement and animations
-        - [ ] Fix Camera to new aiming mechanic 
+        - [x] Fix Camera to new aiming mechanic 
         - [ ] Add motion details (Hair and tie)
         - [ ] Add coded animation details (move up on certain frames if necesary)
         - [ ] Fix leg shadows
