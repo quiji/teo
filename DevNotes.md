@@ -12,6 +12,7 @@
 - [Notes on Shovel Knight](https://www.gamasutra.com/blogs/DavidDAngelo/20140625/219383/Breaking_the_NES_for_Shovel_Knight.php)
 - [Notes on Hyper Light Drifter](http://nightmargin.tumblr.com/post/102886823891/on-resolution)
 - [Git Branching](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
+- [Game Design Gif](https://twitter.com/WaywardMira/status/929025607480041473)
 
 
 ## Brainstorming
@@ -20,6 +21,11 @@
 
 - Blocking projectiles and storing them into satchel for future use (like *throwing back*).
 - Satchel works like a stack: first item in is last item out.
+- Stone Abilities:
+    - Regular Stone: Hurts!
+    - Bounce Stone: Bounce! a lot!
+    - Explosive Stones: Explode!
+    - Warp Stone: Warp! (Can help to tranverse map)
 - Only way to open doors, breaking them throwing stuff (Let's reinforce the main mechanic).
 - You can throw with different strengths by charging. Charging limits your movement. 
 - Enemies: Are ghosts. Because they are ghosts, they cannot be damaged directly, instead they need to have something to "bring it to the physic world", like a t-shirt, or paint them... HENCE the mechanic, paint balls to allow ghost hurting? (This is getting too complicated...)
@@ -74,8 +80,9 @@ List of assets, how they were made and credit where needed.
     - [ ] Create pixel art for moving while preparing throw 8 directions
         - [x] Create leg movements
         - [x] Fixed and improved 8 direction aproximations from target vector
-        - [ ] Fix Leg movements
-        - [ ] Synchronize movement and animations
+        - [x] Fix Leg movements
+        - [x] Synchronize movement and animations
+        - [ ] Fix Camera to new aiming mechanic 
         - [ ] Add motion details (Hair and tie)
         - [ ] Add coded animation details (move up on certain frames if necesary)
         - [ ] Fix leg shadows

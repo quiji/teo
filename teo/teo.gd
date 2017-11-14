@@ -8,6 +8,7 @@ var velocity = Vector2()
 var running = false
 var charging = false
 var aim_walk = false
+var aim_walk_sides = false
 var react_wait_delta = 0
 
 var bullets = 20
@@ -59,7 +60,7 @@ func process_input(i):
 		charging = false
 		aim_walk = false
 		bullets -= 1
-		get_parent().throw_bullet(get_pos(), direction, strength, true)
+		get_parent().throw_bullet(get_pos(), side_dir, strength, true)
 	
 
 func get_direction(): return direction
@@ -89,13 +90,17 @@ func change_direction(dir):
 
 
 			if direction == side_dir:
-				get_node("sprite_handler").play_action("FrontThrow", side_dir, true)
-			elif direction == -side_dir:
 				get_node("sprite_handler").play_action("FrontThrow", side_dir, false)
+				aim_walk_sides = false
+			elif direction == -side_dir:
+				get_node("sprite_handler").play_action("FrontThrow", side_dir, true)
+				aim_walk_sides = false
 			elif direction == Vector2(side_dir.y, -side_dir.x):
 				get_node("sprite_handler").play_action("SideThrow", side_dir, false)
+				aim_walk_sides = true
 			else:
 				get_node("sprite_handler").play_action("SideThrow", side_dir, true)
+				aim_walk_sides = true
 
 		else:
 			direction = side_dir
@@ -114,8 +119,10 @@ func _fixed_process(delta):
 			velocity = velocity.linear_interpolate(top_velocity / 2,  Glb.TeoStats.acceleration)
 		else:
 			velocity = velocity.linear_interpolate(top_velocity,  Glb.TeoStats.acceleration)
-	elif aim_walk:
+	elif aim_walk and aim_walk_sides:
 		velocity = velocity.linear_interpolate(direction * Glb.TeoStats.aimwalk_speed,  Glb.TeoStats.acceleration)
+	elif aim_walk:
+		velocity = velocity.linear_interpolate(direction * Glb.TeoStats.aimwalk_speed_backwards,  Glb.TeoStats.acceleration)
 	else:
 		velocity = velocity.linear_interpolate(Vector2(),  Glb.TeoStats.acceleration)
 	
@@ -136,7 +143,7 @@ func hit(dir, strength):
 	running = false 
 	charging = false
 	Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
-	get_node("target_arrow").stop_polling()
+	get_parent().stop_polling_target()
 	get_node("camera_crew").back_to_actor()
 
 	velocity = -dir * Glb.get_bullet_throwback(strength)

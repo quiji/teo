@@ -1525,7 +1525,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 191.aseprite": {
     "frame": { "x": 480, "y": 352, "w": 32, "h": 32 },
@@ -1533,7 +1533,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 192.aseprite": {
     "frame": { "x": 0, "y": 384, "w": 32, "h": 32 },
@@ -1541,7 +1541,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 193.aseprite": {
     "frame": { "x": 32, "y": 384, "w": 32, "h": 32 },
@@ -1549,7 +1549,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 194.aseprite": {
     "frame": { "x": 64, "y": 384, "w": 32, "h": 32 },
@@ -1557,7 +1557,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 195.aseprite": {
     "frame": { "x": 96, "y": 384, "w": 32, "h": 32 },
@@ -1565,7 +1565,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 196.aseprite": {
     "frame": { "x": 128, "y": 384, "w": 32, "h": 32 },
@@ -1621,7 +1621,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 203.aseprite": {
     "frame": { "x": 352, "y": 384, "w": 32, "h": 32 },
@@ -1629,7 +1629,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 204.aseprite": {
     "frame": { "x": 384, "y": 384, "w": 32, "h": 32 },
@@ -1637,7 +1637,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 205.aseprite": {
     "frame": { "x": 416, "y": 384, "w": 32, "h": 32 },
@@ -1645,7 +1645,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 206.aseprite": {
     "frame": { "x": 448, "y": 384, "w": 32, "h": 32 },
@@ -1653,7 +1653,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 207.aseprite": {
     "frame": { "x": 480, "y": 384, "w": 32, "h": 32 },
@@ -1661,7 +1661,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 208.aseprite": {
     "frame": { "x": 0, "y": 416, "w": 32, "h": 32 },
@@ -1717,7 +1717,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 215.aseprite": {
     "frame": { "x": 224, "y": 416, "w": 32, "h": 32 },
@@ -1725,7 +1725,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 216.aseprite": {
     "frame": { "x": 256, "y": 416, "w": 32, "h": 32 },
@@ -1733,7 +1733,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 217.aseprite": {
     "frame": { "x": 288, "y": 416, "w": 32, "h": 32 },
@@ -1741,7 +1741,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 218.aseprite": {
     "frame": { "x": 320, "y": 416, "w": 32, "h": 32 },
@@ -1749,7 +1749,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 219.aseprite": {
     "frame": { "x": 352, "y": 416, "w": 32, "h": 32 },
@@ -1757,7 +1757,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 220.aseprite": {
     "frame": { "x": 384, "y": 416, "w": 32, "h": 32 },
@@ -1813,7 +1813,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 227.aseprite": {
     "frame": { "x": 96, "y": 448, "w": 32, "h": 32 },
@@ -1821,7 +1821,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 228.aseprite": {
     "frame": { "x": 128, "y": 448, "w": 32, "h": 32 },
@@ -1829,7 +1829,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 229.aseprite": {
     "frame": { "x": 160, "y": 448, "w": 32, "h": 32 },
@@ -1837,7 +1837,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 230.aseprite": {
     "frame": { "x": 192, "y": 448, "w": 32, "h": 32 },
@@ -1845,7 +1845,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 231.aseprite": {
     "frame": { "x": 224, "y": 448, "w": 32, "h": 32 },
@@ -1853,7 +1853,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 232.aseprite": {
     "frame": { "x": 256, "y": 448, "w": 32, "h": 32 },
@@ -1909,7 +1909,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 239.aseprite": {
     "frame": { "x": 480, "y": 448, "w": 32, "h": 32 },
@@ -1917,7 +1917,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 240.aseprite": {
     "frame": { "x": 0, "y": 480, "w": 32, "h": 32 },
@@ -1925,7 +1925,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 241.aseprite": {
     "frame": { "x": 32, "y": 480, "w": 32, "h": 32 },
@@ -1933,7 +1933,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 242.aseprite": {
     "frame": { "x": 64, "y": 480, "w": 32, "h": 32 },
@@ -1941,7 +1941,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 243.aseprite": {
     "frame": { "x": 96, "y": 480, "w": 32, "h": 32 },
@@ -1949,7 +1949,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 244.aseprite": {
     "frame": { "x": 128, "y": 480, "w": 32, "h": 32 },
@@ -2005,7 +2005,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 251.aseprite": {
     "frame": { "x": 352, "y": 480, "w": 32, "h": 32 },
@@ -2013,7 +2013,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 252.aseprite": {
     "frame": { "x": 384, "y": 480, "w": 32, "h": 32 },
@@ -2021,7 +2021,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 253.aseprite": {
     "frame": { "x": 416, "y": 480, "w": 32, "h": 32 },
@@ -2029,7 +2029,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 254.aseprite": {
     "frame": { "x": 448, "y": 480, "w": 32, "h": 32 },
@@ -2037,7 +2037,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 255.aseprite": {
     "frame": { "x": 480, "y": 480, "w": 32, "h": 32 },
@@ -2045,7 +2045,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 256.aseprite": {
     "frame": { "x": 0, "y": 512, "w": 32, "h": 32 },
@@ -2101,7 +2101,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 263.aseprite": {
     "frame": { "x": 224, "y": 512, "w": 32, "h": 32 },
@@ -2109,7 +2109,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 264.aseprite": {
     "frame": { "x": 256, "y": 512, "w": 32, "h": 32 },
@@ -2117,7 +2117,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 265.aseprite": {
     "frame": { "x": 288, "y": 512, "w": 32, "h": 32 },
@@ -2125,7 +2125,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 266.aseprite": {
     "frame": { "x": 320, "y": 512, "w": 32, "h": 32 },
@@ -2133,7 +2133,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 267.aseprite": {
     "frame": { "x": 352, "y": 512, "w": 32, "h": 32 },
@@ -2141,7 +2141,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 268.aseprite": {
     "frame": { "x": 384, "y": 512, "w": 32, "h": 32 },
@@ -2197,7 +2197,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 275.aseprite": {
     "frame": { "x": 96, "y": 544, "w": 32, "h": 32 },
@@ -2205,7 +2205,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 276.aseprite": {
     "frame": { "x": 128, "y": 544, "w": 32, "h": 32 },
@@ -2213,7 +2213,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 277.aseprite": {
     "frame": { "x": 160, "y": 544, "w": 32, "h": 32 },
@@ -2221,7 +2221,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 278.aseprite": {
     "frame": { "x": 192, "y": 544, "w": 32, "h": 32 },
@@ -2229,7 +2229,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 279.aseprite": {
     "frame": { "x": 224, "y": 544, "w": 32, "h": 32 },
@@ -2237,7 +2237,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
-    "duration": 150
+    "duration": 120
    },
    "Teo 280.aseprite": {
     "frame": { "x": 256, "y": 544, "w": 32, "h": 32 },
