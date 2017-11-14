@@ -22,7 +22,11 @@ func prepare_animation_player(anim):
         var an = anim.get_animation(anims[i])
         if anims[i].ends_with("Run"):
             prepare_run_anim(an)
-        #if anims[i].ends_with("Idle") and anims[i].begins_with("Down-"):
+        if anims[i].ends_with("FrontThrow"):
+            prepare_front_throw_anim(an)
+        if anims[i].ends_with("SideThrow"):
+            prepare_side_throw_anim(an)
+            #if anims[i].ends_with("Idle") and anims[i].begins_with("Down-"):
         #    anim.set_autoplay(anims[i])
         i += 1 
 
@@ -46,3 +50,30 @@ func prepare_run_anim(an):
     an.track_insert_key(track, 0.63, Vector2(0, -3))
     an.track_insert_key(track, 0.81, Vector2(0, 0))
 
+func prepare_side_throw_anim(an):
+    var track = an.add_track(Animation.TYPE_METHOD)
+    an.track_set_path(track, ".")
+    var method = {
+        "method": "react",
+        "args": ["Step"]
+    }
+    an.track_insert_key(track, 0.15, method)
+    an.track_insert_key(track, 0.75, method)
+
+    track = an.add_track(Animation.TYPE_VALUE)
+    an.track_set_path(track, "Sprite:offset")
+    an.track_insert_key(track, 0, Vector2(0, 0))
+    an.track_insert_key(track, 0.45, Vector2(0, -2))
+
+func prepare_front_throw_anim(an):
+    var track = an.add_track(Animation.TYPE_METHOD)
+    an.track_set_path(track, ".")
+    var method = {
+        "method": "react",
+        "args": ["Step"]
+    }
+    an.track_insert_key(track, 0.12, method)
+    an.track_insert_key(track, 0.48, method)
+
+    track = an.add_track(Animation.TYPE_VALUE)
+    an.track_set_path(track, "Sprite:offset")

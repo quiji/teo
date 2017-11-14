@@ -77,16 +77,16 @@ List of assets, how they were made and credit where needed.
 
 - [ ] Teo's throw and move animation
     - [x] Create pixel art for preparing throw 8 directions
-    - [ ] Create pixel art for moving while preparing throw 8 directions
+    - [x] Create pixel art for moving while preparing throw 8 directions
         - [x] Create leg movements
         - [x] Fixed and improved 8 direction aproximations from target vector
         - [x] Fix Leg movements
         - [x] Synchronize movement and animations
         - [x] Fix Camera to new aiming mechanic 
-        - [ ] Add motion details (Hair and tie)
-        - [ ] Add coded animation details (move up on certain frames if necesary)
-        - [ ] Fix leg shadows
-        - [ ] Finetune speed, animation and gameplay
+        - [x] Add motion details (Hair and tie)
+        - [x] Add coded animation details (move up on certain frames if necesary)
+        - [x] Fix leg shadows
+        - [x] Finetune speed, animation and gameplay
     - [ ] Create pixel art for throwing with 8 directions
         - [ ] Finetune speed, animation and gameplay
         - [ ] Implement rock spawning points
