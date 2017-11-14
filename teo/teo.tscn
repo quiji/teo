@@ -47,20 +47,24 @@ transform/pos = Vector2( 0, -14 )
 
 vector_color = Color( 0.822727, 0.0541992, 0.867188, 1 )
 mode = 1
+enabled = true
 
 [node name="debug_direction" parent="." instance=ExtResource( 4 )]
 
 vector_color = Color( 0.222832, 0.200912, 0.902344, 1 )
 mode = 0
+enabled = true
 
 [node name="debug_target" parent="." instance=ExtResource( 4 )]
 
 vector_color = Color( 0.253229, 0.828125, 0.0452881, 1 )
 mode = 0
+enabled = true
 
 [node name="debug_side_direction" parent="." instance=ExtResource( 4 )]
 
 vector_color = Color( 0.828125, 0.749225, 0.10675, 1 )
 mode = 0
+enabled = true
 
 

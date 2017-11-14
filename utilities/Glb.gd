@@ -59,9 +59,12 @@ func find_closest_direction(dir):
     var keys = Directions.keys()
     var i = 0
     var closest = null
-    while i < keys.size() and closest == null:
-        if Directions[keys[i]].dot(dir) > 0.75:
+    var closest_dot = -1
+    while i < keys.size():
+        var temp_dot = Directions[keys[i]].dot(dir)
+        if temp_dot > closest_dot:
             closest = Directions[keys[i]]
+            closest_dot = temp_dot
         i += 1
     return closest
 

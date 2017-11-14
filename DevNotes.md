@@ -73,6 +73,7 @@ List of assets, how they were made and credit where needed.
     - [x] Create pixel art for preparing throw 8 directions
     - [ ] Create pixel art for moving while preparing throw 8 directions
         - [x] Create leg movements
+        - [x] Fixed and improved 8 direction aproximations from target vector
         - [ ] Fix Leg movements
         - [ ] Synchronize movement and animations
         - [ ] Add motion details (Hair and tie)
