@@ -78,9 +78,10 @@ List of assets, how they were made and credit where needed.
         - [ ] Add motion details (Hair and tie)
         - [ ] Add coded animation details (move up on certain frames if necesary)
         - [ ] Fix leg shadows
+        - [ ] Finetune speed, animation and gameplay
     - [ ] Create pixel art for throwing with 8 directions
-    - [ ] Import assets and tweak to make them feel right
-    - [ ] Implement rock spawning points
+        - [ ] Finetune speed, animation and gameplay
+        - [ ] Implement rock spawning points
 
 
 - [ ] Make ghost follow character without moving
