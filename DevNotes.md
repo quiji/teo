@@ -89,6 +89,14 @@ List of assets, how they were made and credit where needed.
         - [x] Finetune speed, animation and gameplay
 
 - [ ] Create pixel art for throwing with 8 directions
+    - [x] Down Anim
+    - [ ] DownLeft Anim
+    - [ ] Left Anim
+    - [ ] UpLeft Anim
+    - [ ] Up Anim
+    - [ ] UpRight Anim
+    - [ ] Right Anim
+    - [ ] DownRight Anim
     - [ ] Finetune speed, animation and gameplay
     - [ ] Implement rock spawning points
 
