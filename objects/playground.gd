@@ -2,6 +2,9 @@ extends YSort
 
 var bullet_factory = load("res://objects/bullet_base.tscn")
 var shadow = load("res://objects/shadow.tscn")
+var target_factory = load("res://gui/target_arrow.tscn")
+
+var target_arrow = null
 
 func _ready():
 
@@ -16,6 +19,8 @@ func _ready():
 			sh.follow_owner(children[i])
 		i += 1
 
+	target_arrow = target_factory.instance()
+	add_child(target_arrow)
 
 func throw_bullet(pos, direction, strength, is_teo):
 	var bullet = bullet_factory.instance()
@@ -30,3 +35,6 @@ func throw_bullet(pos, direction, strength, is_teo):
 	sh.follow_owner(bullet, size)
 	bullet.throw(direction, strength, is_teo, size)
 	
+
+func start_polling_target(pos, direction): return target_arrow.poll_target(pos, direction)
+func stop_polling_target(): target_arrow.stop_polling()

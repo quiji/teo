@@ -94,6 +94,7 @@ tracks/7/keys = {
 
 visibility/opacity = 0.8
 transform/pos = Vector2( 0, 2.83554 )
+z/z = 3000
 script/script = ExtResource( 1 )
 
 [node name="animation_player" type="AnimationPlayer" parent="."]

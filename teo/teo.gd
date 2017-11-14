@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var direction = Vector2(0, 1)
+var target = Vector2()
 var side_dir = Vector2()
 var velocity = Vector2()
 
@@ -44,15 +45,16 @@ func process_input(i):
 
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
-		get_node("target_arrow").poll_target()
+		target = get_parent().start_polling_target(get_pos(), direction)
 		get_node("camera_crew").snipe_ahead()
 		charging = true
 		running = false
+
 		get_node("sprite_handler").play_action("IdleThrow", direction)
 
 	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
 		var strength = Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
-		get_node("target_arrow").stop_polling()
+		get_parent().stop_polling_target()
 		get_node("camera_crew").back_to_actor()
 		charging = false
 		aim_walk = false
@@ -63,7 +65,6 @@ func process_input(i):
 func get_direction(): return direction
 
 func change_direction(dir):
-	var is_diagonal = false
 	if not charging:
 		if dir != Glb.Directions.NoDirection:
 			direction = dir
@@ -74,45 +75,30 @@ func change_direction(dir):
 			get_node("sprite_handler").play_action("Idle", direction)
 	else:
 		if dir != Glb.Directions.NoDirection:
-			if Glb.is_diagonal(direction):
-				if Glb.is_diagonal(dir):
-					side_dir = dir
-					aim_walk = true
-					is_diagonal = true
-				else:
-					direction = side_dir
-					aim_walk = true
-					is_diagonal = false
-			else:
-				if not Glb.is_diagonal(dir):
-					side_dir = dir
-					aim_walk = true
-					is_diagonal = false
-				else:
-					direction = side_dir
-					aim_walk = true
-					is_diagonal = true
+			aim_walk = true
+			direction = dir
 			
-			if is_diagonal:
-				if direction == side_dir:
-					get_node("sprite_handler").play_action("FrontThrow", direction, true)
-				elif direction == -side_dir:
-					get_node("sprite_handler").play_action("FrontThrow", direction, false)
-				elif direction == Vector2(side_dir.y, -side_dir.x):
-					get_node("sprite_handler").play_action("SideThrow", direction, false)
-				else:
-					get_node("sprite_handler").play_action("SideThrow", direction, true)
+			var target_dir = (target - get_pos()).normalized()
+			var closest_dir = null
+
+			get_node("debug_target").set_direction(target_dir, Color(0, 0, 200))
+			closest_dir = Glb.find_closest_direction(target_dir)
+
+			if closest_dir != null: 
+				side_dir = closest_dir
+
+
+			if direction == side_dir:
+				get_node("sprite_handler").play_action("FrontThrow", side_dir, true)
+			elif direction == -side_dir:
+				get_node("sprite_handler").play_action("FrontThrow", side_dir, false)
+			elif direction == Vector2(side_dir.y, -side_dir.x):
+				get_node("sprite_handler").play_action("SideThrow", side_dir, false)
 			else:
-				if direction == side_dir:
-					get_node("sprite_handler").play_action("FrontThrow", direction)
-				elif direction == -side_dir:
-					get_node("sprite_handler").play_action("FrontThrow", direction, true)
-				elif direction == Vector2(side_dir.y, -side_dir.x):
-					get_node("sprite_handler").play_action("SideThrow", direction, true)
-				else:
-					get_node("sprite_handler").play_action("SideThrow", direction, false)
+				get_node("sprite_handler").play_action("SideThrow", side_dir, true)
 
 		else:
+			direction = side_dir
 			aim_walk = false
 			get_node("sprite_handler").play_action("IdleThrow", direction)
 
@@ -129,7 +115,7 @@ func _fixed_process(delta):
 		else:
 			velocity = velocity.linear_interpolate(top_velocity,  Glb.TeoStats.acceleration)
 	elif aim_walk:
-		velocity = velocity.linear_interpolate(side_dir * Glb.TeoStats.aimwalk_speed,  Glb.TeoStats.acceleration)
+		velocity = velocity.linear_interpolate(direction * Glb.TeoStats.aimwalk_speed,  Glb.TeoStats.acceleration)
 	else:
 		velocity = velocity.linear_interpolate(Vector2(),  Glb.TeoStats.acceleration)
 	
@@ -141,8 +127,8 @@ func _fixed_process(delta):
 	get_node("camera_crew").update_actor_pos(get_pos(), direction)
 
 	# Some debugging
-	get_node("direction").set_direction(direction, Color(200, 0, 0))
-	get_node("side_direction").set_direction(side_dir, Color(0, 200, 0))
+	get_node("debug_direction").set_direction(direction, Color(200, 0, 0))
+	get_node("debug_side_direction").set_direction(side_dir, Color(0, 200, 0))
 
 
 func hit(dir, strength):

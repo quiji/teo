@@ -53,9 +53,17 @@ func get_direction_name(dir):
     return name
 
 func is_diagonal(dir):
-    var diags = [Directions.UpLeft, Directions.UpRight, Directions.DownLeft, Directions.DownRight]
-    return diags.find(dir) >= 0
+    return dir.x != 0 and dir.y != 0
 
+func find_closest_direction(dir):
+    var keys = Directions.keys()
+    var i = 0
+    var closest = null
+    while i < keys.size() and closest == null:
+        if Directions[keys[i]].dot(dir) > 0.75:
+            closest = Directions[keys[i]]
+        i += 1
+    return closest
 
 enum ObjectTypes { Teo, Wall, Bullet, Pickable, Ghost }
 
