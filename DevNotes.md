@@ -87,6 +87,7 @@ List of assets, how they were made and credit where needed.
         - [x] Add coded animation details (move up on certain frames if necesary)
         - [x] Fix leg shadows
         - [x] Finetune speed, animation and gameplay
+
 - [ ] Create pixel art for throwing with 8 directions
     - [ ] Finetune speed, animation and gameplay
     - [ ] Implement rock spawning points
