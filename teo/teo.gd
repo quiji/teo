@@ -81,7 +81,7 @@ func change_direction(dir):
 			var target_dir = (target - get_pos()).normalized()
 			var closest_dir = null
 
-			get_node("debug_target").set_direction(target_dir, Color(0, 0, 200))
+			get_node("debug_target").set_direction(target_dir)
 			closest_dir = Glb.find_closest_direction(target_dir)
 
 			if closest_dir != null: 
@@ -127,8 +127,8 @@ func _fixed_process(delta):
 	get_node("camera_crew").update_actor_pos(get_pos(), direction)
 
 	# Some debugging
-	get_node("debug_direction").set_direction(direction, Color(200, 0, 0))
-	get_node("debug_side_direction").set_direction(side_dir, Color(0, 200, 0))
+	get_node("debug_direction").set_direction(direction)
+	get_node("debug_side_direction").set_direction(side_dir)
 
 
 func hit(dir, strength):
