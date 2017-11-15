@@ -8,9 +8,9 @@ func _ready():
 	if get_node("AnimationPlayer").has_animation("Down-Idle"):
 		get_node("AnimationPlayer").play("Down-Idle")
 		current_action = "Idle"
-	elif get_node("AnimationPlayer").has_animation("Regular"):
-		get_node("AnimationPlayer").play("Regular")
-		current_action = "Regular"
+
+
+
 
 func play_action(action, direction, backwards=false):
 	var d = Glb.get_direction_name(direction)
@@ -34,9 +34,9 @@ func play_action(action, direction, backwards=false):
 
 	return true
 
-func react(action): 
+func react(action, var1=null): 
     if get_parent().has_method("react"):
-        get_parent().react(action)
+        get_parent().react(action, var1)
 
 
 

@@ -64,4 +64,10 @@ vector_color = Color( 0.828125, 0.749225, 0.10675, 1 )
 mode = 0
 enabled = false
 
+[node name="debug_throw" parent="." instance=ExtResource( 3 )]
+
+vector_color = Color( 0.0742188, 0.0737431, 0.06987, 1 )
+mode = 2
+enabled = false
+
 

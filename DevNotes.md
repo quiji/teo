@@ -32,6 +32,34 @@
 
 Thats it. Ha!
 
+### Random ideas
+
+#### Tutorial
+
+- Tutorial is a floating island. Teo awakes  an that's it. After a while, stones will start to fall. There the player can pick them up and throw them. There will be an interesting floating object that (when hit) opens a path to the rest of the level. There you learn, you can move, throw stuff and open paths.
+
+#### Mechanics
+
+- Other important mechanics, warp stone and blocking. 
+- Other important mechanic, there are alarmclock seeds. They spawn an alarmclock plant. Everytime you die, the alarmclock plant will "wake teo up" on that spot, serving as a checkpoint. 
+- Teo has very little life count. The only way to make him whitstand more damage is by gathering "shield stones" and keeping them in the pack. You can have infinite shield stones.
+- Teo has a limited amount of items on the satchel.
+- The satchel has to compartmens: 1 for rocks and the other for support items, like the seeds. (This means, you can throw the shield stones as weapons if needed be, alsom you are limited in the amount of rocks you can carry, so must think properly which ones to carry and stuff).
+- Must think other ways to solve puzzles, so if player is out of rocks he can device a way to go through.
+
+#### Animations
+- Add air sparks to throwing around Teo (like a delayed loop effect).
+- Add air sparks to rocks to add strength to the movement (when launched with more power).
+
+#### Character Design
+- Enemies are black ghosts with interesting throwback elements like:
+    - A Metool helmet.
+    - A big Mario shell with a ghost inside.
+    - more references to come
+
+#### Music
+
+- First tutorial music should be a marimba magic misterious big adventure theme.
 
 ## Assets
 
@@ -90,19 +118,21 @@ List of assets, how they were made and credit where needed.
 
 - [ ] Create pixel art for throwing with 8 directions
     - [x] Down Anim
-    - [ ] DownLeft Anim
-    - [ ] Left Anim
-    - [ ] UpLeft Anim
-    - [ ] Up Anim
-    - [ ] UpRight Anim
-    - [ ] Right Anim
-    - [ ] DownRight Anim
-    - [ ] Finetune speed, animation and gameplay
-    - [ ] Implement rock spawning points
+    - [x] DownLeft Anim
+    - [x] Left Anim
+    - [x] UpLeft Anim
+    - [x] Up Anim
+    - [x] UpRight Anim
+    - [x] Right Anim
+    - [x] DownRight Anim
+    - [x] Finetune speed, animation and gameplay
+    - [x] Implement rock spawning points
 
 
 - [ ] Make ghost follow character without moving
 - [ ] Make ghost hurt when hit
+- [ ] Make transition from throwing to idle Teo's animations
+    - [ ] Add interesting details on that transition, like bag moving on Up direction.
 
 - [ ] Extend Aseprite importer to keep exporting files for easier updates.
 
