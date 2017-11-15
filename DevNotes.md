@@ -13,7 +13,7 @@
 - [Notes on Hyper Light Drifter](http://nightmargin.tumblr.com/post/102886823891/on-resolution)
 - [Git Branching](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
 - [Game Design Gif](https://twitter.com/WaywardMira/status/929025607480041473)
-
+- [56 PixelArt Tips](http://blog.studiominiboss.com/pixelart)
 
 ## Brainstorming
 
