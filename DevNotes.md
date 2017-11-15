@@ -131,23 +131,24 @@ List of assets, how they were made and credit where needed.
 
 - [ ] Create / Implement different rocks
 
+    - [ ] Warp Stone
+        - [ ] Create island system
+            - [ ] Create background parallax
+                - [ ] Create images ?
+            - [ ] Create island tiles
+                - [ ] Create boundaries
+                - [ ] Add obstacles
+        - [ ] Create and test mechanic
+        - [ ] Make sprites
+
     - [ ] Implement satchel system
         - [ ] Satchil Sprites
         - [ ] Satchel GUI nodes
         - [ ] 
-    - [ ] Warp Stone
-        - [ ] Create and test mechanic
-        - [ ] Make sprites
     - [ ] Shield Stone
     - [ ] Regular Stone
     - [ ] Bounce Stone
 
-- [ ] Create island system
-    - [ ] Create background parallax
-        - [ ] Create images ?
-    - [ ] Create island tiles
-        - [ ] Create boundaries
-        - [ ] Add obstacles
 
 - [ ] Aim Contorls
     - [ ] Test dual keyboard arrows
