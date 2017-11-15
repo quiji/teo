@@ -39,6 +39,8 @@ func throw(dir, strength, is_teo, size=1):
 	get_node("sprite_handler").get_sprite().set_pos(Vector2(0, -height))
 	bullet_time = Glb.get_bullet_time(strength)
 	get_node("sprite_handler").add_animation_speed(strength + 0.5)
+	var pos = get_pos()
+	set_pos(Vector2(pos.x, pos.y + height))
 	
 
 func get_object_type(): 

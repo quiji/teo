@@ -2,17 +2,26 @@ extends KinematicBody2D
 
 var direction = Vector2(0, 1)
 var target = Vector2()
-var side_dir = Vector2()
 var velocity = Vector2()
 
 var running = false
 var charging = false
 var aim_walk = false
 var aim_walk_sides = false
+var movement_blocked = false
 var react_wait_delta = 0
+
+var is_idle = true
 
 var bullets = 20
 
+var side_dir = Vector2()
+var target_dir = Vector2()
+
+var throw_meta = {
+	direction = Vector2(),
+	strength = 0
+}
 
 func _ready():
 	# Configure Keyboard
@@ -40,11 +49,13 @@ func process_input(i):
 		change_direction(Glb.Directions.Up)
 	elif i.Down == Controller.INPUT.Pressed: 
 		change_direction(Glb.Directions.Down)
-	elif Controller.group_or(i, Glb.MovementGroup, Controller.INPUT.Just_Released): 
+	#elif Controller.group_or(i, Glb.MovementGroup, Controller.INPUT.Just_Released): 
+	else:
 		change_direction(Glb.Directions.NoDirection)
 
 
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
+		is_idle = false
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
 		target = get_parent().start_polling_target(get_pos(), direction)
 		get_parent().camera_snipe_ahead(target)
@@ -54,18 +65,28 @@ func process_input(i):
 		get_node("sprite_handler").play_action("IdleThrow", direction)
 
 	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
-		var strength = Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
+		
 		get_parent().stop_polling_target()
 		get_parent().camera_back_to_actor()
 		charging = false
 		aim_walk = false
-		bullets -= 1
-		get_parent().throw_bullet(get_pos(), side_dir, strength, true)
+		is_idle = false
+		movement_blocked = true
+		get_node("sprite_handler").play_action("Throw", side_dir)
+		throw_meta.strength =  Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
+		throw_meta.direction = target_dir
+		
+
 	
 
 func get_direction(): return direction
 
+func finished_animation(action):
+	if action == "Throw" and is_idle:
+		get_node("sprite_handler").play_action("Idle", direction)
+
 func change_direction(dir):
+	is_idle = false
 	if not charging:
 		if dir != Glb.Directions.NoDirection:
 			direction = dir
@@ -74,20 +95,18 @@ func change_direction(dir):
 		else:
 			running = false
 			get_node("sprite_handler").play_action("Idle", direction)
+			is_idle = true
 	else:
+		target_dir = (target - get_pos()).normalized()
+		var closest_dir = Glb.find_closest_direction(target_dir)
+		get_node("debug_target").set_direction(target_dir)
+
+		if closest_dir != null: 
+			side_dir = closest_dir
+
 		if dir != Glb.Directions.NoDirection:
 			aim_walk = true
 			direction = dir
-			
-			var target_dir = (target - get_pos()).normalized()
-			var closest_dir = null
-
-			get_node("debug_target").set_direction(target_dir)
-			closest_dir = Glb.find_closest_direction(target_dir)
-
-			if closest_dir != null: 
-				side_dir = closest_dir
-
 
 			if direction == side_dir:
 				get_node("sprite_handler").play_action("FrontThrow", side_dir, false)
@@ -108,7 +127,7 @@ func change_direction(dir):
 			get_node("sprite_handler").play_action("IdleThrow", direction)
 
 func _fixed_process(delta):
-	if react_wait_delta <= 0:
+	if react_wait_delta <= 0 and not movement_blocked:
 		process_input(Controller.check())
 	else:
 		react_wait_delta -= delta
@@ -140,6 +159,7 @@ func hit(dir, strength):
 	aim_walk = false
 	running = false 
 	charging = false
+	movement_blocked = false
 	Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
 	get_parent().stop_polling_target()
 	get_parent().camera_back_to_actor()
@@ -157,6 +177,16 @@ func get_shadow_offset(): return Vector2(0, -5)
 func get_sprite_handler(): return get_node("sprite_handler")
 
 
-func react(action):
-	if action == "Step":
+func react(action, var1=null):
+	
+	if action == "Step" and running:
 		velocity = direction * Glb.TeoStats.speed / 2
+	elif action == "Step" and aim_walk_sides:
+		velocity = direction * Glb.TeoStats.aimwalk_speed / 2
+	elif action == "Throw":
+		bullets -= 1
+		var pos = get_node("sprite_handler").get_pos() + var1 + get_pos()
+		get_parent().throw_bullet(pos, throw_meta.direction, throw_meta.strength, true)
+		get_node("debug_throw").manifest(pos)
+		movement_blocked = false
+

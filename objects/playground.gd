@@ -4,6 +4,7 @@ var bullet_factory = load("res://objects/bullet_base.tscn")
 var shadow = load("res://objects/shadow.tscn")
 var target_factory = load("res://gui/target_arrow.tscn")
 
+
 var target_arrow = null
 
 func _ready():

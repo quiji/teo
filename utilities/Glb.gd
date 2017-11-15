@@ -74,7 +74,7 @@ enum ObjectTypes { Teo, Wall, Bullet, Pickable, Ghost }
 var TeoStats = {
     speed = 140,
     aimwalk_speed = 38,
-    aimwalk_speed_backwards = 12,
+    aimwalk_speed_backwards = 15,
     acceleration = 0.4,
     react_delay = 1
 }
