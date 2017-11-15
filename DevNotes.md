@@ -103,7 +103,7 @@ List of assets, how they were made and credit where needed.
 
 - [x] Aseprite importe: When a structural change is made to the aseprite file and the spritesheet is reimported to godot, old data lingers in sprite scene screwing the animations. Must find way to bypass autoupdate and create a fresh import.
 
-- [ ] Teo's throw and move animation
+- [x] Teo's throw and move animation
     - [x] Create pixel art for preparing throw 8 directions
     - [x] Create pixel art for moving while preparing throw 8 directions
         - [x] Create leg movements
@@ -116,7 +116,7 @@ List of assets, how they were made and credit where needed.
         - [x] Fix leg shadows
         - [x] Finetune speed, animation and gameplay
 
-- [ ] Create pixel art for throwing with 8 directions
+- [x] Create pixel art for throwing with 8 directions
     - [x] Down Anim
     - [x] DownLeft Anim
     - [x] Left Anim
@@ -129,16 +129,53 @@ List of assets, how they were made and credit where needed.
     - [x] Implement rock spawning points
 
 
-- [ ] Make ghost follow character without moving
-- [ ] Make ghost hurt when hit
-- [ ] Make transition from throwing to idle Teo's animations
-    - [ ] Add interesting details on that transition, like bag moving on Up direction.
+- [ ] Create / Implement different rocks
 
-- [ ] Extend Aseprite importer to keep exporting files for easier updates.
+    - [ ] Implement satchel system
+        - [ ] Satchil Sprites
+        - [ ] Satchel GUI nodes
+        - [ ] 
+    - [ ] Warp Stone
+        - [ ] Create and test mechanic
+        - [ ] Make sprites
+    - [ ] Shield Stone
+    - [ ] Regular Stone
+    - [ ] Bounce Stone
+
+- [ ] Create island system
+    - [ ] Create background parallax
+        - [ ] Create images ?
+    - [ ] Create island tiles
+        - [ ] Create boundaries
+        - [ ] Add obstacles
+
+- [ ] Aim Contorls
+    - [ ] Test dual keyboard arrows
+    - [ ] Test move / mouse combo
+    - [ ] Implement best aiming mechanic
+
+
 
 ### 16-22
+
+- [ ] Create Tutorial level
+    - [ ] Implement alarm clock system
+        - [ ] Create clock sprites
+        - [ ] Implement clock mechanic
+    - [ ] Add "Button blocks"
+        - [ ] Create button blocks
+    - [ ] Implement level flow
+
+
+- [ ] Create Enemies ?
+- [ ] Sounds ?
+- [ ] Boss ?
+
+
 ### 23-29
 
+- [ ] Make transition from throwing to idle Teo's animations
+    - [ ] Add interesting details on that transition, like bag moving on Up direction.
 
 
 ## Fonts
