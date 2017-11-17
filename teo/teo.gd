@@ -49,7 +49,6 @@ func process_input(i):
 		change_direction(Glb.Directions.Up)
 	elif i.Down == Controller.INPUT.Pressed: 
 		change_direction(Glb.Directions.Down)
-	#elif Controller.group_or(i, Glb.MovementGroup, Controller.INPUT.Just_Released): 
 	else:
 		change_direction(Glb.Directions.NoDirection)
 
@@ -57,12 +56,16 @@ func process_input(i):
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
 		is_idle = false
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
-		target = get_parent().start_polling_target(get_pos(), direction)
+		get_parent().start_polling_target(self)
 		get_parent().camera_snipe_ahead(target)
 		charging = true
 		running = false
 
 		get_node("sprite_handler").play_action("IdleThrow", direction)
+
+	if charging:
+		target = get_global_mouse_pos()
+	
 
 	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
 		
@@ -187,6 +190,5 @@ func react(action, var1=null):
 		bullets -= 1
 		var pos = get_node("sprite_handler").get_pos() + var1 + get_pos()
 		get_parent().throw_bullet(pos, throw_meta.direction, throw_meta.strength, true)
-		get_node("debug_throw").manifest(pos)
 		movement_blocked = false
 

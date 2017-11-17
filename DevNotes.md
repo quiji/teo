@@ -132,6 +132,12 @@ List of assets, how they were made and credit where needed.
 - [ ] Create / Implement different rocks
 
     - [ ] Warp Stone
+        - [ ] Aim Contorls
+            - [ ] Test dual keyboard arrows
+            - [ ] Test move / mouse combo
+            - [ ] Implement best aiming mechanic
+
+        - [ ] Implement stone types
         - [ ] Create island system
             - [ ] Create background parallax
                 - [ ] Create images ?
@@ -144,16 +150,8 @@ List of assets, how they were made and credit where needed.
     - [ ] Implement satchel system
         - [ ] Satchil Sprites
         - [ ] Satchel GUI nodes
-        - [ ] 
     - [ ] Shield Stone
     - [ ] Regular Stone
-    - [ ] Bounce Stone
-
-
-- [ ] Aim Contorls
-    - [ ] Test dual keyboard arrows
-    - [ ] Test move / mouse combo
-    - [ ] Implement best aiming mechanic
 
 
 

@@ -38,7 +38,7 @@ func throw_bullet(pos, direction, strength, is_teo):
 	bullet.throw(direction, strength, is_teo, size)
 	
 
-func start_polling_target(pos, direction): return target_arrow.poll_target(pos, direction)
+func start_polling_target(owner): return target_arrow.poll_target(owner)
 func stop_polling_target(): target_arrow.stop_polling()
 
 func camera_snipe_ahead(target): get_node("camera_crew").snipe_ahead(target)

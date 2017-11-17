@@ -9,25 +9,20 @@ extends Node
 
 
 var keyboard = {
-    Left = KEY_LEFT,
-    Right = KEY_RIGHT,
-    Up = KEY_UP,
-    Down = KEY_DOWN,
-    Throw = KEY_A,
 
-    SkipLeft = KEY_Q,
-    SkipRight = KEY_E,
-    Slide = KEY_W,
-    Grab = KEY_D,
-    Attack = KEY_S
+    Throw = KEY_SPACE,
+
+    Left = KEY_A,
+    Right = KEY_D,
+    Up = KEY_W,
+    Down = KEY_S
 }
 
 var keyboard_merged_buttons = {
     UpLeft = ["Up", "Left"],
     UpRight = ["Up", "Right"],
     DownLeft = ["Down", "Left"],
-    DownRight = ["Down", "Right"],
-    SkipLR = ["SkipLeft", "SkipRight"]
+    DownRight = ["Down", "Right"]
 }
 
 var MovementGroup = ["Up", "UpLeft", "Left", "DownLeft", "Down", "DownRight", "Right", "UpRight"]
