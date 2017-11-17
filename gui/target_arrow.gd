@@ -2,15 +2,26 @@ extends Node2D
 
 var direction = Vector2()
 
+var owner = null
 
 func _ready():
 	hide()
 
-func poll_target(pos, direction):
-	var target = pos + direction * 60
-	set_pos(target)
+func poll_target(own):
+	owner = own
+	position()
 	show()
-	return get_pos()
+	set_fixed_process(true)
 
 func stop_polling():
 	hide()
+	set_fixed_process(false)
+
+func position():
+	if owner != null:
+		var owners_pos = owner.get_pos()
+		var direction = (get_global_mouse_pos() - owners_pos).normalized()
+		set_pos(owners_pos + direction * 100)
+
+func _fixed_process(delta):
+	position()

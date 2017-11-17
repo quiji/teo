@@ -129,10 +129,19 @@ List of assets, how they were made and credit where needed.
     - [x] Implement rock spawning points
 
 
+### 16-22
+
 - [ ] Create / Implement different rocks
 
     - [ ] Warp Stone
-        - [ ] Create island system
+        - [x] Aim Contorls
+            - [x] Test dual keyboard arrows
+            - [x] Test move / mouse combo
+            - [x] Implement best aiming mechanic
+
+        - [x] Implement stone types
+        - [ ] **Define how switching between rock works**
+        - [ ] **Create island system**
             - [ ] Create background parallax
                 - [ ] Create images ?
             - [ ] Create island tiles
@@ -140,24 +149,16 @@ List of assets, how they were made and credit where needed.
                 - [ ] Add obstacles
         - [ ] Create and test mechanic
         - [ ] Make sprites
+            - [ ] Teleport sprites
+            - [ ] Rock sprites
 
-    - [ ] Implement satchel system
-        - [ ] Satchil Sprites
-        - [ ] Satchel GUI nodes
-        - [ ] 
-    - [ ] Shield Stone
-    - [ ] Regular Stone
-    - [ ] Bounce Stone
-
-
-- [ ] Aim Contorls
-    - [ ] Test dual keyboard arrows
-    - [ ] Test move / mouse combo
-    - [ ] Implement best aiming mechanic
+        - [ ] Implement satchel system
+            - [ ] Satchil Sprites
+            - [ ] Satchel GUI nodes
+        - [ ] Shield Stone
+        - [ ] Regular Stone
 
 
-
-### 16-22
 
 - [ ] Create Tutorial level
     - [ ] Implement alarm clock system

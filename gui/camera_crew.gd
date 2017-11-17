@@ -1,6 +1,12 @@
 extends Node2D
+
+const CAMERA_SPEED = 200
+const CAMERA_ACCEL = 0.8
 var actor = null
-var snipping = false
+
+
+var velocity = Vector2()
+var target_velocity = Vector2()
 
 func _ready():
     get_node("marker").hide()
@@ -9,18 +15,24 @@ func _ready():
 func set_actor(fella):
     actor = fella
     set_pos(actor.get_pos())
-    actor.connect("moved", self, "on_actor_moved")
 
-func snipe_ahead(target):
-    get_node("tween").interpolate_property(self, "transform/pos", target, get_pos(), 1, Tween.TRANS_CUBIC, Tween.EASE_OUT, 0.5)
-    get_node("tween").start()
-    get_node("camera").set_follow_smoothing(1)
-    snipping = true
 
-func back_to_actor():
-    get_node("camera").set_follow_smoothing(6)
-    snipping = false
+func change_actor(fella):
+    actor = fella
 
-func on_actor_moved(fella):
-    if not snipping:
-        set_pos(actor.get_pos())
+
+func _fixed_process(delta):
+
+    if actor != null:
+        var direction = actor.get_pos() - get_pos()
+        var length_squared = direction.length_squared()
+
+        if length_squared > 1:
+
+            if length_squared > 20:
+                target_velocity = direction.normalized() * CAMERA_SPEED
+            else:
+                target_velocity = Vector2()
+    
+            velocity = velocity.linear_interpolate(target_velocity, CAMERA_ACCEL)
+            set_pos(get_pos() + velocity * delta)

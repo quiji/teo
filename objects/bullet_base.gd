@@ -13,35 +13,42 @@ var speed = 0
 var strength_level = 0
 var is_bullet = true
 
+var rock_type = Glb.RockTypes.None
+var owner = null
+
 func _ready():
 	add_user_signal("moved")
-	add_user_signal("freed")
+	add_user_signal("reached_ground")
 	get_node("area").connect("body_enter", self, "on_body_enter")
 
-func throw(dir, strength, is_teo, size=1):
-	if not is_teo:
+func throw(throw_meta):
+	rock_type = throw_meta.rock_type
+	owner = throw_meta.owner
+	if rock_type == Glb.EnemyRegular:
 		set_layer_mask_bit(0, true)
 		set_layer_mask_bit(1, false)
 	else:
 		set_layer_mask_bit(0, false)
 		set_layer_mask_bit(1, true)
 	
+	var size = clamp(0.5 + (0.5 * throw_meta.strength), 0.5, 1)
 	height = max_height
-	gravity = -2 * height / pow(Glb.get_bullet_fall_time(strength), 2.0)
+	gravity = -2 * height / pow(Glb.get_bullet_fall_time(throw_meta.strength), 2.0)
 	set_fixed_process(true)
-	speed = Glb.get_bullet_speed(strength)
-	velocity = dir * Glb.get_bullet_speed(strength)
-	strength_level = strength 
+	speed = Glb.get_bullet_speed(throw_meta.strength)
+	velocity = throw_meta.direction * Glb.get_bullet_speed(throw_meta.strength)
+	strength_level = throw_meta.strength 
 
 	get_node("sprite_handler").scale_sprite(Vector2(size, size))
 
 
 	get_node("sprite_handler").get_sprite().set_pos(Vector2(0, -height))
-	bullet_time = Glb.get_bullet_time(strength)
-	get_node("sprite_handler").add_animation_speed(strength + 0.5)
+	bullet_time = Glb.get_bullet_time(throw_meta.strength)
+	get_node("sprite_handler").add_animation_speed(throw_meta.strength + 0.5)
 	var pos = get_pos()
 	set_pos(Vector2(pos.x, pos.y + height))
 	
+	return size
 
 func get_object_type(): 
 	if is_bullet:
@@ -82,8 +89,10 @@ func _fixed_process(delta):
 		set_layer_mask_bit(1, false)
 		get_node("area").set_enable_monitoring(true)
 		is_bullet = false
-		emit_signal("freed", self)
+		emit_signal("reached_ground", self)
 		get_node("sprite_handler").pause()
+		if rock_type == Glb.RockTypes.Warp:
+			owner.set_pos(get_pos())
 	elif is_colliding():
 		var collider = get_collider()
 		if collider.get_object_type() == Glb.ObjectTypes.Teo or collider.get_object_type() == Glb.ObjectTypes.Ghost:

@@ -24,22 +24,23 @@ func _ready():
 	add_child(target_arrow)
 	get_node("camera_crew").set_actor(get_node("teo"))
 
-func throw_bullet(pos, direction, strength, is_teo):
+func throw_bullet(throw_meta):
 	var bullet = bullet_factory.instance()
-	var size = clamp(0.5 + (0.5 * strength), 0.5, 1)
 
-	bullet.set_pos(pos)
+	bullet.set_pos(throw_meta.initial_pos)
 	add_child(bullet)
 	var sh = shadow.instance()
 	add_child(sh)
 
-	
+	var size = bullet.throw(throw_meta)
 	sh.follow_owner(bullet, size)
-	bullet.throw(direction, strength, is_teo, size)
+	
 	
 
-func start_polling_target(pos, direction): return target_arrow.poll_target(pos, direction)
-func stop_polling_target(): target_arrow.stop_polling()
+func start_polling_target(owner): 
+	get_node("camera_crew").change_actor(target_arrow)
+	return target_arrow.poll_target(owner)
 
-func camera_snipe_ahead(target): get_node("camera_crew").snipe_ahead(target)
-func camera_back_to_actor(): get_node("camera_crew").back_to_actor()
+func stop_polling_target(): 
+	target_arrow.stop_polling()
+	get_node("camera_crew").change_actor(get_node("teo"))

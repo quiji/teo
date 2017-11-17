@@ -26,9 +26,8 @@ func follow_owner(node, size=1):
 	generate_shadow(node.get_sprite_handler(), offset, size)
 
 	node.connect("moved", self, "on_owner_moved")
-	if node.has_user_signal("freed"):
-		Glb.tell_HUD(Glb.HUDActions.Log, "Shadow has signal freed")
-		node.connect("freed", self, "on_owner_freed")
+	if node.has_user_signal("reached_ground"):
+		node.connect("reached_ground", self, "on_owner_reached_ground")
 
 func on_owner_moved(owner):
 	var region = owner.get_sprite_handler().get_sprite().get_region_rect()
@@ -36,7 +35,6 @@ func on_owner_moved(owner):
 	
 	shadow.set_region_rect(region)
 
-func on_owner_freed(owner):
-	Glb.tell_HUD(Glb.HUDActions.Log, "Shadow discarded")
+func on_owner_reached_ground(owner):
 	hide()
 	queue_free()

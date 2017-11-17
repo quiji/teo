@@ -54,7 +54,10 @@ func process_state(delta):
 
 	if current_state == GhostStates.Throw:
 		Glb.tell_HUD(Glb.HUDActions.Log, "Throw")
-		get_parent().throw_bullet(get_pos(), target.normalized(), Glb.StandardGhostStats.throw_strength, false)
+
+		# Not there yet
+		#get_parent().throw_bullet(get_pos(), target.normalized(), Glb.StandardGhostStats.throw_strength, false)
+
 		current_state = GhostStates.PrepareNextThrow
 		return true
 	
