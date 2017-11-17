@@ -20,7 +20,10 @@ var target_dir = Vector2()
 
 var throw_meta = {
 	direction = Vector2(),
-	strength = 0
+	strength = 0,
+	initial_pos = Vector2(),
+	rock_type = Glb.RockTypes.None,
+	owner = self
 }
 
 func _ready():
@@ -28,6 +31,7 @@ func _ready():
 	Controller.add_buttons(Glb.keyboard)
 	Controller.merge_buttons(Glb.keyboard_merged_buttons)
 
+	# Moved is not used by anyone right now. Leaving here or future use... or future removal.
 	add_user_signal("moved")
 	set_fixed_process(true)
 
@@ -186,7 +190,8 @@ func react(action, var1=null):
 		velocity = direction * Glb.TeoStats.aimwalk_speed / 2
 	elif action == "Throw":
 		bullets -= 1
-		var pos = get_node("sprite_handler").get_pos() + var1 + get_pos()
-		get_parent().throw_bullet(pos, throw_meta.direction, throw_meta.strength, Glb.RockTypes.Warp)
+		throw_meta.initial_pos = get_node("sprite_handler").get_pos() + var1 + get_pos()
+		throw_meta.rock_type = Glb.RockTypes.Warp
+		get_parent().throw_bullet(throw_meta)
 		movement_blocked = false
 

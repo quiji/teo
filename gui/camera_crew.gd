@@ -1,9 +1,9 @@
 extends Node2D
 
 const CAMERA_SPEED = 200
-const CAMERA_ACCEL = 1
+const CAMERA_ACCEL = 0.8
 var actor = null
-var snipping = false
+
 
 var velocity = Vector2()
 var target_velocity = Vector2()
@@ -15,15 +15,10 @@ func _ready():
 func set_actor(fella):
     actor = fella
     set_pos(actor.get_pos())
-    actor.connect("moved", self, "on_actor_moved")
 
 
 func change_actor(fella):
     actor = fella
-
-func on_actor_moved(fella):
-    if not snipping:
-        set_pos(actor.get_pos())
 
 
 func _fixed_process(delta):

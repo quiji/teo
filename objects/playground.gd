@@ -24,15 +24,15 @@ func _ready():
 	add_child(target_arrow)
 	get_node("camera_crew").set_actor(get_node("teo"))
 
-func throw_bullet(pos, direction, strength, bullet_type):
+func throw_bullet(throw_meta):
 	var bullet = bullet_factory.instance()
 
-	bullet.set_pos(pos)
+	bullet.set_pos(throw_meta.initial_pos)
 	add_child(bullet)
 	var sh = shadow.instance()
 	add_child(sh)
 
-	var size = bullet.throw(direction, strength, bullet_type)
+	var size = bullet.throw(throw_meta)
 	sh.follow_owner(bullet, size)
 	
 	
