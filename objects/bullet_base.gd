@@ -15,17 +15,18 @@ var is_bullet = true
 
 func _ready():
 	add_user_signal("moved")
-	add_user_signal("freed")
+	add_user_signal("reached_ground")
 	get_node("area").connect("body_enter", self, "on_body_enter")
 
-func throw(dir, strength, is_teo, size=1):
-	if not is_teo:
+func throw(dir, strength, bullet_type):
+	if bullet_type == Glb.EnemyRegular:
 		set_layer_mask_bit(0, true)
 		set_layer_mask_bit(1, false)
 	else:
 		set_layer_mask_bit(0, false)
 		set_layer_mask_bit(1, true)
 	
+	var size = clamp(0.5 + (0.5 * strength), 0.5, 1)
 	height = max_height
 	gravity = -2 * height / pow(Glb.get_bullet_fall_time(strength), 2.0)
 	set_fixed_process(true)
@@ -42,6 +43,7 @@ func throw(dir, strength, is_teo, size=1):
 	var pos = get_pos()
 	set_pos(Vector2(pos.x, pos.y + height))
 	
+	return size
 
 func get_object_type(): 
 	if is_bullet:
@@ -82,7 +84,7 @@ func _fixed_process(delta):
 		set_layer_mask_bit(1, false)
 		get_node("area").set_enable_monitoring(true)
 		is_bullet = false
-		emit_signal("freed", self)
+		emit_signal("reached_ground", self)
 		get_node("sprite_handler").pause()
 	elif is_colliding():
 		var collider = get_collider()

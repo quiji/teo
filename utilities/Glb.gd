@@ -65,6 +65,7 @@ func find_closest_direction(dir):
 
 enum ObjectTypes { Teo, Wall, Bullet, Pickable, Ghost }
 
+enum RockTypes { Regular, Warp, Shield, EnemyRegular }
 
 var TeoStats = {
     speed = 140,

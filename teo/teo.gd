@@ -57,7 +57,6 @@ func process_input(i):
 		is_idle = false
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
 		get_parent().start_polling_target(self)
-		get_parent().camera_snipe_ahead(target)
 		charging = true
 		running = false
 
@@ -70,7 +69,6 @@ func process_input(i):
 	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
 		
 		get_parent().stop_polling_target()
-		get_parent().camera_back_to_actor()
 		charging = false
 		aim_walk = false
 		is_idle = false
@@ -189,6 +187,6 @@ func react(action, var1=null):
 	elif action == "Throw":
 		bullets -= 1
 		var pos = get_node("sprite_handler").get_pos() + var1 + get_pos()
-		get_parent().throw_bullet(pos, throw_meta.direction, throw_meta.strength, true)
+		get_parent().throw_bullet(pos, throw_meta.direction, throw_meta.strength, Glb.RockTypes.Warp)
 		movement_blocked = false
 
