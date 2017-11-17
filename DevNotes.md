@@ -140,8 +140,8 @@ List of assets, how they were made and credit where needed.
             - [x] Implement best aiming mechanic
 
         - [x] Implement stone types
-        - [ ] Define how switching between rock works
-        - [ ] Create island system
+        - [ ] **Define how switching between rock works**
+        - [ ] **Create island system**
             - [ ] Create background parallax
                 - [ ] Create images ?
             - [ ] Create island tiles
