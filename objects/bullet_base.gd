@@ -92,7 +92,8 @@ func _fixed_process(delta):
 		emit_signal("reached_ground", self)
 		get_node("sprite_handler").pause()
 		if rock_type == Glb.RockTypes.Warp:
-			owner.set_pos(get_pos())
+			owner.react("Teleport", get_pos())
+
 	elif is_colliding():
 		var collider = get_collider()
 		if collider.get_object_type() == Glb.ObjectTypes.Teo or collider.get_object_type() == Glb.ObjectTypes.Ghost:

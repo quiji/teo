@@ -142,10 +142,11 @@ List of assets, how they were made and credit where needed.
         - [x] Implement stone types
         - [ ] **Define how switching between rock works**
         - [ ] **Create island system**
-            - [ ] Create background parallax
-                - [ ] Create images ?
-            - [ ] Create island tiles
+            - [x] Create background parallax
+                - [x] Create images ?
+            - [x] Create island tiles
                 - [ ] Create boundaries
+                    - [ ] Current way of handling falling doens't work well, fix it or find a better one.
                 - [ ] Add obstacles
         - [ ] Create and test mechanic
         - [ ] Make sprites
@@ -168,6 +169,11 @@ List of assets, how they were made and credit where needed.
         - [ ] Create button blocks
     - [ ] Implement level flow
 
+- [ ] Pixeling
+    - [ ] Create background assets
+    - [ ] Create tilemap assets
+    - [ ] Create obstacle assets
+    - [ ] Create other assets, like sparks and dust, etc..
 
 - [ ] Create Enemies ?
 - [ ] Sounds ?

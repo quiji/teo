@@ -1,0 +1,88 @@
+{ "frames": {
+   "GroundTiles 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "GroundTiles 1.aseprite": {
+    "frame": { "x": 16, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "GroundTiles 2.aseprite": {
+    "frame": { "x": 32, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "GroundTiles 3.aseprite": {
+    "frame": { "x": 48, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "GroundTiles 4.aseprite": {
+    "frame": { "x": 64, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "GroundTiles 5.aseprite": {
+    "frame": { "x": 80, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "GroundTiles 6.aseprite": {
+    "frame": { "x": 96, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "GroundTiles 7.aseprite": {
+    "frame": { "x": 112, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.4",
+  "image": "/Users/mac2012/GDev/teo/assets_builders/Exports/GroundTiles.png",
+  "format": "RGBA8888",
+  "size": { "w": 128, "h": 16 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Dirt", "opacity": 255, "blendMode": "normal" },
+   { "name": "DarkShadow", "opacity": 255, "blendMode": "normal" },
+   { "name": "Stones", "opacity": 255, "blendMode": "normal" },
+   { "name": "Light", "opacity": 255, "blendMode": "normal" },
+   { "name": "GrassBack", "opacity": 255, "blendMode": "normal" },
+   { "name": "Background", "opacity": 255, "blendMode": "normal" },
+   { "name": "Leaves", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

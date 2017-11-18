@@ -12,6 +12,7 @@ var movement_blocked = false
 var react_wait_delta = 0
 
 var is_idle = true
+var cant_fall = false
 
 var bullets = 20
 
@@ -194,4 +195,13 @@ func react(action, var1=null):
 		throw_meta.rock_type = Glb.RockTypes.Warp
 		get_parent().throw_bullet(throw_meta)
 		movement_blocked = false
+	elif action == "Teleport":
+		cant_fall = true
+		set_pos(var1)
+		
 
+func out_of_island():
+	if not cant_fall:
+		Glb.tell_HUD(Glb.HUDActions.Log, "Dead!")
+	else:
+		cant_fall = false
