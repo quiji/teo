@@ -1,16 +1,14 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Prototype.gd" type="Script" id=1]
 [ext_resource path="res://assets/Tiles/cloud_back.tex" type="Texture" id=2]
 [ext_resource path="res://assets/Tiles/cloud00.tex" type="Texture" id=3]
-[ext_resource path="res://objects/islands/island_00.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/playground.gd" type="Script" id=5]
-[ext_resource path="res://teo/teo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/walls/column.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/walls/horizontal_wall.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/walls/vertical_wall.tscn" type="PackedScene" id=9]
-[ext_resource path="res://gui/camera_crew.tscn" type="PackedScene" id=10]
-[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/islands_handler.gd" type="Script" id=4]
+[ext_resource path="res://objects/islands/island_00.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/playground.gd" type="Script" id=6]
+[ext_resource path="res://teo/teo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://gui/camera_crew.tscn" type="PackedScene" id=8]
+[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=9]
 
 [node name="Prototype" type="Node2D"]
 
@@ -68,109 +66,33 @@ margin/bottom = 190.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
+[node name="fallers" type="Node2D" parent="."]
+
 [node name="islands" type="Node2D" parent="."]
 
-[node name="island_00" parent="islands" instance=ExtResource( 4 )]
+script/script = ExtResource( 4 )
 
-transform/pos = Vector2( 901, 249 )
+[node name="island_00" parent="islands" instance=ExtResource( 5 )]
 
-[node name="island_1" parent="islands" instance=ExtResource( 4 )]
+transform/pos = Vector2( 232, 172 )
 
-transform/pos = Vector2( 1167, 322 )
+[node name="island_1" parent="islands" instance=ExtResource( 5 )]
 
-[node name="YSort" type="YSort" parent="."]
+transform/pos = Vector2( 506, 276 )
+
+[node name="playground" type="YSort" parent="."]
 
 sort/enabled = true
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
-[node name="teo" parent="YSort" instance=ExtResource( 6 )]
+[node name="teo" parent="playground" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 864, 262 )
+transform/pos = Vector2( 319, 174 )
 
-[node name="column" parent="YSort" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( -130.872, 152.428 )
-
-[node name="column1" parent="YSort" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 399, 376 )
-
-[node name="column3" parent="YSort" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 399, 52 )
-
-[node name="column2" parent="YSort" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 1171, 360 )
-
-[node name="column4" parent="YSort" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 153, 198 )
-
-[node name="column6" parent="YSort" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 815, 157 )
-
-[node name="column5" parent="YSort" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 815, 52 )
-
-[node name="horizontal_wall" parent="YSort" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( -101.619, 247.888 )
-
-[node name="horizontal_wall1" parent="YSort" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 137, 131 )
-
-[node name="horizontal_wall4 3" parent="YSort" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 479, 52 )
-
-[node name="horizontal_wall2" parent="YSort" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 221, 318 )
-
-[node name="horizontal_wall4 2" parent="YSort" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 607, 52 )
-
-[node name="horizontal_wall3" parent="YSort" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 76, 380 )
-
-[node name="horizontal_wall4" parent="YSort" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 735, 52 )
-
-[node name="vertical_wall" parent="YSort" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( -53, 75 )
-
-[node name="vertical_wall1" parent="YSort" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 399, 279 )
-
-[node name="vertical_wall4" parent="YSort" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 44, 209 )
-
-[node name="vertical_wall5" parent="YSort" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 815, 84 )
-
-[node name="vertical_wall2" parent="YSort" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 399, 181 )
-
-[node name="vertical_wall3" parent="YSort" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 399, 83 )
-
-[node name="camera_crew" parent="YSort" instance=ExtResource( 10 )]
+[node name="camera_crew" parent="playground" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 987, 251 )
 
-[node name="HUD" parent="." instance=ExtResource( 11 )]
+[node name="HUD" parent="." instance=ExtResource( 9 )]
 
 

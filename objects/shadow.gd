@@ -30,10 +30,15 @@ func follow_owner(node, size=1):
 		node.connect("reached_ground", self, "on_owner_reached_ground")
 
 func on_owner_moved(owner):
-	var region = owner.get_sprite_handler().get_sprite().get_region_rect()
-	set_pos(owner.get_pos() - Vector2(0, 1))
-	
-	shadow.set_region_rect(region)
+	if owner.has_method("is_over_island") and owner.is_over_island():
+		var region = owner.get_sprite_handler().get_sprite().get_region_rect()
+		set_pos(owner.get_pos() - Vector2(0, 1))
+		
+		shadow.set_region_rect(region)
+		if is_hidden():
+			show()
+	else:
+		hide()
 
 func on_owner_reached_ground(owner):
 	hide()

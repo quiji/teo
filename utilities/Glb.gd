@@ -92,7 +92,8 @@ var StandardGhostStats = {
 }
 
 var BulletStats = {
-    min_speed = 300,
+    #min_speed = 300,
+    min_speed = 100,
     max_speed = 500,
     min_falltime = 4,
     max_falltime = 7,

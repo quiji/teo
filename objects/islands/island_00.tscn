@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://objects/island_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/walls/column.tscn" type="PackedScene" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -55,6 +56,7 @@ tile_data = IntArray( -262140, 2, -262139, 2, -262138, 2, -131075, 2, -131074, 2
 
 [node name="walkable_area" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -94,5 +96,9 @@ build_mode = 0
 polygon = Vector2Array( 65, -62, 112, -63, 113, -47, 143, -47, 144, 55, 129, 56, 128, 70, 97, 71, 96, 88, 66, 88, 63, 72, 50, 72, 47, 87, 34, 87, 32, 103, -47, 105, -48, 88, -78, 88, -79, 57, -96, 55, -96, -15, -80, -16, -79, -31, -48, -32, -47, -46, 64, -47 )
 shape_range = Vector2( 0, 8 )
 trigger = false
+
+[node name="column" parent="objects" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -19, 18 )
 
 

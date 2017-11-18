@@ -13,13 +13,20 @@ var speed = 0
 var strength_level = 0
 var is_bullet = true
 
+var outside_island = false
+var reached_ground_emitted = false
 var rock_type = Glb.RockTypes.None
 var owner = null
 
+var i_am_initialized = false
+
 func _ready():
-	add_user_signal("moved")
-	add_user_signal("reached_ground")
-	get_node("area").connect("body_enter", self, "on_body_enter")
+	if not i_am_initialized:
+		i_am_initialized = true
+		add_user_signal("moved")
+		add_user_signal("reached_ground")
+		get_node("area").connect("body_enter", self, "on_body_enter")
+		get_node("tween").connect("tween_complete", self, "on_tween_complete")
 
 func throw(throw_meta):
 	rock_type = throw_meta.rock_type
@@ -59,19 +66,25 @@ func get_object_type():
 func is_shadow_enabled(): return true
 func get_shadow_offset(): return Vector2(1, 1)
 func get_sprite_handler(): return get_node("sprite_handler")
+func exit_island(): outside_island = true
+func enter_island(): outside_island = false
+func is_over_island(): return not outside_island
+
 
 func on_body_enter(body):
 	if body.get_object_type() == Glb.ObjectTypes.Teo:
 		body.pick(Glb.ObjectTypes.Bullet)
 		queue_free()
 	
+func on_tween_complete(object, key):
+	if object == self and key == "transform/scale":
+		queue_free()
 
 func _fixed_process(delta):
 
 
 	get_node("sprite_handler").get_sprite().set_pos(Vector2(0, -height))
-	#var scale = height / max_height
-	#get_node("shadow").set_scale(Vector2(scale, scale))
+	get_node("collision").set_pos(Vector2(0, -height))
 
 	if bullet_time <= 0:
 		fall_velocity += gravity 
@@ -82,14 +95,23 @@ func _fixed_process(delta):
 	move(velocity * delta)
 	if get_travel().length_squared() > 0: emit_signal("moved", self)
 
-	if height <= 0:
+	if height <= 0 and outside_island: 
+		fall_velocity = fall_velocity / 2
+		velocity = velocity /1.05
+		if not reached_ground_emitted:
+			reached_ground_emitted = true
+			emit_signal("reached_ground", self)
+			get_parent().move_to_fallers(self)
+	elif height <= 0:
 		set_fixed_process(false)
 		velocity = Vector2()
 		set_layer_mask_bit(0, false)
 		set_layer_mask_bit(1, false)
 		get_node("area").set_enable_monitoring(true)
 		is_bullet = false
-		emit_signal("reached_ground", self)
+		if not reached_ground_emitted:
+			reached_ground_emitted = true
+			emit_signal("reached_ground", self)
 		get_node("sprite_handler").pause()
 		if rock_type == Glb.RockTypes.Warp:
 			owner.react("Teleport", get_pos())
@@ -102,3 +124,12 @@ func _fixed_process(delta):
 		get_node("sprite_handler").play_backwards_from_spot()
 
 
+func free_fall():
+	set_layer_mask_bit(0, false)
+	set_collision_mask_bit(0, false)
+	set_layer_mask_bit(1, false)
+	set_collision_mask_bit(1, false)
+
+	is_bullet = false
+	get_node("tween").interpolate_property(self, "transform/scale", Vector2(1, 1), Vector2(0.2, 0.2), 1, Tween.TRANS_CUBIC, Tween.EASE_IN)
+	get_node("tween").start()

@@ -44,3 +44,13 @@ func start_polling_target(owner):
 func stop_polling_target(): 
 	target_arrow.stop_polling()
 	get_node("camera_crew").change_actor(get_node("teo"))
+
+func add_objects(objects):
+	var i = 0
+	while i < objects.size():
+		add_child(objects[i])
+		i += 1
+
+func move_to_fallers(obj):
+	remove_child(obj)
+	get_parent().place_object_on_fallers(obj)

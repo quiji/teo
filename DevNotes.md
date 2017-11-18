@@ -141,14 +141,19 @@ List of assets, how they were made and credit where needed.
 
         - [x] Implement stone types
         - [ ] **Define how switching between rock works**
-        - [ ] **Create island system**
+        - [x] Create island system
             - [x] Create background parallax
                 - [x] Create images ?
             - [x] Create island tiles
-                - [ ] Create boundaries
-                    - [ ] Current way of handling falling doens't work well, fix it or find a better one.
-                - [ ] Add obstacles
-        - [ ] Create and test mechanic
+                - [x] Create boundaries
+                    - [x] Current way of handling falling doens't work well, fix it or find a better one.
+                - [x] Add obstacles functionality
+        - [ ] Make stone collide with islands when free falling
+        - [ ] Fix Stone free falling (some directions feels like is moving up rather than falling)
+        - [ ] Create a variaty of islands and test warp mechanic
+        - [ ] Create floating columns and bridge features
+
+
         - [ ] Make sprites
             - [ ] Teleport sprites
             - [ ] Rock sprites

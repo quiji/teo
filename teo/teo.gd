@@ -19,6 +19,8 @@ var bullets = 20
 var side_dir = Vector2()
 var target_dir = Vector2()
 
+var outside_island = false
+
 var throw_meta = {
 	direction = Vector2(),
 	strength = 0,
@@ -200,8 +202,9 @@ func react(action, var1=null):
 		set_pos(var1)
 		
 
-func out_of_island():
+func exit_island():
 	if not cant_fall:
 		Glb.tell_HUD(Glb.HUDActions.Log, "Dead!")
+		outside_island = true
 	else:
 		cant_fall = false
