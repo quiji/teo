@@ -150,9 +150,12 @@ List of assets, how they were made and credit where needed.
                 - [x] Add obstacles functionality
         - [ ] Make stone collide with islands when free falling
         - [ ] Fix Stone free falling (some directions feels like is moving up rather than falling)
+        - [ ] Improve camera handling when throwing and warping
         - [ ] Create a variaty of islands and test warp mechanic
         - [ ] Create floating columns and bridge features
-
+        
+        - [ ] Implement Teo falling and respawn
+            - [ ] Implement restart effect
 
         - [ ] Make sprites
             - [ ] Teleport sprites
