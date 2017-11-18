@@ -8,6 +8,7 @@ var fall_velocity = 0
 var bullet_time = 0
 
 var velocity = Vector2()
+var top_velocity = null
 
 var speed = 0
 var strength_level = 0
@@ -27,6 +28,8 @@ func _ready():
 		add_user_signal("reached_ground")
 		get_node("area").connect("body_enter", self, "on_body_enter")
 		get_node("tween").connect("tween_complete", self, "on_tween_complete")
+	else:
+		get_node("sprite_handler").restore_animation_spot(0.01)
 
 func throw(throw_meta):
 	rock_type = throw_meta.rock_type
@@ -82,7 +85,6 @@ func on_tween_complete(object, key):
 
 func _fixed_process(delta):
 
-
 	get_node("sprite_handler").get_sprite().set_pos(Vector2(0, -height))
 	get_node("collision").set_pos(Vector2(0, -height))
 
@@ -92,15 +94,18 @@ func _fixed_process(delta):
 	else:
 		bullet_time -= delta
 
+	if top_velocity != null:
+		velocity = velocity.linear_interpolate(top_velocity, 0.08)
 	move(velocity * delta)
 	if get_travel().length_squared() > 0: emit_signal("moved", self)
 
 	if height <= 0 and outside_island: 
 		fall_velocity = fall_velocity / 2
-		velocity = velocity /1.05
 		if not reached_ground_emitted:
+			top_velocity = velocity.normalized() * speed / 2.5 + Vector2(0, 1) * speed * 1.2
 			reached_ground_emitted = true
 			emit_signal("reached_ground", self)
+			get_node("sprite_handler").store_animation_spot()
 			get_parent().move_to_fallers(self)
 	elif height <= 0:
 		set_fixed_process(false)

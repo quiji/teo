@@ -131,43 +131,48 @@ List of assets, how they were made and credit where needed.
 
 ### 16-22
 
-- [ ] Create / Implement different rocks
-
-    - [ ] Warp Stone
-        - [x] Aim Contorls
-            - [x] Test dual keyboard arrows
-            - [x] Test move / mouse combo
-            - [x] Implement best aiming mechanic
-
-        - [x] Implement stone types
-        - [ ] **Define how switching between rock works**
-        - [x] Create island system
-            - [x] Create background parallax
-                - [x] Create images ?
-            - [x] Create island tiles
-                - [x] Create boundaries
-                    - [x] Current way of handling falling doens't work well, fix it or find a better one.
-                - [x] Add obstacles functionality
-        - [ ] Make stone collide with islands when free falling
-        - [ ] Fix Stone free falling (some directions feels like is moving up rather than falling)
-        - [ ] Improve camera handling when throwing and warping
-        - [ ] Create a variaty of islands and test warp mechanic
-        - [ ] Create floating columns and bridge features
-        
-        - [ ] Implement Teo falling and respawn
-            - [ ] Implement restart effect
-
-        - [ ] Make sprites
-            - [ ] Teleport sprites
-            - [ ] Rock sprites
-
-        - [ ] Implement satchel system
-            - [ ] Satchil Sprites
-            - [ ] Satchel GUI nodes
-        - [ ] Shield Stone
-        - [ ] Regular Stone
 
 
+- [x] Warp Stone
+    - [x] Aim Contorls
+        - [x] Test dual keyboard arrows
+        - [x] Test move / mouse combo
+        - [x] Implement best aiming mechanic
+    - [x] Implement stone types
+    
+- [x] Create island system
+    - [x] Create background parallax
+        - [x] Create images 
+    - [x] Create island tiles
+        - [x] Create boundaries
+            - [x] Current way of handling falling doens't work well, fix it or find a better one.
+        - [x] Add obstacles functionality
+
+    - [ ] **Bug:** When rocks is spawn outside of island `outside` flag doesn't work.
+    - [ ] **Bug:** When rock's parent node is changed, animation is restarted breaking the flow of the rocks fall.
+    - [x] **Bug:** Fix Stone free falling (some directions feels like is moving up rather than falling)
+    - [ ] Make stone collide with islands when free falling
+    - [ ] Improve camera handling when throwing and warping
+    - [ ] Create a variaty of islands and test warp mechanic
+    - [ ] Create floating columns and bridge features
+    
+    - [ ] Implement Teo falling and respawn
+        - [ ] Implement restart effect
+
+    - [ ] Make sprites
+        - [ ] Teleport sprites
+
+
+
+- [ ] **Define how switching between rock works**
+    - [ ] Implement satchel system
+        - [ ] Satchil Sprites
+        - [ ] Satchel GUI nodes
+
+- [ ] Shield Stone
+    - [ ] Rock sprites
+- [ ] Regular Stone
+    - [ ] Rock sprites
 
 - [ ] Create Tutorial level
     - [ ] Implement alarm clock system
