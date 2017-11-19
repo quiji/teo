@@ -131,34 +131,56 @@ List of assets, how they were made and credit where needed.
 
 ### 16-22
 
-- [ ] Create / Implement different rocks
-
-    - [ ] Warp Stone
-        - [x] Aim Contorls
-            - [x] Test dual keyboard arrows
-            - [x] Test move / mouse combo
-            - [x] Implement best aiming mechanic
-
-        - [x] Implement stone types
-        - [ ] **Define how switching between rock works**
-        - [ ] **Create island system**
-            - [ ] Create background parallax
-                - [ ] Create images ?
-            - [ ] Create island tiles
-                - [ ] Create boundaries
-                - [ ] Add obstacles
-        - [ ] Create and test mechanic
-        - [ ] Make sprites
-            - [ ] Teleport sprites
-            - [ ] Rock sprites
-
-        - [ ] Implement satchel system
-            - [ ] Satchil Sprites
-            - [ ] Satchel GUI nodes
-        - [ ] Shield Stone
-        - [ ] Regular Stone
 
 
+- [x] Warp Stone
+    - [x] Aim Contorls
+        - [x] Test dual keyboard arrows
+        - [x] Test move / mouse combo
+        - [x] Implement best aiming mechanic
+    - [x] Implement stone types
+    
+- [x] Create island system
+    - [x] Create background parallax
+        - [x] Create images 
+    - [x] Create island tiles
+        - [x] Create boundaries
+            - [x] Current way of handling falling doens't work well, fix it or find a better one.
+        - [x] Add obstacles functionality
+
+    - [x] **Bug:** When rocks is spawn outside of island `outside` flag doesn't work.
+    - [x] **Bug:** When rock's parent node is changed, animation is restarted breaking the flow of the rocks fall.
+    - [x] **Bug:** Fix Stone free falling (some directions feels like is moving up rather than falling)
+    - [x] Change ground logic to ray casts. (Raycast don't work when completely inside of collision shape)
+    - [ ] Make stone collide with islands when free falling
+    - [ ] Improve camera handling when throwing and warping
+    - [ ] Test warp mechanic
+    - [ ] Implement falling mechanic
+    - [ ] Create floating columns and bridge features
+    
+    - [ ] Implement Teo falling and respawn
+        - [ ] Implement restart effect
+
+    - [ ] Make sprites
+        - [ ] Teleport sprites
+        - [x] Grass Tiles
+            - [x] Create animated grass tiles functionality
+            - [x] **Animate grass**
+            - [x] Remove 2 layers of grass and transform to 1
+                - [x] Change all front grass tiles to be a 1 pixel line
+        - [x] Dirt Tiles
+
+
+
+- [ ] **Define how switching between rock works**
+    - [ ] Implement satchel system
+        - [ ] Satchil Sprites
+        - [ ] Satchel GUI nodes
+
+- [ ] Shield Stone
+    - [ ] Rock sprites
+- [ ] Regular Stone
+    - [ ] Rock sprites
 
 - [ ] Create Tutorial level
     - [ ] Implement alarm clock system
@@ -168,6 +190,17 @@ List of assets, how they were made and credit where needed.
         - [ ] Create button blocks
     - [ ] Implement level flow
 
+- [ ] Pixeling
+    - [ ] Create background assets
+        - [ ] First parallax level
+        - [ ] Big clouds
+        - [ ] Smaller clouds
+        - [ ] Floating stuff
+    - [ ] Create tilemap assets
+        - [x] Dirt
+        - [x] Grass
+    - [ ] Create obstacle assets
+    - [ ] Create other assets, like sparks and dust, etc..
 
 - [ ] Create Enemies ?
 - [ ] Sounds ?

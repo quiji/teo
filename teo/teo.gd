@@ -12,11 +12,14 @@ var movement_blocked = false
 var react_wait_delta = 0
 
 var is_idle = true
+var cant_fall = false
 
 var bullets = 20
 
 var side_dir = Vector2()
 var target_dir = Vector2()
+
+var outside_island = false
 
 var throw_meta = {
 	direction = Vector2(),
@@ -180,7 +183,7 @@ func get_object_type(): return Glb.ObjectTypes.Teo
 func is_shadow_enabled(): return true
 func get_shadow_offset(): return Vector2(0, -5)
 func get_sprite_handler(): return get_node("sprite_handler")
-
+func is_over_island(): return not outside_island
 
 func react(action, var1=null):
 	
@@ -194,4 +197,15 @@ func react(action, var1=null):
 		throw_meta.rock_type = Glb.RockTypes.Warp
 		get_parent().throw_bullet(throw_meta)
 		movement_blocked = false
+	elif action == "Teleport":
+		cant_fall = true
+		set_pos(var1)
+		emit_signal("moved", self)
+		
 
+func exit_island():
+	if not cant_fall:
+		Glb.tell_HUD(Glb.HUDActions.Log, "Dead!")
+		outside_island = true
+	else:
+		cant_fall = false

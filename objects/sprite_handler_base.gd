@@ -3,6 +3,7 @@ extends Node2D
 var current_action = ""
 var prev_anim = ""
 var prev_frame = 0.0
+var stored_frame = 0
 
 func _ready():
 	if get_node("AnimationPlayer").has_animation("Down-Idle"):
@@ -10,7 +11,11 @@ func _ready():
 		current_action = "Idle"
 
 
+func store_animation_spot():
+	stored_frame = get_node("AnimationPlayer").get_current_animation_pos()
 
+func restore_animation_spot(offset=0):
+	get_node("AnimationPlayer").seek(stored_frame + offset, true)
 
 func play_action(action, direction, backwards=false):
 	var d = Glb.get_direction_name(direction)

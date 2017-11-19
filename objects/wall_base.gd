@@ -4,11 +4,11 @@ extends StaticBody2D
 func get_object_type(): return Glb.ObjectTypes.Wall
 
 
-func _ready():
+#func _ready():
 
-    if has_node("object_behind_area"):
-        get_node("object_behind_area").connect("body_enter", self, "on_body_behind_wall")
-        get_node("object_behind_area").connect("body_exit", self, "on_body_exit_wall")
+    #if has_node("object_behind_area"):
+        #get_node("object_behind_area").connect("body_enter", self, "on_body_behind_wall")
+        #get_node("object_behind_area").connect("body_exit", self, "on_body_exit_wall")
         
 
 func on_body_behind_wall(body):
