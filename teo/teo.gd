@@ -183,7 +183,7 @@ func get_object_type(): return Glb.ObjectTypes.Teo
 func is_shadow_enabled(): return true
 func get_shadow_offset(): return Vector2(0, -5)
 func get_sprite_handler(): return get_node("sprite_handler")
-
+func is_over_island(): return not outside_island
 
 func react(action, var1=null):
 	
@@ -200,6 +200,7 @@ func react(action, var1=null):
 	elif action == "Teleport":
 		cant_fall = true
 		set_pos(var1)
+		emit_signal("moved", self)
 		
 
 func exit_island():

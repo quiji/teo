@@ -28,6 +28,7 @@ func follow_owner(node, size=1):
 	node.connect("moved", self, "on_owner_moved")
 	if node.has_user_signal("reached_ground"):
 		node.connect("reached_ground", self, "on_owner_reached_ground")
+	on_owner_moved(node)
 
 func on_owner_moved(owner):
 	if owner.has_method("is_over_island") and owner.is_over_island():

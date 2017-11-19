@@ -16,8 +16,7 @@ func _ready():
 		i += 1
 	get_parent().move_objects(children)
 
-	process_grass_animations("grass_back_layer_tilemap")
-	process_grass_animations("grass_top_layer_tilemap")
+	process_grass_animations("grass")
 
 
 func on_body_exit(fella):

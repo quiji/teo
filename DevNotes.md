@@ -154,7 +154,8 @@ List of assets, how they were made and credit where needed.
     - [x] Change ground logic to ray casts. (Raycast don't work when completely inside of collision shape)
     - [ ] Make stone collide with islands when free falling
     - [ ] Improve camera handling when throwing and warping
-    - [ ] Create a variaty of islands and test warp mechanic
+    - [ ] Test warp mechanic
+    - [ ] Implement falling mechanic
     - [ ] Create floating columns and bridge features
     
     - [ ] Implement Teo falling and respawn
@@ -162,12 +163,11 @@ List of assets, how they were made and credit where needed.
 
     - [ ] Make sprites
         - [ ] Teleport sprites
-        - [ ] Grass Tiles
+        - [x] Grass Tiles
             - [x] Create animated grass tiles functionality
-            - [ ] **Animate grass**
-            - [ ] **Create diagonal grass tiles**
-            - [ ] **Remove 2 layers of grass and transform to 1**
-                - [ ] Change all front grass tiles to be a 1 pixel line
+            - [x] **Animate grass**
+            - [x] Remove 2 layers of grass and transform to 1
+                - [x] Change all front grass tiles to be a 1 pixel line
         - [x] Dirt Tiles
 
 
@@ -192,7 +192,13 @@ List of assets, how they were made and credit where needed.
 
 - [ ] Pixeling
     - [ ] Create background assets
+        - [ ] First parallax level
+        - [ ] Big clouds
+        - [ ] Smaller clouds
+        - [ ] Floating stuff
     - [ ] Create tilemap assets
+        - [x] Dirt
+        - [x] Grass
     - [ ] Create obstacle assets
     - [ ] Create other assets, like sparks and dust, etc..
 
