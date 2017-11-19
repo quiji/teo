@@ -1,62 +1,158 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://assets/Tiles/GroundTiles.tex" type="Texture" id=1]
+[ext_resource path="res://assets/tiles/GroundTiles.tex" type="Texture" id=1]
 
 [node name="ground_tiles" type="Node"]
 
-[node name="dirt" type="Sprite" parent="."]
+[node name="center_dirt_0" type="Sprite" parent="."]
 
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+vframes = 2
+hframes = 16
 
-[node name="dirt_grass" type="Sprite" parent="."]
+[node name="center_dirt_2" type="Sprite" parent="."]
 
+transform/pos = Vector2( 19, 0 )
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+vframes = 2
+hframes = 16
 frame = 1
 
-[node name="grass" type="Sprite" parent="."]
+[node name="center_dirt_3" type="Sprite" parent="."]
 
+transform/pos = Vector2( 38, 0 )
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+vframes = 2
+hframes = 16
 frame = 2
 
-[node name="grass1" type="Sprite" parent="."]
+[node name="center_dirt_4" type="Sprite" parent="."]
 
+transform/pos = Vector2( 57, 0 )
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+vframes = 2
+hframes = 16
 frame = 3
 
-[node name="grass2" type="Sprite" parent="."]
+[node name="cave_up_0" type="Sprite" parent="."]
 
+transform/pos = Vector2( 0, 19 )
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+vframes = 2
+hframes = 16
 frame = 4
 
-[node name="grass3" type="Sprite" parent="."]
+[node name="cave_down_0" type="Sprite" parent="."]
 
+transform/pos = Vector2( 19, 19 )
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+vframes = 2
+hframes = 16
 frame = 5
 
-[node name="grass4" type="Sprite" parent="."]
+[node name="cave_left_0" type="Sprite" parent="."]
 
+transform/pos = Vector2( 38, 19 )
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+vframes = 2
+hframes = 16
 frame = 6
 
-[node name="grass5" type="Sprite" parent="."]
+[node name="cave_right_0" type="Sprite" parent="."]
 
+transform/pos = Vector2( 57, 19 )
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+vframes = 2
+hframes = 16
 frame = 7
+
+[node name="left_dirt_0" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 38 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 8
+
+[node name="left_dir_1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 19, 38 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 10
+
+[node name="left_dir_2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 38, 39 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 13
+
+[node name="right_dir_0" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 57 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 9
+
+[node name="right_dir_1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 20, 57 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 11
+
+[node name="right_dir_2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 40, 57 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 14
+
+[node name="down_dirt_0" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 77 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 12
+
+[node name="upleft_dirt_0" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 95 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 15
+
+[node name="upright_dirt_0" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 115 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 16
+frame = 16
 
 

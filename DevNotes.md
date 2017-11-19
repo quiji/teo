@@ -149,8 +149,9 @@ List of assets, how they were made and credit where needed.
         - [x] Add obstacles functionality
 
     - [ ] **Bug:** When rocks is spawn outside of island `outside` flag doesn't work.
-    - [ ] **Bug:** When rock's parent node is changed, animation is restarted breaking the flow of the rocks fall.
+    - [x] **Bug:** When rock's parent node is changed, animation is restarted breaking the flow of the rocks fall.
     - [x] **Bug:** Fix Stone free falling (some directions feels like is moving up rather than falling)
+    - [x] Change ground logic to ray casts. (Raycast don't work when completely inside of collision shape)
     - [ ] Make stone collide with islands when free falling
     - [ ] Improve camera handling when throwing and warping
     - [ ] Create a variaty of islands and test warp mechanic

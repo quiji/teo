@@ -99,6 +99,7 @@ func _fixed_process(delta):
 	move(velocity * delta)
 	if get_travel().length_squared() > 0: emit_signal("moved", self)
 
+	
 	if height <= 0 and outside_island: 
 		fall_velocity = fall_velocity / 2
 		if not reached_ground_emitted:
