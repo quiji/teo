@@ -148,7 +148,7 @@ List of assets, how they were made and credit where needed.
             - [x] Current way of handling falling doens't work well, fix it or find a better one.
         - [x] Add obstacles functionality
 
-    - [ ] **Bug:** When rocks is spawn outside of island `outside` flag doesn't work.
+    - [x] **Bug:** When rocks is spawn outside of island `outside` flag doesn't work.
     - [x] **Bug:** When rock's parent node is changed, animation is restarted breaking the flow of the rocks fall.
     - [x] **Bug:** Fix Stone free falling (some directions feels like is moving up rather than falling)
     - [x] Change ground logic to ray casts. (Raycast don't work when completely inside of collision shape)
@@ -162,6 +162,13 @@ List of assets, how they were made and credit where needed.
 
     - [ ] Make sprites
         - [ ] Teleport sprites
+        - [ ] Grass Tiles
+            - [x] Create animated grass tiles functionality
+            - [ ] **Animate grass**
+            - [ ] **Create diagonal grass tiles**
+            - [ ] **Remove 2 layers of grass and transform to 1**
+                - [ ] Change all front grass tiles to be a 1 pixel line
+        - [x] Dirt Tiles
 
 
 

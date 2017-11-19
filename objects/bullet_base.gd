@@ -14,7 +14,7 @@ var speed = 0
 var strength_level = 0
 var is_bullet = true
 
-var outside_island = false
+var outside_island = true
 var reached_ground_emitted = false
 var rock_type = Glb.RockTypes.None
 var owner = null
