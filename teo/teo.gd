@@ -194,7 +194,10 @@ func react(action, var1=null):
 	elif action == "Throw":
 		bullets -= 1
 		throw_meta.initial_pos = get_node("sprite_handler").get_pos() + var1 + get_pos()
-		throw_meta.rock_type = Glb.RockTypes.Warp
+		#throw_meta.rock_type = Glb.RockTypes.Warp
+		#throw_meta.rock_type = Glb.RockTypes.Warp
+		#throw_meta.rock_type = Glb.RockTypes.Shield
+		throw_meta.rock_type = Glb.RockTypes.Regular
 		get_parent().throw_bullet(throw_meta)
 		movement_blocked = false
 	elif action == "Teleport":
