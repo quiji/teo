@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export (int, "None", "Regular", "Warp", "Shield", "EnemyRegular") var rock_type = Glb.RockTypes.None
+
 var height = 0
 var max_height = 20
 
@@ -16,10 +18,11 @@ var is_bullet = true
 
 var outside_island = true
 var reached_ground_emitted = false
-var rock_type = Glb.RockTypes.None
+
 var owner = null
 
 var i_am_initialized = false
+var spawned_as_pickable = false
 
 func _ready():
 	if not i_am_initialized:
@@ -76,12 +79,36 @@ func is_over_island(): return not outside_island
 
 func on_body_enter(body):
 	if body.get_object_type() == Glb.ObjectTypes.Teo:
+		if spawned_as_pickable:
+			emit_signal("reached_ground", self)
 		body.pick(Glb.ObjectTypes.Bullet)
 		queue_free()
-	
+
 func on_tween_complete(object, key):
 	if object == self and key == "transform/scale":
 		queue_free()
+
+func spawn_as_pickable():
+	get_node("sprite_handler").play_rock_type(rock_type)
+	outside_island = false
+	if rock_type == Glb.RockTypes.Warp:
+		height = 20
+		get_node("sprite_handler").slow(0.6)
+		get_node("sprite_handler").get_sprite().set_pos(Vector2(0, -height))
+		get_node("collision").set_pos(Vector2(0, -height))
+		get_node("animation_player").play("floating")
+		emit_signal("moved", self)
+	else:
+		get_node("sprite_handler").pause()
+	set_fixed_process(false)
+	velocity = Vector2()
+	set_layer_mask_bit(0, false)
+	set_layer_mask_bit(1, false)
+	get_node("area").set_enable_monitoring(true)
+	is_bullet = false
+	spawned_as_pickable = true
+
+
 
 func _fixed_process(delta):
 

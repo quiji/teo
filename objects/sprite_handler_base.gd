@@ -62,3 +62,7 @@ func play_backwards_from_spot():
 
 func scale_sprite(scale):
 	get_node("Sprite").set_scale(scale)
+
+
+func slow(amount):
+	get_node("AnimationPlayer").set_speed(amount)

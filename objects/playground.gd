@@ -18,6 +18,8 @@ func _ready():
 			var sh = shadow.instance()
 			add_child(sh)
 			sh.follow_owner(children[i])
+			if children[i].get_object_type() == Glb.ObjectTypes.Bullet:
+				children[i].spawn_as_pickable()
 		i += 1
 
 	target_arrow = target_factory.instance()

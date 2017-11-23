@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://Prototype.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://objects/playground.gd" type="Script" id=8]
 [ext_resource path="res://teo/teo.tscn" type="PackedScene" id=9]
 [ext_resource path="res://gui/camera_crew.tscn" type="PackedScene" id=10]
-[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/bullet_base.tscn" type="PackedScene" id=11]
+[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CanvasItemShader" id=1]
 
@@ -146,7 +147,6 @@ transform/pos = Vector2( 255, 362 )
 
 [node name="playground" type="YSort" parent="."]
 
-editor/display_folded = true
 sort/enabled = true
 script/script = ExtResource( 8 )
 
@@ -157,6 +157,16 @@ transform/pos = Vector2( 319, 174 )
 [node name="camera_crew" parent="playground" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 987, 251 )
+
+[node name="bullet_base" parent="playground" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 224, 150 )
+rock_type = 2
+
+[node name="bullet_base1" parent="playground" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 225, 194 )
+rock_type = 1
 
 [node name="particle_foreground" type="CanvasLayer" parent="."]
 
@@ -194,6 +204,6 @@ params/anim_initial_pos = 0.0
 color/color = Color( 0.217865, 0.945312, 0.65547, 1 )
 color/color_ramp = SubResource( 3 )
 
-[node name="HUD" parent="." instance=ExtResource( 11 )]
+[node name="HUD" parent="." instance=ExtResource( 12 )]
 
 

@@ -12,6 +12,8 @@ var keyboard = {
 
     Throw = KEY_SPACE,
 
+    SwapRock = KEY_E,
+
     Left = KEY_A,
     Right = KEY_D,
     Up = KEY_W,

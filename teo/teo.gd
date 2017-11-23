@@ -14,7 +14,7 @@ var react_wait_delta = 0
 var is_idle = true
 var cant_fall = false
 
-var bullets = 20
+var bullets = 0
 
 var side_dir = Vector2()
 var target_dir = Vector2()
@@ -64,6 +64,9 @@ func process_input(i):
 	else:
 		change_direction(Glb.Directions.NoDirection)
 
+
+	if i.SwapRock == Controller.INPUT.Just_Pressed:
+		pass
 
 	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
 		is_idle = false

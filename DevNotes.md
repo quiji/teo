@@ -158,8 +158,7 @@ List of assets, how they were made and credit where needed.
     - [ ] Make stone collide with islands when free falling
     - [ ] Improve camera handling when throwing and warping
     - [ ] Test warp mechanic
-    - [ ] Implement falling mechanic
-    - [ ] Create floating columns and bridge features
+    - [x] Implement falling mechanic
     
     - [ ] Make parallax configure itself to the current resolution (because of the `Resolution.gd` class, the resolution changes)
     - [ ] Improve Particle effect.
@@ -176,7 +175,7 @@ List of assets, how they were made and credit where needed.
                 - [x] Change all front grass tiles to be a 1 pixel line
         - [x] Dirt Tiles
 
-
+- [ ] Swap shadow direction
 
 - [ ] **Define how switching between rock works**
     - [ ] Implement satchel system
