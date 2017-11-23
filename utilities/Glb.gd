@@ -144,8 +144,27 @@ func tell_HUD(action, values=null):
     else:
         return false
 
+# **********************************************************************
+#           Island Handler Communication... part
+# **********************************************************************
+var island_handler = null
+func set_island_handler(handler):
+    island_handler = handler
+
+func ask_island_for_dummy(pos, dir):
+    if island_handler != null:
+        island_handler.show_dummy(pos, dir)
 
 
+# **********************************************************************
+#           Teo Communication... part
+# **********************************************************************
+var teo = null
+func set_teo(t):
+    teo = t
+
+func tell_teo_to_respawn():
+    teo.respawn()
 
 # **********************************************************************
 #           Global Init

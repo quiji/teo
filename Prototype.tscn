@@ -71,7 +71,6 @@ scroll/ignore_camera_zoom = false
 
 [node name="background" type="ParallaxLayer" parent="parallax_background"]
 
-editor/display_folded = true
 motion/scale = Vector2( 0, 0 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 0 )
@@ -116,6 +115,7 @@ texture = ExtResource( 4 )
 
 [node name="front_layer" type="ParallaxLayer" parent="parallax_background"]
 
+editor/display_folded = true
 motion/scale = Vector2( 0.3, 0.3 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 900, 800 )
@@ -127,9 +127,9 @@ texture = ExtResource( 5 )
 
 [node name="fallers" type="Node2D" parent="."]
 
-[node name="islands" type="Node2D" parent="."]
+[node name="islands" type="YSort" parent="."]
 
-editor/display_folded = true
+sort/enabled = true
 script/script = ExtResource( 6 )
 
 [node name="island_00" parent="islands" instance=ExtResource( 7 )]
@@ -139,6 +139,10 @@ transform/pos = Vector2( 232, 172 )
 [node name="island_1" parent="islands" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 506, 276 )
+
+[node name="island_2" parent="islands" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 255, 362 )
 
 [node name="playground" type="YSort" parent="."]
 

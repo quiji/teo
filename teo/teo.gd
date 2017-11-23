@@ -21,6 +21,8 @@ var target_dir = Vector2()
 
 var outside_island = false
 
+var respawn_point = Vector2()
+
 var throw_meta = {
 	direction = Vector2(),
 	strength = 0,
@@ -37,6 +39,9 @@ func _ready():
 	# Moved is not used by anyone right now. Leaving here or future use... or future removal.
 	add_user_signal("moved")
 	set_fixed_process(true)
+
+	Glb.set_teo(self)
+	respawn_point = get_pos()
 
 func process_input(i):
 
@@ -208,7 +213,19 @@ func react(action, var1=null):
 
 func exit_island():
 	if not cant_fall:
-		Glb.tell_HUD(Glb.HUDActions.Log, "Dead!")
+		get_node("sprite_handler").play_action("Fall", direction)
 		outside_island = true
+		set_fixed_process(false)
+		emit_signal("moved", self)
+		Glb.ask_island_for_dummy(get_pos() + get_node("sprite_handler").get_pos(), direction)
+		hide()
 	else:
 		cant_fall = false
+
+func respawn():
+	set_pos(respawn_point)
+	outside_island = false
+	set_fixed_process(true)
+	show()
+	get_node("sprite_handler").play_action("Idle", direction)
+	emit_signal("moved", self)
