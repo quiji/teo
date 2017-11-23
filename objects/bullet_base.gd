@@ -79,10 +79,10 @@ func is_over_island(): return not outside_island
 
 func on_body_enter(body):
 	if body.get_object_type() == Glb.ObjectTypes.Teo:
-		if spawned_as_pickable:
-			emit_signal("reached_ground", self)
-		body.pick(Glb.ObjectTypes.Bullet)
-		queue_free()
+		if body.pick(rock_type):
+			if spawned_as_pickable:
+				emit_signal("reached_ground", self)
+			queue_free()
 
 func on_tween_complete(object, key):
 	if object == self and key == "transform/scale":

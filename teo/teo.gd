@@ -31,6 +31,8 @@ var throw_meta = {
 	owner = self
 }
 
+var satchel = []
+
 func _ready():
 	# Configure Keyboard
 	Controller.add_buttons(Glb.keyboard)
@@ -68,7 +70,7 @@ func process_input(i):
 	if i.SwapRock == Controller.INPUT.Just_Pressed:
 		pass
 
-	if i.Throw == Controller.INPUT.Just_Pressed and bullets > 0:
+	if i.Throw == Controller.INPUT.Just_Pressed and satchel.size() > 0:
 		is_idle = false
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
 		get_parent().start_polling_target(self)
@@ -81,7 +83,7 @@ func process_input(i):
 		target = get_global_mouse_pos()
 	
 
-	if i.Throw == Controller.INPUT.Just_Released and bullets > 0 and charging:
+	if i.Throw == Controller.INPUT.Just_Released and satchel.size() > 0 and charging:
 		
 		get_parent().stop_polling_target()
 		charging = false
@@ -184,8 +186,11 @@ func hit(dir, strength):
 	react_wait_delta = Glb.TeoStats.react_delay
 	
 
-func pick(obj):
-	bullets += 1
+func pick(rock_type):
+	if satchel.size() < 2:
+		satchel.push_back(rock_type)
+		return true
+	return false
 
 func get_object_type(): return Glb.ObjectTypes.Teo
 func is_shadow_enabled(): return true
@@ -200,12 +205,9 @@ func react(action, var1=null):
 	elif action == "Step" and aim_walk_sides:
 		velocity = direction * Glb.TeoStats.aimwalk_speed / 2
 	elif action == "Throw":
-		bullets -= 1
 		throw_meta.initial_pos = get_node("sprite_handler").get_pos() + var1 + get_pos()
-		#throw_meta.rock_type = Glb.RockTypes.Warp
-		#throw_meta.rock_type = Glb.RockTypes.Warp
-		#throw_meta.rock_type = Glb.RockTypes.Shield
-		throw_meta.rock_type = Glb.RockTypes.Regular
+		throw_meta.rock_type = satchel.back()
+		satchel.pop_back()
 		get_parent().throw_bullet(throw_meta)
 		movement_blocked = false
 	elif action == "Teleport":
