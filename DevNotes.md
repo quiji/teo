@@ -189,8 +189,11 @@ List of assets, how they were made and credit where needed.
 
 - [ ] **Define how switching between rock works**
     - [ ] Implement satchel system
+        - [x] Satchel logic
         - [ ] Satchil Sprites
         - [ ] Satchel GUI nodes
+
+- [ ] **Implement respawning when throwing warp stone to abyss**
 
 - [ ] Create Tutorial level
     - [ ] Implement alarm clock system

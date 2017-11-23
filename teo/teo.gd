@@ -14,7 +14,6 @@ var react_wait_delta = 0
 var is_idle = true
 var cant_fall = false
 
-var bullets = 0
 
 var side_dir = Vector2()
 var target_dir = Vector2()
@@ -67,8 +66,13 @@ func process_input(i):
 		change_direction(Glb.Directions.NoDirection)
 
 
-	if i.SwapRock == Controller.INPUT.Just_Pressed:
-		pass
+	if i.SwapRock == Controller.INPUT.Just_Pressed and satchel.size() > 1:
+		var last = satchel.back()
+		satchel.pop_back()
+		var next = satchel.back()
+		satchel.pop_back()
+		satchel.push_back(last)
+		satchel.push_back(next)
 
 	if i.Throw == Controller.INPUT.Just_Pressed and satchel.size() > 0:
 		is_idle = false
