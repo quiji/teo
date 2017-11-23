@@ -152,12 +152,18 @@ List of assets, how they were made and credit where needed.
     - [x] **Bug:** When rock's parent node is changed, animation is restarted breaking the flow of the rocks fall.
     - [x] **Bug:** Fix Stone free falling (some directions feels like is moving up rather than falling)
     - [x] Change ground logic to ray casts. (Raycast don't work when completely inside of collision shape)
+    - [ ] **Create shader for background**
+        - [ ] Transform big background to small sprites for new layer
+        - [ ] Improve shader for different and nicer bkg effect
     - [ ] Make stone collide with islands when free falling
     - [ ] Improve camera handling when throwing and warping
     - [ ] Test warp mechanic
     - [ ] Implement falling mechanic
     - [ ] Create floating columns and bridge features
     
+    - [ ] Make parallax configure itself to the current resolution (because of the `Resolution.gd` class, the resolution changes)
+    - [ ] Improve Particle effect.
+
     - [ ] Implement Teo falling and respawn
         - [ ] Implement restart effect
 
@@ -178,9 +184,9 @@ List of assets, how they were made and credit where needed.
         - [ ] Satchel GUI nodes
 
 - [ ] Shield Stone
-    - [ ] Rock sprites
+    - [x] Rock sprites
 - [ ] Regular Stone
-    - [ ] Rock sprites
+    - [x] Rock sprites
 
 - [ ] Create Tutorial level
     - [ ] Implement alarm clock system

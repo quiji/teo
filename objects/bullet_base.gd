@@ -50,7 +50,7 @@ func throw(throw_meta):
 	strength_level = throw_meta.strength 
 
 	get_node("sprite_handler").scale_sprite(Vector2(size, size))
-
+	get_node("sprite_handler").play_rock_type(rock_type)
 
 	get_node("sprite_handler").get_sprite().set_pos(Vector2(0, -height))
 	bullet_time = Glb.get_bullet_time(throw_meta.strength)

@@ -1,14 +1,56 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Prototype.gd" type="Script" id=1]
-[ext_resource path="res://assets/Tiles/cloud_back.tex" type="Texture" id=2]
-[ext_resource path="res://assets/Tiles/cloud00.tex" type="Texture" id=3]
-[ext_resource path="res://objects/islands_handler.gd" type="Script" id=4]
-[ext_resource path="res://objects/islands/island_00.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/playground.gd" type="Script" id=6]
-[ext_resource path="res://teo/teo.tscn" type="PackedScene" id=7]
-[ext_resource path="res://gui/camera_crew.tscn" type="PackedScene" id=8]
-[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/parallax/clouds_parallax3.tex" type="Texture" id=3]
+[ext_resource path="res://assets/parallax/clouds_parallax2.tex" type="Texture" id=4]
+[ext_resource path="res://assets/parallax/clouds_parallax1.tex" type="Texture" id=5]
+[ext_resource path="res://objects/islands_handler.gd" type="Script" id=6]
+[ext_resource path="res://objects/islands/island_00.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/playground.gd" type="Script" id=8]
+[ext_resource path="res://teo/teo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://gui/camera_crew.tscn" type="PackedScene" id=10]
+[ext_resource path="res://gui/HUD.tscn" type="PackedScene" id=11]
+
+[sub_resource type="CanvasItemShader" id=1]
+
+_code = {
+"fragment": "uniform color color_1 = vec4(0.784313725, 0.788235294, 0.262745098,1);
+
+float modif = 1;
+if (SCREEN_UV.y > 0.5) {
+	modif = 1 + SCREEN_UV.y - 0.5;
+}
+vec3 col = color_1.rgb - vec3(0.1, 0.1, 0.1) * pow(SCREEN_UV.y * modif, 2);
+
+col.g -= 0.2 * SCREEN_UV.y * (1 - abs(0.5 - SCREEN_UV.x) * 1.2);
+/*
+if (SCREEN_UV.x > 0.25 && SCREEN_UV.x < 0.75) {
+	col.g -= 0.1 * (1 - abs(0.5 - SCREEN_UV.x));
+}
+*/
+// Set the pixel color we are going to use
+COLOR = vec4(col, 1);
+
+
+",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+shader/shader = SubResource( 1 )
+shader/shading_mode = 0
+shader_param/color_1 = Color( 0.337255, 0.639216, 0.74902, 1 )
+
+[sub_resource type="ColorRamp" id=3]
+
+offsets = FloatArray( 0, 0.239766, 0.479532, 0.666667, 0.847953, 0.97076 )
+colors = ColorArray( 0.902344, 0.0528717, 0.0528717, 1, 0.742188, 0.419768, 0.107269, 1, 0.367188, 0.0258179, 0.0818238, 1, 0.671875, 0.335589, 0.112854, 1, 0.824219, 0.14775, 0.0965881, 1, 0.726562, 0.577427, 0.224213, 1 )
 
 [node name="Prototype" type="Node2D"]
 
@@ -29,12 +71,13 @@ scroll/ignore_camera_zoom = false
 
 [node name="background" type="ParallaxLayer" parent="parallax_background"]
 
-motion/scale = Vector2( 0.1, 0.1 )
+motion/scale = Vector2( 0, 0 )
 motion/offset = Vector2( 0, 0 )
-motion/mirroring = Vector2( 960, 540 )
+motion/mirroring = Vector2( 0, 0 )
 
 [node name="texture" type="TextureFrame" parent="parallax_background/background"]
 
+material/material = SubResource( 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -48,50 +91,109 @@ stretch_mode = 2
 
 [node name="back_layer" type="ParallaxLayer" parent="parallax_background"]
 
+editor/display_folded = true
+motion/scale = Vector2( 0.1, 0.1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 900, 800 )
+
+[node name="sprite" type="Sprite" parent="parallax_background/back_layer"]
+
+transform/pos = Vector2( 294, 132 )
+texture = ExtResource( 3 )
+
+[node name="mid_layer" type="ParallaxLayer" parent="parallax_background"]
+
+editor/display_folded = true
 motion/scale = Vector2( 0.2, 0.2 )
 motion/offset = Vector2( 0, 0 )
-motion/mirroring = Vector2( 600, 400 )
+motion/mirroring = Vector2( 900, 800 )
 
-[node name="cloud" type="TextureFrame" parent="parallax_background/back_layer"]
+[node name="sprite" type="Sprite" parent="parallax_background/mid_layer"]
 
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 175.0
-margin/top = 228.0
-margin/right = 303.0
-margin/bottom = 356.0
-texture = ExtResource( 3 )
-stretch_mode = 0
+transform/pos = Vector2( 193, 77 )
+texture = ExtResource( 4 )
+
+[node name="front_layer" type="ParallaxLayer" parent="parallax_background"]
+
+editor/display_folded = true
+motion/scale = Vector2( 0.3, 0.3 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 900, 800 )
+
+[node name="sprite" type="Sprite" parent="parallax_background/front_layer"]
+
+transform/pos = Vector2( 435, 164 )
+texture = ExtResource( 5 )
 
 [node name="fallers" type="Node2D" parent="."]
 
-[node name="islands" type="Node2D" parent="."]
-
-script/script = ExtResource( 4 )
-
-[node name="island_00" parent="islands" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 232, 172 )
-
-[node name="island_1" parent="islands" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 506, 276 )
-
-[node name="playground" type="YSort" parent="."]
+[node name="islands" type="YSort" parent="."]
 
 sort/enabled = true
 script/script = ExtResource( 6 )
 
-[node name="teo" parent="playground" instance=ExtResource( 7 )]
+[node name="island_00" parent="islands" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 232, 172 )
+
+[node name="island_1" parent="islands" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 506, 276 )
+
+[node name="island_2" parent="islands" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 255, 362 )
+
+[node name="playground" type="YSort" parent="."]
+
+editor/display_folded = true
+sort/enabled = true
+script/script = ExtResource( 8 )
+
+[node name="teo" parent="playground" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 319, 174 )
 
-[node name="camera_crew" parent="playground" instance=ExtResource( 8 )]
+[node name="camera_crew" parent="playground" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 987, 251 )
 
-[node name="HUD" parent="." instance=ExtResource( 9 )]
+[node name="particle_foreground" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="air" type="Particles2D" parent="particle_foreground"]
+
+transform/pos = Vector2( 727, 153 )
+config/amount = 300
+config/lifetime = 8.0
+config/emitting = false
+config/process_mode = 1
+config/offset = Vector2( 0, -100 )
+config/half_extents = Vector2( 0, 300 )
+config/explosiveness = 0.8
+params/direction = 260.0
+params/spread = 60.0
+params/linear_velocity = 150.0
+params/spin_velocity = 50.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 260.0
+params/gravity_strength = 300.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 2.0
+params/final_size = 2.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color = Color( 0.217865, 0.945312, 0.65547, 1 )
+color/color_ramp = SubResource( 3 )
+
+[node name="HUD" parent="." instance=ExtResource( 11 )]
 
 
