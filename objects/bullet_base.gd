@@ -135,6 +135,8 @@ func _fixed_process(delta):
 			emit_signal("reached_ground", self)
 			get_node("sprite_handler").store_animation_spot()
 			get_parent().move_to_fallers(self)
+			if rock_type == Glb.RockTypes.Warp:
+				owner.react("TeleportToHell")	
 	elif height <= 0:
 		set_fixed_process(false)
 		velocity = Vector2()
