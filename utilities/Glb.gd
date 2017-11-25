@@ -132,6 +132,11 @@ func get_bullet_throwback(strength):
 enum HUDActions {
     ThrowChargeBarStart,
     ThrowChargeBarEnd,
+    PushRock,
+    HoldRock,
+    PopRock,
+    SwapRock,
+    CancelRock,
     Log
 }
 

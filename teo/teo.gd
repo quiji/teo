@@ -73,10 +73,12 @@ func process_input(i):
 		satchel.pop_back()
 		satchel.push_back(last)
 		satchel.push_back(next)
+		Glb.tell_HUD(Glb.HUDActions.SwapRock)
 
 	if i.Throw == Controller.INPUT.Just_Pressed and satchel.size() > 0:
 		is_idle = false
 		Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarStart)
+		Glb.tell_HUD(Glb.HUDActions.HoldRock)
 		get_parent().start_polling_target(self)
 		charging = true
 		running = false
@@ -97,6 +99,7 @@ func process_input(i):
 		get_node("sprite_handler").play_action("Throw", side_dir)
 		throw_meta.strength =  Glb.tell_HUD(Glb.HUDActions.ThrowChargeBarEnd)
 		throw_meta.direction = target_dir
+		Glb.tell_HUD(Glb.HUDActions.PopRock)
 		
 
 	
@@ -193,6 +196,7 @@ func hit(dir, strength):
 func pick(rock_type):
 	if satchel.size() < 2:
 		satchel.push_back(rock_type)
+		Glb.tell_HUD(Glb.HUDActions.PushRock, rock_type)
 		return true
 	return false
 

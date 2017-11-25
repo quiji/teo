@@ -187,11 +187,11 @@ List of assets, how they were made and credit where needed.
     - [x] Implement Teo falling and respawn
         - [x] Implement restart effect
 
-- [ ] **Define how switching between rock works**
-    - [ ] Implement satchel system
+- [x] Define how switching between rock works
+    - [x] Implement satchel system
         - [x] Satchel logic
-        - [ ] Satchil Sprites
-        - [ ] Satchel GUI nodes
+        - [x] Satchel Sprites
+        - [x] Satchel GUI nodes
 
 - [ ] **Implement respawning when throwing warp stone to abyss**
 

@@ -17,6 +17,10 @@ func store_animation_spot():
 func restore_animation_spot(offset=0):
 	get_node("AnimationPlayer").seek(stored_frame + offset, true)
 
+func play(anim):
+	if get_node("AnimationPlayer").has_animation(anim):
+		get_node("AnimationPlayer").play(anim)
+
 func play_action(action, direction, backwards=false):
 	var d = Glb.get_direction_name(direction)
 	var anim_name = d + "-" + action
