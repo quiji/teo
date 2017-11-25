@@ -222,6 +222,10 @@ func react(action, var1=null):
 		cant_fall = true
 		set_pos(var1)
 		emit_signal("moved", self)
+	elif action == "TeleportToHell":
+		hide()
+		respawn()
+		get_parent().spawn_warp_stone(get_pos())
 		
 
 func exit_island():

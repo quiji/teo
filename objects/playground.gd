@@ -56,3 +56,15 @@ func add_objects(objects):
 func move_to_fallers(obj):
 	remove_child(obj)
 	get_parent().place_object_on_fallers(obj)
+
+func spawn_warp_stone(pos):
+	var bullet = bullet_factory.instance()
+	
+	bullet.rock_type = Glb.RockTypes.Warp
+	bullet.set_pos(pos)
+	add_child(bullet)
+	var sh = shadow.instance()
+	add_child(sh)
+	sh.follow_owner(bullet)
+	bullet.spawn_as_pickable()
+	
