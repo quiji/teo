@@ -12,6 +12,8 @@ var keyboard = {
 
     Throw = KEY_SPACE,
 
+    SwapRock = KEY_E,
+
     Left = KEY_A,
     Right = KEY_D,
     Up = KEY_W,
@@ -130,6 +132,11 @@ func get_bullet_throwback(strength):
 enum HUDActions {
     ThrowChargeBarStart,
     ThrowChargeBarEnd,
+    PushRock,
+    HoldRock,
+    PopRock,
+    SwapRock,
+    CancelRock,
     Log
 }
 

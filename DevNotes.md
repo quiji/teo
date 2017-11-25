@@ -152,23 +152,12 @@ List of assets, how they were made and credit where needed.
     - [x] **Bug:** When rock's parent node is changed, animation is restarted breaking the flow of the rocks fall.
     - [x] **Bug:** Fix Stone free falling (some directions feels like is moving up rather than falling)
     - [x] Change ground logic to ray casts. (Raycast don't work when completely inside of collision shape)
-    - [ ] **Create shader for background**
-        - [ ] Transform big background to small sprites for new layer
-        - [ ] Improve shader for different and nicer bkg effect
-    - [ ] Make stone collide with islands when free falling
-    - [ ] Improve camera handling when throwing and warping
-    - [ ] Test warp mechanic
-    - [ ] Implement falling mechanic
-    - [ ] Create floating columns and bridge features
+    - [x] **Create shader for background**
+        - [x] Transform big background to small sprites for new layer
+        - [x] Improve shader for different and nicer bkg effect
+    - [x] Implement falling mechanic
     
-    - [ ] Make parallax configure itself to the current resolution (because of the `Resolution.gd` class, the resolution changes)
-    - [ ] Improve Particle effect.
-
-    - [ ] Implement Teo falling and respawn
-        - [ ] Implement restart effect
-
-    - [ ] Make sprites
-        - [ ] Teleport sprites
+    - [x] Make sprites
         - [x] Grass Tiles
             - [x] Create animated grass tiles functionality
             - [x] **Animate grass**
@@ -176,17 +165,35 @@ List of assets, how they were made and credit where needed.
                 - [x] Change all front grass tiles to be a 1 pixel line
         - [x] Dirt Tiles
 
-
-
-- [ ] **Define how switching between rock works**
-    - [ ] Implement satchel system
-        - [ ] Satchil Sprites
-        - [ ] Satchel GUI nodes
-
-- [ ] Shield Stone
+- [x] Shield Stone
     - [x] Rock sprites
-- [ ] Regular Stone
+- [x] Regular Stone
     - [x] Rock sprites
+
+- [x] Create tilemap assets
+    - [x] Dirt
+    - [x] Grass
+
+
+
+### 23-29
+
+    - [ ] Make stone collide with islands when free falling
+    - [ ] Improve camera handling when throwing and warping
+    - [x] Test warp mechanic
+    - [ ] Make parallax configure itself to the current resolution (because of the `Resolution.gd` class, the resolution changes)
+    - [ ] Improve Particle effect.
+
+    - [x] Implement Teo falling and respawn
+        - [x] Implement restart effect
+
+- [x] Define how switching between rock works
+    - [x] Implement satchel system
+        - [x] Satchel logic
+        - [x] Satchel Sprites
+        - [x] Satchel GUI nodes
+
+- [ ] **Implement respawning when throwing warp stone to abyss**
 
 - [ ] Create Tutorial level
     - [ ] Implement alarm clock system
@@ -202,9 +209,6 @@ List of assets, how they were made and credit where needed.
         - [ ] Big clouds
         - [ ] Smaller clouds
         - [ ] Floating stuff
-    - [ ] Create tilemap assets
-        - [x] Dirt
-        - [x] Grass
     - [ ] Create obstacle assets
     - [ ] Create other assets, like sparks and dust, etc..
 
@@ -212,8 +216,6 @@ List of assets, how they were made and credit where needed.
 - [ ] Sounds ?
 - [ ] Boss ?
 
-
-### 23-29
 
 - [ ] Make transition from throwing to idle Teo's animations
     - [ ] Add interesting details on that transition, like bag moving on Up direction.
